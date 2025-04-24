@@ -7,13 +7,57 @@
     <title>Pablo Bellón | Personal Website – Under Construction</title>
   </head>
   <body>
-    <canvas id="bg-canvas"></canvas>
+    <video
+      id="bg-video"
+      src="./assets/video/vhs-background.mp4"
+      loop
+      muted
+      autoplay></video>
     <main id="main-container">
       <section id="section-global-container">
-        <div id="div-section-container"><p>Under construction!!</p></div>
+        <div id="div-section-container">
+          <figure id="coming-soon-figure">
+            <img id="coming-soon-img" src="./images/personal-stud.png" alt="Persona estudiando" />
+            <figcaption> I’m currently studying and working on new projects. Stay tuned for updates!</figcaption>
+          </figure>
+        </div>
       </section>
     </main>
-    <footer>Footer</footer>
+    <footer>
+      <a href="https://www.pablobellon.com"
+        ><span id="span-year">© 2025 </span> pablobellon.com</a
+      >
+
+      <ul id="ul-footer">
+        <li>
+          <a href="www.pablobellon.com"
+            ><img
+              class="footer-ico"
+              src="./images/icons/github-ico.png"
+              alt="Acceder a mi GitHub"
+          /></a>
+        </li>
+        <li>
+          <a
+            href="https://wa.me/+34670025720?text=Hola%20Pablo%21%20%2C%20contacto%20contigo%20a%20trav%C3%A9s%20de%20tu%20web%20personal%20"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              class="footer-ico"
+              src="./images/icons/whatsapp-ico.png"
+              alt="Enviar Whatsapp"
+          /></a>
+        </li>
+        <li>
+          <a href="mailto:pablo.bellon.ruibal@gmail.com"
+            ><img
+              class="footer-ico"
+              src="./images/icons/mail-ico.png"
+              alt="Enviar Correo"
+          /></a>
+        </li>
+      </ul>
+    </footer>
     <script src="./js/main.js"></script>
   </body>
 </html>
