@@ -74,7 +74,7 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 1rem;
+ 
 }
 
 img.footer-ico {
@@ -102,16 +102,19 @@ figure#coming-soon-figure {
   width: 100%;
   max-width: 300px;
   text-align: center;
+  
 }
 
 figure#coming-soon-figure img {
-  width: 100%;            /* escala al 100% del figure */
-  height: auto;           /* mantiene la proporción */
-  display: block;         /* elimina pequeños gaps inline */
+  width: 100%;            
+  height: auto;           
+  display: block;  
+  border-radius: 75%;  
+  opacity: 0.6;     
 }
 
 figure#coming-soon-figure figcaption {
-  margin-top: 0.5rem;
+  margin-top: 2rem;
   font-size: 1.25rem;
   color: var(--neon-pink);
 }
