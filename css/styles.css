@@ -1,8 +1,8 @@
 /* Import custom retro font (VCR-OSD-Mono) */
 
 @font-face {
-  font-family: "VCR-OSD-Mono";
-  src: url(../assets/fonts/VCR_OSD_MONO_1.001.ttf);
+  font-family: "VT323-Regular";
+  src: url(../assets/fonts/VT323-Regular.ttf);
   font-weight: normal;
   font-size: normal;
 }
@@ -10,7 +10,7 @@
 :root {
   --neon-pink: #ff1493;
   --terminal-green: #00cc00;
-  --main-font: "VCR-OSD-Mono", sans-serif;
+  --main-font: "VT323-Regular", sans-serif;
 }
 
 /* Universal Reset */
@@ -32,7 +32,7 @@ body {
   align-items: center;
   user-select: none;
   font-family: var(--main-font);
-  letter-spacing: -1px;
+  /* letter-spacing: -1px; */
 }
 
 /* the canvas is always positioned behind content */
@@ -61,7 +61,7 @@ main#main-container {
 section#section-global-container {
   border: 2px solid blue;
   height: 95%;
-  width: 85%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   justify-content: center;
