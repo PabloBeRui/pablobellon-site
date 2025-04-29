@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* Retro Terminal Typewriter Effect */
 
   const text =
-    "I’m currently studying and working on new projects. Stay tuned for updates!";
+    "I’m currently studying and working on new projects 👾. Stay tuned for updates!";
 
   const typewriterElement = document.getElementById("typewriter-text");
 
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 5000);
 
   // Preload the reverse video to minimize transition delay
-  const reverseVideo = document.createElement('video');
+  const reverseVideo = new Video();
   reverseVideo.src = "./assets/video/personal-stud-vid-reverse.mp4";
   reverseVideo.preload = "auto";
 });

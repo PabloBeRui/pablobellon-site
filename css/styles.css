@@ -126,12 +126,11 @@ figure#coming-soon-figure video {
   /* display: block;   */
   border-radius: 75%;
   opacity: 0.6;
-
 }
 
 figure#coming-soon-figure figcaption {
   margin-top: 2rem;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: var(--terminal-green);
 }
 
@@ -144,4 +143,12 @@ figure#coming-soon-figure figcaption {
 
 figure#coming-soon-figure .typewriter-class-2 {
   color: var(--neon-pink);
+}
+
+/* Balancing lines */
+
+#typewriter-text {
+  line-height: 1.5;
+  word-break: break-word;
+  text-align: left;
 }
