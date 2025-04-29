@@ -1,2 +1,46 @@
-# pablobellon-site
-Pablo Bellon’s personal website — currently under construction. Stay tuned for updates!
+# 🌐 Web Temporal de Pablo Bellón Ruibal / Temporary Website
+
+## 🇪🇸 Español
+
+Bienvenido a la **web personal temporal** de **Pablo Bellón Ruibal**.
+
+Este sitio web está en desarrollo y sirve como presentación personal mientras se finalizan otros proyectos más complejos.
+
+> 🔗 También puedes visitar una de mis webs, desarrollada en React:
+> 👉 [elElegido.netlify.app](https://elelegido.netlify.app)
+
+### 👨‍💻 Sobre mí
+
+- Estudiante de **Desarrollo de Aplicaciones Web (DAW)**
+- Apasionado por el diseño web, el desarrollo frontend y las tecnologías creativas
+- Actualmente trabajando en varios proyectos personales y aprendiendo nuevas herramientas
+
+### ⚙️ Tecnologías utilizadas
+
+- **HTML5**, **CSS3**, **JavaScript**
+
+---
+
+## 🇬🇧 English
+
+Welcome to the **temporary personal website** of **Pablo Bellón Ruibal**.
+
+This website is currently under development and serves as a personal introduction while more complex projects are being finalized.
+
+> 🔗 You can also check out my website built with React:
+> 👉 [elElegido.netlify.app](https://elelegido.netlify.app)
+
+### 👨‍💻 About me
+
+- Student of **Web Application Development (DAW)**
+- Passionate about web design, frontend development, and creative technologies
+- Currently working on personal projects and learning new tools
+
+### ⚙️ Technologies used
+
+- **HTML5**, **CSS3**, **JavaScript**
+
+---
+
+> 🌐 Visítala en [pablobellon.com](https://www.pablobellon.com)  
+> 📬 Contacto / Contact: pablo.bellon.ruibal@gmail.com
