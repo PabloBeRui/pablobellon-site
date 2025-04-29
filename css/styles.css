@@ -103,6 +103,10 @@ a {
   color: var(--neon-pink);
 }
 
+footer a {
+  font-size: 1.2rem;
+}
+
 figure#coming-soon-figure {
   display: flex;
   flex-direction: column;
@@ -115,12 +119,13 @@ figure#coming-soon-figure {
   text-align: center;
 }
 
-figure#coming-soon-figure img {
+figure#coming-soon-figure video {
   width: 100%;
   height: auto;
   /* display: block;   */
   border-radius: 75%;
   opacity: 0.6;
+
 }
 
 figure#coming-soon-figure figcaption {

@@ -29,8 +29,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setTimeout(typeWriter, 60); //typing speed
     } else {
-      typewriterElement.classList.add('typewriter-class-2');
+      typewriterElement.classList.add("typewriter-class-2");
     }
   }
   typeWriter();
+
+  // Personal video animation
+
+  const comingSoonVid = document.getElementById("coming-soon-vid");
+
+  setTimeout(() => {
+    comingSoonVid.play();
+
+    // When the forward playback ends
+
+    comingSoonVid.onended = () => {
+      comingSoonVid.src = "../assets/video/personal-stud-vid-reverse.mp4";
+      comingSoonVid.play(); //starts with reverse video
+
+      comingSoonVid.onended = null; // Remove the event to prevent loops
+    };
+  }, 5000);
+
+  // Preload the reverse video to minimize transition delay
+  const reverseVideo = new Video();
+  reverseVideo.src = "./assets/video/personal-stud-vid-reverse.mp4";
+  reverseVideo.preload = "auto";
 });
