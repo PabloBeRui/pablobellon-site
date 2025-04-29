@@ -4,7 +4,6 @@
   font-family: "VT323-Regular";
   src: url(../assets/fonts/VT323-Regular.ttf);
   font-weight: normal;
-  font-size: normal;
 }
 
 :root {
@@ -90,7 +89,13 @@ footer {
 }
 
 img.footer-ico {
+  transition: box-shadow 0.5s ease-in-out;
   height: 3rem;
+}
+
+img.footer-ico:hover {
+  box-shadow: 0 0 20px var(--terminal-green);
+  border-radius: 100%;
 }
 
 ul#ul-footer {
@@ -102,6 +107,11 @@ ul#ul-footer {
 a {
   text-decoration: none;
   color: var(--neon-pink);
+  transition: color 0.5s ease-in-out;
+}
+
+a:hover {
+  color: var(--terminal-green);
 }
 
 footer a {
@@ -113,10 +123,10 @@ figure#coming-soon-figure {
   flex-direction: column;
   justify-content: space-around;
 
-  margin: 0;
+  margin-left: 2rem;
   height: 100%;
   width: 100%;
-  max-width: 300px;
+  /* max-width: 300px; */
   text-align: center;
 }
 
@@ -125,11 +135,12 @@ figure#coming-soon-figure video {
   height: auto;
   /* display: block;   */
   border-radius: 75%;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 figure#coming-soon-figure figcaption {
   margin-top: 2rem;
+  padding-left: 0.5rem;
   font-size: 1.5rem;
   color: var(--terminal-green);
 }
@@ -151,4 +162,31 @@ figure#coming-soon-figure .typewriter-class-2 {
   line-height: 1.5;
   word-break: break-word;
   text-align: left;
+}
+
+/* Adapt layout for horizontal or larger screens */
+@media (orientation: landscape) {
+  figure#coming-soon-figure {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  figure#coming-soon-figure video {
+    width: 30%;
+  }
+
+  figure#coming-soon-figure figcaption {
+    font-size: 3rem;
+  }
+
+  footer a {
+    font-size: 2rem;
+  }
+
+  footer {
+    justify-content: center;
+    gap: 4rem;
+  }
 }
