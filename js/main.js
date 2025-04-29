@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 5000);
 
   // Preload the reverse video to minimize transition delay
-  const reverseVideo = new Video();
+  const reverseVideo = document.createElement('video');
   reverseVideo.src = "./assets/video/personal-stud-vid-reverse.mp4";
   reverseVideo.preload = "auto";
 });

@@ -48,9 +48,10 @@ video#bg-video {
 }
 
 main#main-container {
-  border: 2px solid pink;
+  /* border: 1px solid var(--neon-pink); */
   height: 85%;
   width: 85%;
+  border-radius: 10px;
 
   display: flex;
   flex-direction: column;
@@ -59,7 +60,7 @@ main#main-container {
 }
 
 section#section-global-container {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   height: 95%;
   width: 95%;
   display: flex;
@@ -69,7 +70,7 @@ section#section-global-container {
 }
 
 div#div-section-container {
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
   height: 95%;
   width: 95%;
   display: flex;
@@ -78,7 +79,7 @@ div#div-section-container {
 }
 
 footer {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   position: fixed;
   left: 0;
   bottom: 0;
