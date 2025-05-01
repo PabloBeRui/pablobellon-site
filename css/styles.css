@@ -143,6 +143,7 @@ figure#coming-soon-figure figcaption {
   padding-left: 0.5rem;
   font-size: 1.5rem;
   color: var(--terminal-green);
+  margin-bottom: 1rem;
 }
 
 /* Retro Terminal Typewriter Effect T-green to N-pink */
