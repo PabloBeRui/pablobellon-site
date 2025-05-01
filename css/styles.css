@@ -121,7 +121,7 @@ footer a {
 figure#coming-soon-figure {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
 
   margin-left: 2rem;
   height: 100%;
