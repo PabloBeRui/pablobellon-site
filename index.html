@@ -12,10 +12,15 @@
   </head>
   <body>
     <!-- Background video with WebM + MP4 fallback -->
-    <video id="bg-video" autoplay loop muted playsinline preload="auto">
-      <source src="./assets/video/vhs-background.webm" type="video/webm" />
+    <video
+      id="bg-video"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="auto"
+      aria-label="Looping VHS-style background animation for aesthetic effect">
       <source src="./assets/video/vhs-background.mp4" type="video/mp4" />
-      <p>Tu navegador no soporta la reproducción de vídeo en HTML5.</p>
     </video>
     <main id="main-container">
       <section id="section-global-container">
@@ -23,10 +28,11 @@
           <figure id="coming-soon-figure">
             <video
               id="coming-soon-vid"
-              src="./assets/video/personal-stud-vid.mp4"
+              src="./assets/video/personal-stud-vid-in-out.mp4"
               muted
               preload="auto"
-              playsinline></video>
+              playsinline
+              aria-label="Intro video of Pablo Bellón working on projects"></video>
             <figcaption id="typewriter-text" class="typewriter-class-1">
               <!--  js typewirter effect-->
             </figcaption>

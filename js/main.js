@@ -39,20 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const comingSoonVid = document.getElementById("coming-soon-vid");
 
   setTimeout(() => {
-    comingSoonVid.play();
-
-    // When the forward playback ends
-
-    comingSoonVid.onended = () => {
-      comingSoonVid.src = "../assets/video/personal-stud-vid-reverse.mp4";
-      comingSoonVid.play(); //starts with reverse video
-
-      comingSoonVid.onended = null; // Remove the event to prevent loops
-    };
+    comingSoonVid.play();    
+  
   }, 5000);
 
-  // Preload the reverse video to minimize transition delay
-  const reverseVideo = document.createElement("video");
-  reverseVideo.src = "./assets/video/personal-stud-vid-reverse.mp4";
-  reverseVideo.preload = "auto";
 });
