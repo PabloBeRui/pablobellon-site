@@ -30,6 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(typeWriter, 60); //typing speed
     } else {
       typewriterElement.classList.add("typewriter-class-2");
+
+      // Custom Event
+      // This event will signal that the typewriter effect has completed.
+      const typewriterFinishedEvent = new CustomEvent("typewriterFinished");
+       // Dispatching (trigger) the custom event on the 'document' object.
+      // event globally available for any listener.
+      document.dispatchEvent(typewriterFinishedEvent);
     }
   }
   typeWriter();
@@ -42,5 +49,16 @@ document.addEventListener("DOMContentLoaded", () => {
     comingSoonVid.play();    
   
   }, 5000);
+
+  // Nav and buttons
+  
+  const navButtons = document.querySelector("#nav-buttons");
+  
+  
+  document.addEventListener("typewriterFinished", () => {
+
+    navButtons.classList.add("visible");
+  
+  })
 
 });

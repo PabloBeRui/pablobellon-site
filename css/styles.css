@@ -165,6 +165,23 @@ figure#coming-soon-figure .typewriter-class-2 {
   text-align: left;
 }
 
+
+/* Nav and Buttons */
+
+#nav-buttons {
+  opacity: 0;
+  visibility: hidden;
+  margin-top: 1rem;
+  transition: opacity 0.5s ease;
+  pointer-events: none; /* Cuando está oculto, no debe ser interactivo */
+}
+
+#nav-buttons.visible {
+  opacity: 1;
+ visibility: visible;
+  pointer-events: auto; /* Cuando es visible, debe ser interactivo */
+}
+
 /* Adapt layout for horizontal or larger screens */
 @media (orientation: landscape) {
   figure#coming-soon-figure {
