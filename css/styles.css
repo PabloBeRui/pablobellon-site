@@ -165,21 +165,57 @@ figure#coming-soon-figure .typewriter-class-2 {
   text-align: left;
 }
 
-
 /* Nav and Buttons */
+/* nav  */
 
 #nav-buttons {
+  display: flex;
+  justify-content: center;
   opacity: 0;
   visibility: hidden;
   margin-top: 1rem;
   transition: opacity 0.5s ease;
-  pointer-events: none; /* Cuando está oculto, no debe ser interactivo */
+  pointer-events: none; /* When hidden, it should not be interactive */
 }
 
 #nav-buttons.visible {
   opacity: 1;
- visibility: visible;
-  pointer-events: auto; /* Cuando es visible, debe ser interactivo */
+  visibility: visible;
+  pointer-events: auto; /* When visible, it should be interactive */
+}
+
+/* buttons  */
+
+.nav-button {
+  background-color: var(--neon-pink);
+  color: black;
+  font-weight: 700;
+  font-family: var(--main-font);
+  font-size: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  margin: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 0 0.625rem var(--neon-pink);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-button:hover {
+  background-color: var(--terminal-green);
+  color: black;
+  box-shadow: 0 0 15px var(--terminal-green);
+}
+
+.nav-button:active {
+  background-color: #008800;
+  box-shadow: 0 0 8px #008800;
+}
+
+.nav-button:focus {
+  outline: 2px solid var(--terminal-green);
+  outline-offset: 2px;
 }
 
 /* Adapt layout for horizontal or larger screens */
@@ -206,5 +242,14 @@ figure#coming-soon-figure .typewriter-class-2 {
   footer {
     justify-content: center;
     gap: 4rem;
+  }
+
+  .nav-button {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+  }
+
+  #nav-buttons {
+    gap: 2rem;
   }
 }
