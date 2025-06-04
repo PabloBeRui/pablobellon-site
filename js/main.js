@@ -1,5 +1,5 @@
-import aboutMe from "./templates/aboutMe.js"
-import myProgress from "./templates/myProgress.js"
+import aboutMe from "./templates/about-me.js";
+import myProgress from "./templates/my-progress.js";
 
 // Wait for the full HTML document to be loaded and parsed before executing scripts.
 // This ensures that all DOM elements exist when we try to manipulate them.
@@ -37,56 +37,52 @@ document.addEventListener("DOMContentLoaded", () => {
       // Custom Event
       // This event will signal that the typewriter effect has completed.
       const typewriterFinishedEvent = new CustomEvent("typewriterFinished");
-       // Dispatching (trigger) the custom event on the 'document' object.
+      // Dispatching (trigger) the custom event on the 'document' object.
       // event globally available for any listener.
       document.dispatchEvent(typewriterFinishedEvent);
     }
   }
-  typeWriter();
+
+  if (typewriterElement) {
+    typeWriter();
+  }
 
   // Personal video animation
 
   const comingSoonVid = document.getElementById("coming-soon-vid");
 
-  setTimeout(() => {
-    comingSoonVid.play();    
-  
-  }, 5000);
+  if (comingSoonVid) {
+    setTimeout(() => {
+      comingSoonVid.play();
+    }, 5000);
+  }
 
   // Nav and buttons
 
   /*  This code will handle the visibility of the navigation buttons
    and will show them after the typewriter effect is finished. */
-  
+
   const navButtons = document.querySelector("#nav-buttons");
-  
-  
+
   document.addEventListener("typewriterFinished", () => {
-
     navButtons.classList.add("visible");
-  
-  })
+  });
 
-// Navigation buttons functionality
+  // Navigation buttons functionality
 
-  let aboutMeButton = document.querySelector('#about-me-button')
-  let myProgressButton = document.querySelector('#my-progress-button')
+  let aboutMeButton = document.querySelector("#about-me-button");
+  let myProgressButton = document.querySelector("#my-progress-button");
 
-  let variableContent = document.querySelector('#div-section-container')
+  let variableContent = document.querySelector("#div-section-container");
 
-  
   //Changing Content
+  if (aboutMeButton && myProgressButton) {
+    aboutMeButton.addEventListener("click", () => {
+      variableContent.innerHTML = aboutMe;
+    });
 
-  aboutMeButton.addEventListener("click", () => {
-    
-    variableContent.innerHTML= aboutMe
-
-   })
-
-  myProgressButton.addEventListener("click", () => {
-    
-    variableContent.innerHTML= myProgress
-
-   })
-
+    myProgressButton.addEventListener("click", () => {
+      variableContent.innerHTML = myProgress;
+    });
+  }
 });
