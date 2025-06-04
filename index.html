@@ -11,7 +11,7 @@
       type="image/x-icon" />
 
     <!-- Android/Chrome: Toolbar color -->
-<meta name="theme-color" content="#ff1493" />
+    <meta name="theme-color" content="#ff1493" />
   </head>
   <body>
     <!-- Background video with WebM + MP4 fallback -->
@@ -35,14 +35,16 @@
               muted
               preload="auto"
               playsinline
-              aria-label="Intro video of Pablo Bellón working on projects"></video> <div id="text-and-buttons-container">
-    <figcaption id="typewriter-text" class="typewriter-class-1">
-      </figcaption>
-    <nav id="nav-buttons">
-      <button class="nav-button">About me</button>
-      <button class="nav-button">My Progress</button>
-    </nav>
-  </div>
+              aria-label="Intro video of Pablo Bellón working on projects"></video>
+            <div id="text-and-buttons-container">
+              <figcaption
+                id="typewriter-text"
+                class="typewriter-class-1"></figcaption>
+              <nav id="nav-buttons">
+                <button class="nav-button" id="about-me-button">About me</button>
+                <button class="nav-button" id="my-progress-button">My Progress</button>
+              </nav>
+            </div>
           </figure>
         </div>
       </section>
@@ -83,6 +85,6 @@
         </li>
       </ul>
     </footer>
-    <script src="./js/main.js"></script>
+    <script src="./js/main.js" type="module"></script>
   </body>
 </html>

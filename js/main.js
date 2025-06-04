@@ -1,3 +1,6 @@
+import aboutMe from "./templates/aboutMe.js"
+import myProgress from "./templates/myProgress.js"
+
 // Wait for the full HTML document to be loaded and parsed before executing scripts.
 // This ensures that all DOM elements exist when we try to manipulate them.
 
@@ -51,6 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 5000);
 
   // Nav and buttons
+
+  /*  This code will handle the visibility of the navigation buttons
+   and will show them after the typewriter effect is finished. */
   
   const navButtons = document.querySelector("#nav-buttons");
   
@@ -60,5 +66,27 @@ document.addEventListener("DOMContentLoaded", () => {
     navButtons.classList.add("visible");
   
   })
+
+// Navigation buttons functionality
+
+  let aboutMeButton = document.querySelector('#about-me-button')
+  let myProgressButton = document.querySelector('#my-progress-button')
+
+  let variableContent = document.querySelector('#div-section-container')
+
+  
+  //Changing Content
+
+  aboutMeButton.addEventListener("click", () => {
+    
+    variableContent.innerHTML= aboutMe
+
+   })
+
+  myProgressButton.addEventListener("click", () => {
+    
+    variableContent.innerHTML= myProgress
+
+   })
 
 });
