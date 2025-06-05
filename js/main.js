@@ -1,4 +1,5 @@
 import aboutMe from "./templates/about-me.js";
+import home from "./templates/home.js";
 import myProgress from "./templates/my-progress.js";
 
 // Wait for the full HTML document to be loaded and parsed before executing scripts.
@@ -73,16 +74,27 @@ document.addEventListener("DOMContentLoaded", () => {
   let aboutMeButton = document.querySelector("#about-me-button");
   let myProgressButton = document.querySelector("#my-progress-button");
 
+  let backButton = document.querySelector("#back-button");
+
   let variableContent = document.querySelector("#section-global-container");
 
   //Changing Content
-  if (aboutMeButton && myProgressButton) {
-    aboutMeButton.addEventListener("click", () => {
+   variableContent.addEventListener("click", (event) => {
+    // Button "About me"
+    if (event.target && event.target.id === "about-me-button") {
       variableContent.innerHTML = aboutMe;
-    });
-
-    myProgressButton.addEventListener("click", () => {
+    }
+    // Button "My Progress"
+    else if (event.target && event.target.id === "my-progress-button") {
       variableContent.innerHTML = myProgress;
-    });
-  }
+    }
+    // Button "Back"
+    else if (event.target && event.target.id === "back-button") {
+      variableContent.innerHTML = home; // Carga el template 'home' con texto y botones ya visibles
+     
+      
+    }
+  });
+
+  
 });
