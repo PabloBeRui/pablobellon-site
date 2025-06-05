@@ -9,17 +9,19 @@
   border-radius: 10px;
   opacity: 0.75;
   border-top-right-radius: 30px;
+  overflow-y: auto;
 }
 
 #photo-and-description-div {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding: 0 1rem;
 }
 
 #photo-div {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   margin-left: 4rem;
 }
 
@@ -28,5 +30,50 @@
   border-top-right-radius: 30px;
   height: 110%;
   margin-right: 1rem;
- /* filter: drop-shadow(0 0 5px var(--neon-pink)); */
+
+  /* filter: drop-shadow(0 0 5px var(--neon-pink)); */
+}
+
+div#description-div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+span.about-me-span {
+  background-color: var(--terminal-green);
+  color: white;
+  border-radius: 3px;
+  border-top-right-radius: 9px;
+}
+
+span.skills-span {
+  background-color: var(--neon-pink);
+  color: white;
+  border-radius: 3px;
+  border-top-right-radius: 9px;
+}
+
+/* Adapt layout for horizontal or larger screens */
+
+@media (orientation: landscape) {
+  #about-me-div-content {
+    width: 40%;
+  }
+
+  #photo-and-description-div {
+    gap: 4rem;
+  }
+
+  #photo-div img {
+    height: 140%;
+  }
+
+  div#description-div {
+    gap: 1.5rem;
+  }
+
+  p {
+    font-size: 2rem;
+  }
 }

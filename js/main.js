@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let aboutMeButton = document.querySelector("#about-me-button");
   let myProgressButton = document.querySelector("#my-progress-button");
 
-  let variableContent = document.querySelector("#div-section-container");
+  let variableContent = document.querySelector("#section-global-container");
 
   //Changing Content
   if (aboutMeButton && myProgressButton) {
