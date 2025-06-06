@@ -2,6 +2,11 @@ import aboutMe from "./templates/about-me.js";
 import home from "./templates/home.js";
 import myProgress from "./templates/my-progress.js";
 
+//renderer an data of my-progress
+
+import { courses } from "./data/my-progress-data.js";
+import { myProgressRenderer } from "./renderers/my-progress-renderer.js";
+
 // Wait for the full HTML document to be loaded and parsed before executing scripts.
 // This ensures that all DOM elements exist when we try to manipulate them.
 
@@ -87,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Button "My Progress"
     else if (event.target && event.target.id === "my-progress-button") {
       variableContent.innerHTML = myProgress;
+      myProgressRenderer()
     }
     // Button "Back"
     else if (event.target && event.target.id === "back-button") {
