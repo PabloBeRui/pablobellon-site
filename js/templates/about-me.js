@@ -32,19 +32,7 @@ const aboutMe = `<div id="about-me-div-content">
                 estoy cursando el segundo año del ciclo de Desarrollo de
                 Aplicaciones Web (<span class="skills-span">&nbsp;DAW </span>).
               </p>
-              <br />
-
-              <p>
-                Estoy buscando una oportunidad para comenzar a trabajar como
-                desarrollador front-end. Soy consciente de que al inicio no
-                podré aportar experiencia laboral, pero sí puedo garantizar un
-                <strong
-                  >compromiso absoluto, energía, responsabilidad y
-                  dedicación</strong
-                >
-                para convertirme en un aporte importante en el menor tiempo
-                posible.
-              </p>
+              
             </div>
           </div>
         </div>`;

@@ -1,10 +1,6 @@
 import aboutMe from "./templates/about-me.js";
 import home from "./templates/home.js";
 import myProgress from "./templates/my-progress.js";
-
-//renderer an data of my-progress
-
-import { courses } from "./data/my-progress-data.js";
 import { myProgressRenderer } from "./renderers/my-progress-renderer.js";
 
 // Wait for the full HTML document to be loaded and parsed before executing scripts.

@@ -1,18 +1,19 @@
+// js/myProgressData.js
+
 export const courses = [
   {
     id: "hackaboss-2023",
     name: "HackABoss",
     year: 2023,
     totalHours: 400,
-    approved: false,
+    approved: true,
     img: "../../images/icons/my-progress-icons/hackaboss.png",
-    url: "https://www.hackaboss.com/",
     projects: [],
     subjects: [
       {
         id: "web-full-stack-javascript",
         name: "Web Full Stack Javascript",
-        approved: false,
+        approved: true,
       },
     ],
   },
@@ -20,16 +21,15 @@ export const courses = [
     id: "campusdual-tic-2023",
     name: "CampusDual TIC",
     year: 2023,
-    totalHours: 0, // No se especificaron horas en el enunciado
-    approved: false,
+    totalHours: 480,
+    approved: true,
     img: "../../images/icons/my-progress-icons/campusdual.png",
-    url: "https://www.campusdual.com/",
     projects: [],
     subjects: [
       {
         id: "introduccion-a-la-programacion",
         name: "Introducción a la Programación",
-        approved: false,
+        approved: true,
       },
     ],
   },
@@ -38,15 +38,16 @@ export const courses = [
     name: "TokioSchool",
     year: 2024,
     totalHours: 400,
-    approved: false,
+    approved: true,
     img: "../../images/icons/my-progress-icons/tokioschool.png",
-    url: "https://www.tokioschool.com/",
-    projects: [],
+    projects: [
+      "<a href='https://elelegido.netlify.app/'>Restaurante El ELegido</a> ",
+    ],
     subjects: [
       {
         id: "front-end-html5-css3-javascript",
         name: "Front-End: HTML5, CSS3, JavaScript",
-        approved: false,
+        approved: true,
       },
     ],
   },
@@ -57,53 +58,52 @@ export const courses = [
     totalHours: 2000,
     approved: false,
     img: "../../images/icons/my-progress-icons/ilerna.png",
-    url: "https://www.ilerna.es/",
     projects: [],
     subjects: [
       {
         id: "lenguajes-de-marcas-y-sistemas-de-gestion-de-informacion",
         name: "Lenguajes de marcas y sistemas de gestión de información",
-        approved: false,
+        approved: true,
       },
       {
         id: "sistemas-informaticos",
         name: "Sistemas informáticos",
-        approved: false,
+        approved: true,
       },
       {
         id: "bases-de-datos",
         name: "Bases de datos",
-        approved: false,
+        approved: true,
       },
       {
         id: "programacion",
         name: "Programación",
-        approved: false,
+        approved: true,
       },
       {
         id: "entornos-de-desarrollo",
         name: "Entornos de desarrollo",
-        approved: false,
+        approved: true,
       },
       {
         id: "ingles-profesional",
         name: "Inglés profesional",
-        approved: false,
+        approved: true,
       },
       {
         id: "digitalizacion-aplicada-a-los-sectores-productivos",
         name: "Digitalización aplicada a los sectores productivos",
-        approved: false,
+        approved: true,
       },
       {
         id: "sostenibilidad-aplicada-al-sistema-productivo",
         name: "Sostenibilidad aplicada al sistema productivo",
-        approved: false,
+        approved: true,
       },
       {
         id: "diseno-de-interfaces-web",
         name: "Diseño de interfaces web",
-        approved: false,
+        approved: true,
       },
       {
         id: "itinerario-personal-para-la-empleabilidad-i",
