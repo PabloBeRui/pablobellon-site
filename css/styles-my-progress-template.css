@@ -98,8 +98,8 @@ b#b-hours {
   font-size: 1.2rem;
   border: 1px solid var(--terminal-green);
   padding: 0.5rem 0.5rem;
-  border-radius: 8px;
-  border-top-right-radius: 20px; /* Specific border-radius for top-right corner */
+  border-radius: 6px;
+  border-top-right-radius: 14px; /* Specific border-radius for top-right corner */
 }
 
 /* Styles for list items (e.g., subjects, projects) */
