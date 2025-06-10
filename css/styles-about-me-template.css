@@ -1,7 +1,7 @@
 #about-me-div-content {
   height: 100%;
   width: 100%;
-  background-color:black ;
+  background-color: black;
   color: white;
   padding: 0.5rem;
   display: flex;
@@ -12,7 +12,6 @@
   border-top-right-radius: 30px;
   overflow-y: auto;
   border: 1px solid var(--neon-pink);
-  
 }
 
 #photo-and-description-div {
@@ -79,4 +78,83 @@ span.skills-span {
   p {
     font-size: 2rem;
   }
+}
+
+/* TOGGLE SWITCH CONTAINER */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+/* 1) Hide the native checkbox input */
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* 2) The track: grey background and rounded corners */
+.toggle-switch .slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #ccc;
+  border-radius: 30px;
+  transition: background 0.2s;
+}
+
+/* 3) Labels “EN” (left) and “ES” (right) in var(--terminal-green) */
+.toggle-switch .slider::before,
+.toggle-switch .slider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: var(--terminal-green);       /* var(--terminal-green) labels */
+  pointer-events: none; /* let clicks pass through */
+}
+.toggle-switch .slider::before {
+  content: "EN";
+  left: 10px;
+}
+.toggle-switch .slider::after {
+  content: "ES";
+  right: 8px;
+}
+
+/* 4) The knob (circle) in var(--neon-pink) */
+.toggle-switch .slider .knob {
+  position: absolute;
+  top: 3px;
+  width: 24px;
+  height: 24px;
+  background: var(--neon-pink);  /* var(--neon-pink) knob */
+  border-radius: 15%;
+  border-top-right-radius: 30%;
+  transition: left 0.2s;
+  z-index: 1;            /* ensure knob sits above labels */
+}
+
+/* 5) Initial position: knob on the right (covering “ES”) */
+.toggle-switch .slider .knob {
+  left: calc(100% - 27px);
+}
+
+/* 6) When checked: move knob to the left (covering “EN”) */
+.toggle-switch input:checked + .slider .knob {
+  left: 3px;
+}
+
+/* 7) Optional: change track color when toggled on */
+.toggle-switch input:checked + .slider {
+  background: var(--terminal-green);   /* var(--terminal-green) track when active */
+}
+
+/* ALIGNMENT OF TOGGLE CONTAINER */
+#toggle-div {
+  display: flex;
+  justify-content: flex-end;
 }

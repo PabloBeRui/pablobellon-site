@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Navigation buttons functionality
 
-  let variableContent = document.querySelector("#section-global-container");
+  const variableContent = document.querySelector("#section-global-container");
 
   //Changing Content
   variableContent.addEventListener("click", (event) => {
