@@ -72,15 +72,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Navigation buttons functionality
 
-  let aboutMeButton = document.querySelector("#about-me-button");
-  let myProgressButton = document.querySelector("#my-progress-button");
-
-  let backButton = document.querySelector("#back-button");
-
   let variableContent = document.querySelector("#section-global-container");
 
   //Changing Content
-   variableContent.addEventListener("click", (event) => {
+  variableContent.addEventListener("click", (event) => {
     // Button "About me"
     if (event.target && event.target.id === "about-me-button") {
       variableContent.innerHTML = aboutMe;
@@ -88,15 +83,23 @@ document.addEventListener("DOMContentLoaded", () => {
     // Button "My Progress"
     else if (event.target && event.target.id === "my-progress-button") {
       variableContent.innerHTML = myProgress;
-      myProgressRenderer()
+      myProgressRenderer();
     }
     // Button "Back"
     else if (event.target && event.target.id === "back-button") {
       variableContent.innerHTML = home; // Carga el template 'home' con texto y botones ya visibles
-     
-      
     }
   });
 
-  
+  //back to home listener -click  out of #section-global-container and no buttons
+
+  window.addEventListener("click", (event) => {
+    const clickedInsideContent = event.target.closest(
+      "#section-global-container"
+    );
+    const clickedOnButton = event.target.closest("button");
+    if (!clickedInsideContent && !clickedOnButton) {
+      variableContent.innerHTML = home;
+    }
+  });
 });
