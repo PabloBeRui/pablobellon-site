@@ -3,62 +3,25 @@ import home from "./templates/home.js";
 import myProgress from "./templates/my-progress.js";
 import { myProgressRenderer } from "./renderers/my-progress-renderer.js";
 import { aboutMeRenderer } from "./renderers/about-me-renderer.js";
+import { backgroundVideo } from "./modules/background-video.js";
+import { typewriterEffect } from "./modules/typewriter-effect.js";
+import { personalVideoAnimation } from "./modules/personal-video-animation.js";
 
 // Wait for the full HTML document to be loaded and parsed before executing scripts.
 // This ensures that all DOM elements exist when we try to manipulate them.
 
 document.addEventListener("DOMContentLoaded", () => {
-  // background video
+  // VHS Background Video playback speed
 
-  const video = document.getElementById("bg-video");
-
-  video.addEventListener("canplaythrough", () => {
-    video.playbackRate = 0.2;
-    // re-start
-    video.play();
-  });
+  backgroundVideo("bg-video");
 
   /* Retro Terminal Typewriter Effect */
 
-  const text =
-    "I’m currently studying and working on new projects 👾 Stay tuned for updates!";
-
-  const typewriterElement = document.getElementById("typewriter-text");
-
-  let textIndex = 0;
-
-  function typeWriter() {
-    if (textIndex < text.length) {
-      typewriterElement.innerHTML += text.charAt(textIndex);
-
-      textIndex++;
-
-      setTimeout(typeWriter, 60); //typing speed
-    } else {
-      typewriterElement.classList.add("typewriter-class-2");
-
-      // Custom Event
-      // This event will signal that the typewriter effect has completed.
-      const typewriterFinishedEvent = new CustomEvent("typewriterFinished");
-      // Dispatching (trigger) the custom event on the 'document' object.
-      // event globally available for any listener.
-      document.dispatchEvent(typewriterFinishedEvent);
-    }
-  }
-
-  if (typewriterElement) {
-    typeWriter();
-  }
+  typewriterEffect("typewriter-text");
 
   // Personal video animation
 
-  const comingSoonVid = document.getElementById("coming-soon-vid");
-
-  if (comingSoonVid) {
-    setTimeout(() => {
-      comingSoonVid.play();
-    }, 5000);
-  }
+  personalVideoAnimation("coming-soon-vid")
 
   // Nav and buttons
 

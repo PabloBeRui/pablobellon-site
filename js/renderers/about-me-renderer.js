@@ -10,9 +10,9 @@ const descriptionEs = `<p>
 
       <p>
         Para ello, he completado varios bootcamps intensivos como
-        <span class="about-me-span">HackABoss</span>,
-        <span class="about-me-span">TokioSchool</span> y
-        <span class="about-me-span">CampusDual</span>, donde aprendí de forma
+        <span class="about-me-span">&nbsp;HackABoss&nbsp;</span>,
+        <span class="about-me-span">&nbsp;TokioSchool&nbsp;</span> y
+        <span class="about-me-span">&nbsp;CampusDual&nbsp;</span>, donde aprendí de forma
         práctica y rápida las herramientas y tecnologías más utilizadas, como
         <span class="skills-span">&nbsp;HTML&nbsp;</span>,
         <span class="skills-span">&nbsp;CSS&nbsp;</span>,
@@ -39,9 +39,9 @@ const descriptionEn = `
 
       <p>
         To that end, I completed several intensive bootcamps such as
-        <span class="about-me-span">HackABoss</span>,
-        <span class="about-me-span">TokioSchool</span> and
-        <span class="about-me-span">CampusDual</span>, where I learned in a
+        <span class="about-me-span">&nbsp;HackABoss&nbsp;</span>,
+        <span class="about-me-span">&nbsp;TokioSchool&nbsp;</span> and
+        <span class="about-me-span">&nbsp;CampusDual&nbsp;</span>, where I learned in a
         practical and fast-paced way the most widely used tools and technologies
         like <span class="skills-span">&nbsp;HTML&nbsp;</span>,
         <span class="skills-span">&nbsp;CSS&nbsp;</span>,
