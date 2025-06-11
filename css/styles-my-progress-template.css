@@ -10,7 +10,8 @@
   justify-content: flex-start;
   align-items: center;
   border-radius: 10px;
-  border-top-right-radius: 30px; /* Specific border-radius for top-right corner */
+  border-top-right-radius: 60px;
+  border-bottom-left-radius: 60px;
   opacity: 0.75;
   border: 1px solid var(--neon-pink);
   gap: 2rem;
@@ -35,7 +36,8 @@
   background: rgba(0, 0, 0, 0.85);
   border: 1px solid var(--neon-pink);
   border-radius: 8px;
-  border-top-right-radius: 20px; /* Specific border-radius for top-right corner */
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
   padding: 1rem;
   margin-bottom: 1rem;
   box-shadow: 0 0 10px rgba(255, 20, 147, 0.5); /* Initial box shadow */
@@ -99,7 +101,8 @@ b#b-hours {
   border: 1px solid var(--terminal-green);
   padding: 0.5rem 0.5rem;
   border-radius: 6px;
-  border-top-right-radius: 14px; /* Specific border-radius for top-right corner */
+  border-top-right-radius: 14px;
+  border-bottom-left-radius: 14px; /* Specific border-radius for top-right corner */
 }
 
 /* Styles for list items (e.g., subjects, projects) */
@@ -132,6 +135,7 @@ img#logo-img {
   border: 1px solid var(--neon-pink);
   border-radius: 6px;
   border-top-right-radius: 9px;
+  border-bottom-left-radius: 9px;
 }
 
 img#logo-img[alt="TokioSchool icon"],

@@ -201,6 +201,7 @@ figure#coming-soon-figure .typewriter-class-2 {
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   white-space: nowrap;
   border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .nav-button:hover {
