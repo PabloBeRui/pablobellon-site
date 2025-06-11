@@ -51,11 +51,11 @@ main#main-container {
   height: 85%;
   width: 85%;
   border-radius: 10px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  line-height: 1.1;
 }
 
 section#section-global-container {
@@ -259,10 +259,10 @@ figure#coming-soon-figure .typewriter-class-2 {
 
 /* WebKit browsers (Chrome, Safari, Edge) */
 #my-progress-div-content::-webkit-scrollbar {
-  width: 12px;                /* grosor de la barra */
+  width: 12px; /* grosor de la barra */
 }
 #my-progress-div-content::-webkit-scrollbar-track {
-  background: transparent;     /* pista transparente */
+  background: transparent; /* pista transparente */
 }
 #my-progress-div-content::-webkit-scrollbar-thumb {
   background: var(--neon-pink); /* usa tu variable rosa */
