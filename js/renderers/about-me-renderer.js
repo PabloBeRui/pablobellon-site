@@ -53,6 +53,28 @@ const descriptionEN = `<p>
           >).
         </p>`;
 
-const lanToggle = document.querySelector("lang-toggle");
+// Declared outside the renderer so its value isn't reset on each function call
+let esOrEn = false;
 
-const descriptionDiv = document.querySelector("description-div");
+export const aboutMeRenderer = () => {
+
+  const descriptionDiv = document.querySelector("#description-div");
+
+  // toggle button
+  const lanToggle = document.querySelector("#lang-toggle");
+
+  //render function based on esOrEn boolean
+  const lanConditionalChange = () => {esOrEn
+    ? (descriptionDiv.innerHTML = descriptionEs)
+    : (descriptionDiv.innerHTML = descriptionEN); }
+
+  //initial render
+  lanConditionalChange();
+
+  //listener to re render on language change
+  lanToggle.addEventListener("click", () => {
+    esOrEn = !esOrEn;
+
+    lanConditionalChange();
+  });
+};
