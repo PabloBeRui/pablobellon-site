@@ -1,72 +1,77 @@
 const descriptionEs = `<p>
-              He pasado la mayor parte de mi vida profesional trabajando en la
-              industria, pero siempre he sentido una gran pasión por la
-              informática y la tecnología. Hace un tiempo decidí dar un giro a
-              mi carrera y enfocarme en lo que realmente me apasiona: la
-              programación, especialmente el desarrollo
-              <span class="about-me-span">&nbspfront-end </span>.
-            </p>
-            <br />
+        He pasado la mayor parte de mi vida profesional trabajando en la
+        industria, pero siempre he sentido una gran pasión por la informática y
+        la tecnología. Hace un tiempo, decidí dar un giro a mi carrera y
+        enfocarme en lo que realmente me apasiona: la programación,
+        especialmente el desarrollo
+        <span class="about-me-span">&nbsp;front-end&nbsp;</span>.
+      </p>
+      <br />
 
-            <p>
-              Para ello, he completado varios bootcamps intensivos como
-              <span class="about-me-span">&nbspHackABoss </span>,
-              <span class="about-me-span">&nbspTokioSchool </span>&nbsp;y
-              <span class="about-me-span">&nbspCampusDual </span>, donde aprendí
-              de forma práctica y rápida las herramientas y tecnologías más
-              utilizadas, como <span class="skills-span">&nbsp;HTML </span>,
-              <span class="skills-span">&nbsp;CSS </span>,
-              <span class="skills-span">&nbsp;JavaScript </span>,
-              <span class="skills-span">&nbsp;React </span> &nbsp; (<a
-                href="https://elelegido.netlify.app/"
-                >https://elelegido.netlify.app/</a
-              >) y <span class="skills-span">&nbsp;Git </span>. Actualmente,
-              estoy cursando el segundo año del ciclo de Desarrollo de
-              Aplicaciones Web (<span class="skills-span">&nbsp;DAW </span>).
-            </p>`;
+      <p>
+        Para ello, he completado varios bootcamps intensivos como
+        <span class="about-me-span">HackABoss</span>,
+        <span class="about-me-span">TokioSchool</span> y
+        <span class="about-me-span">CampusDual</span>, donde aprendí de forma
+        práctica y rápida las herramientas y tecnologías más utilizadas, como
+        <span class="skills-span">&nbsp;HTML&nbsp;</span>,
+        <span class="skills-span">&nbsp;CSS&nbsp;</span>,
+        <span class="skills-span">&nbsp;JavaScript&nbsp;</span>,
+        <span class="skills-span">&nbsp;React&nbsp; </span> (<a
+          href="https://elelegido.netlify.app/"
+          >https://elelegido.netlify.app/</a
+        >) y <span class="skills-span">&nbsp;Git&nbsp</span>. Actualmente, estoy cursando
+        el segundo año del ciclo de Desarrollo de Aplicaciones Web (<span
+          class="skills-span"
+          >&nbsp;DAW&nbsp;</span
+        >).
+      </p>`;
 
-const descriptionEN = `<p>
-          I have spent most of my professional life working in industry, but I
-          have always felt a great passion for computing and technology. Some
-          time ago, I decided to shift my career and focus on what truly excites
-          me: programming, especially
-          <span class="about-me-span">&nbsp;front-end </span> development.
-        </p>
-        <br />
+const descriptionEn = `
+      <p>
+        I have spent most of my professional life working in industry, but I
+        have always felt a great passion for computing and technology. Some time
+        ago, I decided to shift my career and focus on what truly excites me:
+        programming, especially
+        <span class="about-me-span">&nbsp;front-end&nbsp;</span> development.
+      </p>
+      <br />
 
-        <p>
-          To that end, I completed several intensive bootcamps such as
-          <span class="about-me-span">&nbsp;HackABoss </span>,
-          <span class="about-me-span">&nbsp;TokioSchool </span>, and
-          <span class="about-me-span">&nbsp;CampusDual </span>, where I learned,
-          in a practical and fast-paced way, the most widely used tools and
-          technologies like <span class="skills-span">&nbsp;HTML </span>,
-          <span class="skills-span">&nbsp;CSS </span>,
-          <span class="skills-span">&nbsp;JavaScript </span>,
-          <span class="skills-span">&nbsp;React </span> (<a
-            href="https://elelegido.netlify.app/"
-            >https://elelegido.netlify.app/</a
-          >), and <span class="skills-span">&nbsp;Git </span>. Currently, I am in
-          my second year of the Web Application Development program (<span
-            class="skills-span"
-            >&nbsp;DAW </span
-          >).
-        </p>`;
+      <p>
+        To that end, I completed several intensive bootcamps such as
+        <span class="about-me-span">HackABoss</span>,
+        <span class="about-me-span">TokioSchool</span> and
+        <span class="about-me-span">CampusDual</span>, where I learned in a
+        practical and fast-paced way the most widely used tools and technologies
+        like <span class="skills-span">&nbsp;HTML&nbsp;</span>,
+        <span class="skills-span">&nbsp;CSS&nbsp;</span>,
+        <span class="skills-span">&nbsp;JavaScript&nbsp;</span>,
+        <span class="skills-span">&nbsp;React&nbsp; </span> (<a
+          href="https://elelegido.netlify.app/"
+          >https://elelegido.netlify.app/</a
+        >) and <span class="skills-span">&nbsp;Git&nbsp;</span>. Currently, I am
+        in my second year of the Web Application Development program (<span
+          class="skills-span"
+          >&nbsp;DAW&nbsp;</span
+        >).
+      </p>
+      `;
 
 // Declared outside the renderer so its value isn't reset on each function call
 let esOrEn = false;
 
 export const aboutMeRenderer = () => {
-
   const descriptionDiv = document.querySelector("#description-div");
 
   // toggle button
   const lanToggle = document.querySelector("#lang-toggle");
 
   //render function based on esOrEn boolean
-  const lanConditionalChange = () => {esOrEn
-    ? (descriptionDiv.innerHTML = descriptionEs)
-    : (descriptionDiv.innerHTML = descriptionEN); }
+  const lanConditionalChange = () => {
+    esOrEn
+      ? (descriptionDiv.innerHTML = descriptionEs)
+      : (descriptionDiv.innerHTML = descriptionEn);
+  };
 
   //initial render
   lanConditionalChange();
