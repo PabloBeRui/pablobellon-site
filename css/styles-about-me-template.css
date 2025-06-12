@@ -1,4 +1,5 @@
-/* About Me container styles */
+/* ───────────── About Me container styles ───────────── */
+
 #about-me-div-content {
   height: 100%;
   width: 100%;
@@ -17,6 +18,7 @@
 }
 
 /* Photo and description container */
+
 #photo-and-description-div {
   display: flex;
   flex-direction: column;
@@ -25,6 +27,7 @@
 }
 
 /* Photo styling */
+
 #photo-div {
   display: flex;
   justify-content: right;
@@ -41,6 +44,7 @@
 }
 
 /* Description styling */
+
 div#description-div {
   display: flex;
   flex-direction: column;
@@ -48,6 +52,7 @@ div#description-div {
 }
 
 /* About me badge */
+
 span.about-me-span {
   background-color: var(--terminal-green);
   color: white;
@@ -57,6 +62,7 @@ span.about-me-span {
 }
 
 /* Skills badge */
+
 span.skills-span {
   background-color: var(--neon-pink);
   color: white;
@@ -65,32 +71,8 @@ span.skills-span {
     calc(var(--corner-small) * 0.4) var(--corner-small);
 }
 
-/* Adapt layout for horizontal or larger screens */
-@media (orientation: landscape) {
-  #about-me-div-content {
-    width: 40%;
-    border-radius: var(--corner-prop) calc(var(--corner-base) * 5)
-      var(--corner-prop) calc(var(--corner-base) * 5);
-  }
+/*  ─────────────TOGGLE SWITCH CONTAINER ───────────── */
 
-  #photo-and-description-div {
-    gap: 4rem;
-  }
-
-  #photo-div img {
-    height: 140%;
-  }
-
-  div#description-div {
-    gap: 1.5rem;
-  }
-
-  p {
-    font-size: 2rem;
-  }
-}
-
-/* TOGGLE SWITCH CONTAINER */
 .toggle-switch {
   position: relative;
   display: inline-block;
@@ -169,4 +151,32 @@ span.skills-span {
 #toggle-div {
   display: flex;
   justify-content: flex-end;
+}
+
+/* ─────────────Adapt layout for horizontal or larger screens ───────────── */
+
+@media (orientation: landscape) {
+  #about-me-div-content {
+    width: 40%;
+    border-radius: var(--corner-prop) calc(var(--corner-base) * 5)
+      var(--corner-prop) calc(var(--corner-base) * 5);
+  }
+
+  #photo-and-description-div {
+    gap: 4rem;
+  }
+
+  #photo-div img {
+    border-radius: var(--corner-prop) calc(var(--corner-base) * 2)
+      var(--corner-prop) calc(var(--corner-base) * 2);
+    height: 140%;
+  }
+
+  div#description-div {
+    gap: 1.5rem;
+  }
+
+  p {
+    font-size: 2rem;
+  }
 }

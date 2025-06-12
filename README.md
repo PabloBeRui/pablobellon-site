@@ -11,7 +11,7 @@ Este sitio web está en desarrollo y sirve como presentación personal mientras 
 
 ### 👨‍💻 Sobre mí
 
-- Estudiante de **Desarrollo de Aplicaciones Web (DAW)**
+- Estudiante de segundo curso de **Desarrollo de Aplicaciones Web (DAW)**, con el primer curso completado y aprobado.
 - Apasionado por el diseño web, el desarrollo frontend y las tecnologías creativas
 - Actualmente trabajando en varios proyectos personales y aprendiendo nuevas herramientas
 
@@ -32,7 +32,7 @@ This website is currently under development and serves as a personal introductio
 
 ### 👨‍💻 About me
 
-- Student of **Web Application Development (DAW)**
+- Second-year student in **Web Application Development (DAW)**, with the first year completed and passed.
 - Passionate about web design, frontend development, and creative technologies
 - Currently working on personal projects and learning new tools
 

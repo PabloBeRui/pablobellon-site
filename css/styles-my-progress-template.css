@@ -1,4 +1,4 @@
-/* Main container styles */
+/* ───────────── Main container styles ───────────── */
 #my-progress-div-content {
   height: 100%;
   width: 100%;
@@ -19,11 +19,13 @@
 }
 
 /* Button within the main container */
+
 #my-progress-div-content button {
   margin-right: 12rem;
 }
 
 /* Container for individual course cards */
+
 #progress-cards-container {
   width: 90%;
   display: flex;
@@ -32,6 +34,7 @@
 }
 
 /* Styles for each course card */
+
 .course-card {
   background: rgba(0, 0, 0, 0.85);
   border: 1px solid var(--neon-pink);
@@ -45,17 +48,20 @@
 }
 
 /* Hover effects for course cards */
+
 .course-card:hover {
   transform: translateY(-5px); /* lift card slightly on hover */
   box-shadow: 0 5px 15px rgba(255, 20, 147, 0.7); /* enhanced shadow on hover */
 }
 
 /* Course summary section (always visible) */
+
 .course-summary {
   cursor: pointer; /* indicate clickable summary */
 }
 
 /* Header section within the course card */
+
 .course-header {
   display: flex;
   align-items: center;
@@ -64,6 +70,7 @@
 }
 
 /* Styles for the course link */
+
 .course-link {
   flex: 1; /* take available space */
   text-decoration: none;
@@ -71,10 +78,11 @@
 }
 
 /* Container for course information (title, year, emoji) */
+
 .course-info {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* space between title, year, and emoji */
+  gap: 0.5rem;
 }
 
 /* Course year text */
@@ -85,54 +93,64 @@
 }
 
 /* Course approved/loading emoji */
+
 .course-approved-emoji {
-  font-size: 1.2rem; /* slightly larger emoji */
+  font-size: 1.2rem;
 }
 
 /* Course hours text */
+
 .course-hours {
   margin: 0.75rem 0 0.5rem;
   font-size: 0.9rem;
 }
 
 /* Bold hours display */
+
 b#b-hours {
   font-size: 1.2rem;
   border: 1px solid var(--terminal-green);
   padding: 0.5rem 0.5rem;
   /* TL TR BR BL */
-  border-radius: calc(var(--corner-small) * 0.4) var(--corner-small) calc(var(--corner-small) * 0.4) var(--corner-small);
+  border-radius: calc(var(--corner-small) * 0.4) var(--corner-small)
+    calc(var(--corner-small) * 0.4) var(--corner-small);
 }
 
 /* Styles for list items (e.g., subjects, projects) */
+
 li {
-  list-style: none; /* remove default bullet points */
+  list-style: none;
 }
 
 /* Course details section (hidden by default) */
+
 .course-details {
   display: none; /* hide details by default */
   margin-top: 0.75rem;
 }
 
 /* Styles for subjects and projects within details */
+
 .course-subjects,
 .course-projects {
   margin-top: 0.5rem;
 }
 
 /* When a course card is expanded, show its details */
+
 .course-card.expanded .course-details {
   display: block; /* show details when expanded */
 }
 
 /* Logo icons */
+
 img#logo-img {
   height: 110%;
   padding: 3px;
   border: 1px solid var(--neon-pink);
   /* TL TR BR BL */
-  border-radius: calc(var(--corner-small) * 0.4) var(--corner-small) calc(var(--corner-small) * 0.4) var(--corner-small);
+  border-radius: calc(var(--corner-small) * 0.4) var(--corner-small)
+    calc(var(--corner-small) * 0.4) var(--corner-small);
 }
 
 img#logo-img[alt="TokioSchool icon"],
@@ -141,33 +159,46 @@ img#logo-img[alt="TokioSchool icon"],
   background-color: white;
 }
 
-/* Adapt layout for horizontal or larger screens */
+/*───────────── Adapt layout for horizontal or larger screens ───────────── */
+
 @media (orientation: landscape) {
   /* Main container adjustments for landscape */
   #my-progress-div-content {
     width: 45%;
     margin: 0 auto; /* center horizontally */
     border-radius: var(--corner-prop) calc(var(--corner-base) * 5)
-    var(--corner-prop) calc(var(--corner-base) * 5);
+      var(--corner-prop) calc(var(--corner-base) * 5);
   }
 
   /* Font size for course titles in landscape */
+
   h3 {
     font-size: 2rem;
   }
 
   /* Font size for course year in landscape */
+
   span.course-year {
     font-size: 1.5rem;
   }
 
   /* Button margin adjustment for landscape */
+
   #my-progress-div-content button {
-    margin-right: 42rem;
+    margin-right: 45rem;
   }
 
   /* Font size for subject list items in landscape */
+
   .course-subjects li {
     font-size: 1.5rem;
+  }
+
+  b#b-hours {
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    /* TL TR BR BL */
+    border-radius: calc(var(--corner-small) * 0.3) var(--corner-small)
+      calc(var(--corner-small) * 0.3) var(--corner-small);
   }
 }

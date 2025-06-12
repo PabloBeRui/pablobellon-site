@@ -10,7 +10,7 @@
     var(--corner-base) * 0.4
   ); /* 40% of base = 8px for TL/BR */
   --corner-med: 15px; /* 0.75× scale */
-  --corner-small: 10px; /* 0.5× scale */
+  --corner-small: 15px; /* 0.5× scale */
   --knob: 6px; /* toggle knob height */
   --knob-prop: calc(var(--knob) * 0.4); /* 40% of knob = ~5px */
 }
@@ -18,6 +18,7 @@
 /* ───────────── styles.css ───────────── */
 
 /* Import custom retro font (VCR-OSD-Mono) */
+
 @font-face {
   font-family: "VT323-Regular";
   src: url(../assets/fonts/VT323-Regular.ttf);
@@ -25,6 +26,7 @@
 }
 
 /* Universal Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -32,6 +34,7 @@
 }
 
 /* Body styling */
+
 body {
   /* fallback static background */
   background-color: black;
@@ -46,6 +49,7 @@ body {
 }
 
 /* the canvas is always positioned behind content */
+
 video#bg-video {
   position: absolute;
   width: 100%;
@@ -57,7 +61,6 @@ video#bg-video {
 }
 
 main#main-container {
-  /* border: 1px solid var(--neon-pink); */
   height: 85%;
   width: 85%;
   border-radius: 10px;
@@ -69,7 +72,6 @@ main#main-container {
 }
 
 section#section-global-container {
-  /* border: 2px solid blue; */
   height: 95%;
   width: 95%;
   display: flex;
@@ -79,7 +81,6 @@ section#section-global-container {
 }
 
 div#div-section-container {
-  /* border: 2px solid orange; */
   height: 95%;
   width: 95%;
   display: flex;
@@ -88,7 +89,6 @@ div#div-section-container {
 }
 
 footer {
-  /* border: 2px solid red; */
   position: fixed;
   left: 0;
   bottom: 0;
@@ -135,14 +135,12 @@ figure#coming-soon-figure {
   margin-left: 2rem;
   height: 100%;
   width: 100%;
-  /* max-width: 300px; */
   text-align: center;
 }
 
 figure#coming-soon-figure video {
   width: 100%;
   height: auto;
-  /* display: block; */
   border-radius: 75%;
   opacity: 0.5;
 }
@@ -166,6 +164,7 @@ figure#coming-soon-figure .typewriter-class-2 {
 }
 
 /* Balancing lines */
+
 #typewriter-text {
   line-height: 1.5;
   word-break: break-word;
@@ -174,6 +173,7 @@ figure#coming-soon-figure .typewriter-class-2 {
 
 /* Nav and Buttons */
 /* navigation container */
+
 #nav-buttons {
   display: flex;
   justify-content: center;
@@ -191,6 +191,7 @@ figure#coming-soon-figure .typewriter-class-2 {
 }
 
 /* nav buttons */
+
 .nav-button {
   background-color: var(--neon-pink);
   color: black;
@@ -225,7 +226,8 @@ figure#coming-soon-figure .typewriter-class-2 {
   outline-offset: 2px;
 }
 
-/* Adapt layout for horizontal or larger screens */
+/*───────────── Adapt layout for horizontal or larger screens───────────── */
+
 @media (orientation: landscape) {
   figure#coming-soon-figure {
     flex-direction: row;
@@ -272,7 +274,7 @@ figure#coming-soon-figure .typewriter-class-2 {
 }
 
 #my-progress-div-content::-webkit-scrollbar-thumb {
-  background: var(--neon-pink); /* use pink variable */
+  background: var(--neon-pink);
   border-radius: 6px;
   border: 3px solid transparent; /* inner margin for padding effect */
 }
