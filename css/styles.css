@@ -1,25 +1,37 @@
-/* Import custom retro font (VCR-OSD-Mono) */
+/* ───────────── Shared Variables ───────────── */
+:root {
+  --neon-pink: #ff1493;
+  --terminal-green: #00cc00;
+  --main-font: "VT323-Regular", sans-serif;
 
+  /* custom corner radio */
+  --corner-base: 20px; /* base radius for TR/BL */
+  --corner-prop: calc(
+    var(--corner-base) * 0.4
+  ); /* 40% of base = 8px for TL/BR */
+  --corner-med: 15px; /* 0.75× scale */
+  --corner-small: 10px; /* 0.5× scale */
+  --knob: 6px; /* toggle knob height */
+  --knob-prop: calc(var(--knob) * 0.4); /* 40% of knob = ~5px */
+}
+
+/* ───────────── styles.css ───────────── */
+
+/* Import custom retro font (VCR-OSD-Mono) */
 @font-face {
   font-family: "VT323-Regular";
   src: url(../assets/fonts/VT323-Regular.ttf);
   font-weight: normal;
 }
 
-:root {
-  --neon-pink: #ff1493;
-  --terminal-green: #00cc00;
-  --main-font: "VT323-Regular", sans-serif;
-}
-
 /* Universal Reset */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body styling */
 body {
   /* fallback static background */
   background-color: black;
@@ -31,11 +43,9 @@ body {
   align-items: center;
   user-select: none;
   font-family: var(--main-font);
-  /* letter-spacing: -1px; */
 }
 
 /* the canvas is always positioned behind content */
-
 video#bg-video {
   position: absolute;
   width: 100%;
@@ -122,7 +132,6 @@ figure#coming-soon-figure {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   margin-left: 2rem;
   height: 100%;
   width: 100%;
@@ -133,7 +142,7 @@ figure#coming-soon-figure {
 figure#coming-soon-figure video {
   width: 100%;
   height: auto;
-  /* display: block;   */
+  /* display: block; */
   border-radius: 75%;
   opacity: 0.5;
 }
@@ -146,8 +155,7 @@ figure#coming-soon-figure figcaption {
   margin-bottom: 1rem;
 }
 
-/* Retro Terminal Typewriter Effect T-green to N-pink */
-
+/* Retro Terminal Typewriter Effect (green to pink) */
 .typewriter-class-1 {
   color: var(--terminal-green);
   transition: color 1s ease-in-out;
@@ -158,7 +166,6 @@ figure#coming-soon-figure .typewriter-class-2 {
 }
 
 /* Balancing lines */
-
 #typewriter-text {
   line-height: 1.5;
   word-break: break-word;
@@ -166,8 +173,7 @@ figure#coming-soon-figure .typewriter-class-2 {
 }
 
 /* Nav and Buttons */
-/* nav  */
-
+/* navigation container */
 #nav-buttons {
   display: flex;
   justify-content: center;
@@ -175,17 +181,16 @@ figure#coming-soon-figure .typewriter-class-2 {
   visibility: hidden;
   margin-top: 1rem;
   transition: opacity 0.5s ease;
-  pointer-events: none; /* When hidden, it should not be interactive */
+  pointer-events: none;
 }
 
 #nav-buttons.visible {
   opacity: 1;
   visibility: visible;
-  pointer-events: auto; /* When visible, it should be interactive */
+  pointer-events: auto;
 }
 
-/* buttons  */
-
+/* nav buttons */
 .nav-button {
   background-color: var(--neon-pink);
   color: black;
@@ -195,13 +200,13 @@ figure#coming-soon-figure .typewriter-class-2 {
   padding: 0.5rem 1.5rem;
   margin: 0.75rem;
   border: none;
-  border-radius: 0.5rem;
+  /* TL TR BR BL */
+  border-radius: var(--corner-prop) var(--corner-base) var(--corner-prop)
+    var(--corner-base);
   cursor: pointer;
   box-shadow: 0 0 0.625rem var(--neon-pink);
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   white-space: nowrap;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
 }
 
 .nav-button:hover {
@@ -256,17 +261,18 @@ figure#coming-soon-figure .typewriter-class-2 {
   }
 }
 
-/* custom scrollbar   */
-
+/* Custom Scrollbar */
 /* WebKit browsers (Chrome, Safari, Edge) */
 #my-progress-div-content::-webkit-scrollbar {
-  width: 12px; /* grosor de la barra */
+  width: 12px; /* width of the scrollbar */
 }
+
 #my-progress-div-content::-webkit-scrollbar-track {
-  background: transparent; /* pista transparente */
+  background: transparent; /* transparent track */
 }
+
 #my-progress-div-content::-webkit-scrollbar-thumb {
-  background: var(--neon-pink); /* usa tu variable rosa */
+  background: var(--neon-pink); /* use pink variable */
   border-radius: 6px;
-  border: 3px solid transparent; /* margen interior para efecto “padding” */
+  border: 3px solid transparent; /* inner margin for padding effect */
 }

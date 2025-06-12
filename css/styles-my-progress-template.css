@@ -9,13 +9,13 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  border-radius: 10px;
-  border-top-right-radius: 60px;
-  border-bottom-left-radius: 60px;
+  /* TL TR BR BL */
+  border-radius: var(--corner-prop) calc(var(--corner-base) * 2)
+    var(--corner-prop) calc(var(--corner-base) * 2);
   opacity: 0.75;
   border: 1px solid var(--neon-pink);
   gap: 2rem;
-  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  overflow-y: auto; /* enable vertical scrolling if content overflows */
 }
 
 /* Button within the main container */
@@ -35,24 +35,24 @@
 .course-card {
   background: rgba(0, 0, 0, 0.85);
   border: 1px solid var(--neon-pink);
-  border-radius: 8px;
-  border-top-right-radius: 25px;
-  border-bottom-left-radius: 25px;
+  /* TL TR BR BL */
+  border-radius: var(--corner-prop) calc(var(--corner-base) * 2)
+    var(--corner-prop) calc(var(--corner-base) * 2);
   padding: 1rem;
   margin-bottom: 1rem;
-  box-shadow: 0 0 10px rgba(255, 20, 147, 0.5); /* Initial box shadow */
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover effects */
+  box-shadow: 0 0 10px rgba(255, 20, 147, 0.5); /* initial box shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* smooth hover transition */
 }
 
 /* Hover effects for course cards */
 .course-card:hover {
-  transform: translateY(-5px); /* Lift card slightly on hover */
-  box-shadow: 0 5px 15px rgba(255, 20, 147, 0.7); /* Enhanced shadow on hover */
+  transform: translateY(-5px); /* lift card slightly on hover */
+  box-shadow: 0 5px 15px rgba(255, 20, 147, 0.7); /* enhanced shadow on hover */
 }
 
 /* Course summary section (always visible) */
 .course-summary {
-  cursor: pointer; /* Indicate the clickable summary  */
+  cursor: pointer; /* indicate clickable summary */
 }
 
 /* Header section within the course card */
@@ -65,7 +65,7 @@
 
 /* Styles for the course link */
 .course-link {
-  flex: 1; /* Allows the link to take available space */
+  flex: 1; /* take available space */
   text-decoration: none;
   color: var(--neon-pink);
 }
@@ -74,19 +74,19 @@
 .course-info {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* Space between title, year, and emoji */
+  gap: 0.5rem; /* space between title, year, and emoji */
 }
 
 /* Course year text */
 .course-year {
   font-size: 0.9rem;
   color: var(--terminal-green);
-  margin-right: 0.25rem; /* Space before the status emoji */
+  margin-right: 0.25rem; /* space before the status emoji */
 }
 
 /* Course approved/loading emoji */
 .course-approved-emoji {
-  font-size: 1.2rem; /* Slightly larger emoji */
+  font-size: 1.2rem; /* slightly larger emoji */
 }
 
 /* Course hours text */
@@ -100,19 +100,18 @@ b#b-hours {
   font-size: 1.2rem;
   border: 1px solid var(--terminal-green);
   padding: 0.5rem 0.5rem;
-  border-radius: 6px;
-  border-top-right-radius: 14px;
-  border-bottom-left-radius: 14px; /* Specific border-radius for top-right corner */
+  /* TL TR BR BL */
+  border-radius: calc(var(--corner-small) * 0.4) var(--corner-small) calc(var(--corner-small) * 0.4) var(--corner-small);
 }
 
 /* Styles for list items (e.g., subjects, projects) */
 li {
-  list-style: none; /* Remove default list bullet points */
+  list-style: none; /* remove default bullet points */
 }
 
 /* Course details section (hidden by default) */
 .course-details {
-  display: none; /* Hide details by default */
+  display: none; /* hide details by default */
   margin-top: 0.75rem;
 }
 
@@ -124,18 +123,16 @@ li {
 
 /* When a course card is expanded, show its details */
 .course-card.expanded .course-details {
-  display: block; /* Show details when the card is expanded */
+  display: block; /* show details when expanded */
 }
 
-/* logo icons  */
-
+/* Logo icons */
 img#logo-img {
   height: 110%;
   padding: 3px;
   border: 1px solid var(--neon-pink);
-  border-radius: 6px;
-  border-top-right-radius: 9px;
-  border-bottom-left-radius: 9px;
+  /* TL TR BR BL */
+  border-radius: calc(var(--corner-small) * 0.4) var(--corner-small) calc(var(--corner-small) * 0.4) var(--corner-small);
 }
 
 img#logo-img[alt="TokioSchool icon"],
@@ -149,7 +146,9 @@ img#logo-img[alt="TokioSchool icon"],
   /* Main container adjustments for landscape */
   #my-progress-div-content {
     width: 45%;
-    margin: 0 auto; /* Center the container horizontally */
+    margin: 0 auto; /* center horizontally */
+    border-radius: var(--corner-prop) calc(var(--corner-base) * 5)
+    var(--corner-prop) calc(var(--corner-base) * 5);
   }
 
   /* Font size for course titles in landscape */
