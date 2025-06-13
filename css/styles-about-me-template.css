@@ -81,87 +81,10 @@ span.skills-span {
     calc(var(--corner-small) * 0.4) var(--corner-small);
 }
 
-/*  ─────────────TOGGLE SWITCH CONTAINER ───────────── */
+/*  language icon img */
 
-.toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 30px;
-  margin-left: 1rem;
-}
-
-/* Hide the native checkbox input */
-.toggle-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* Track: grey background and rounded corners */
-.toggle-switch .slider {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: #ccc;
-  border-radius: 30px;
-  transition: background 0.2s;
-}
-
-/* Labels “EN” (left) and “ES” (right) in green */
-.toggle-switch .slider::before,
-.toggle-switch .slider::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 15px;
-  color: var(--terminal-green);
-  pointer-events: none;
-}
-
-.toggle-switch .slider::before {
-  content: "EN";
-  left: 10px;
-}
-
-.toggle-switch .slider::after {
-  content: "ES";
-  right: 8px;
-}
-
-/* Knob (circle) styling */
-.toggle-switch .slider .knob {
-  position: absolute;
-  top: 3px;
-  width: 24px;
-  height: 24px;
-  background: var(--neon-pink);
-  /* TL TR BR BL */
-  border-radius: var(--knob-prop) var(--knob) var(--knob-prop) var(--knob);
-  transition: left 0.2s;
-  z-index: 1;
-}
-
-/* Initial position: knob on the right (covering “ES”) */
-.toggle-switch .slider .knob {
-  left: calc(100% - 27px);
-}
-
-/* When checked: move knob to the left (covering “EN”) */
-.toggle-switch input:checked + .slider .knob {
-  left: 3px;
-}
-
-/* Change track color when toggled on */
-.toggle-switch input:checked + .slider {
-  background: var(--terminal-green);
-}
-
-/* Alignment of toggle container */
-#toggle-div {
-  display: flex;
-  justify-content: flex-end;
+#lang-ico{
+  height: 1.5rem;
 }
 
 /* ─────────────Adapt layout for horizontal or larger screens ───────────── */
