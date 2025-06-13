@@ -57,29 +57,37 @@ const descriptionEn = `
       </p>
       `;
 
+const ButtonEs = `<button id="lang-btn" class="lang-toggle-btn nav-button"><img src="../../images/icons/globe_green_transparent_language.png" id="lang-ico"> EN</button>`;
+const ButtonEn = `<button id="lang-btn" class="lang-toggle-btn nav-button"><img src="../../images/icons/globe_green_transparent_language.png" id="lang-ico"> ES</button>`;
+
 // Declared outside the renderer so its value isn't reset on each function call
 let esOrEn = false;
 
 export const aboutMeRenderer = () => {
+  // Description Div
   const descriptionDiv = document.querySelector("#description-div");
-
-  // toggle button
-  const lanToggle = document.querySelector("#lang-toggle");
+  // Language button container div
+  const langDivBtn = document.querySelector("#lang-btn-div");
 
   //render function based on esOrEn boolean
   const lanConditionalChange = () => {
-    esOrEn
-      ? (descriptionDiv.innerHTML = descriptionEs)
-      : (descriptionDiv.innerHTML = descriptionEn);
+    if (esOrEn) {
+      descriptionDiv.innerHTML = descriptionEs;
+      langDivBtn.innerHTML = ButtonEs;
+    } else {
+      descriptionDiv.innerHTML = descriptionEn;
+      langDivBtn.innerHTML = ButtonEn;
+    }
+    // language button
+    const langBtn = document.querySelector("#lang-btn");
+    //listener to re render on language change
+    langBtn.addEventListener("click", () => {
+      esOrEn = !esOrEn;
+
+      lanConditionalChange();
+    });
   };
 
   //initial render
   lanConditionalChange();
-
-  //listener to re render on language change
-  lanToggle.addEventListener("click", () => {
-    esOrEn = !esOrEn;
-
-    lanConditionalChange();
-  });
 };

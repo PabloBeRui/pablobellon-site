@@ -1,3 +1,5 @@
+// This is a template for the "About Me" section.
+
 const aboutMe = `<div id="about-me-div-content">
         <nav><button class="nav-button" id="back-button">Back</button></nav>
         <div id="photo-and-description-div">
@@ -5,17 +7,7 @@ const aboutMe = `<div id="about-me-div-content">
             <img src="./images/profile-photo.png" alt="profile photo" />
           </div>
 
-          <div id="toggle-div">
-            <label class="toggle-switch">
-              <input
-                type="checkbox"
-                id="lang-toggle"
-                role="switch"
-                aria-checked="false" />
-              <span class="slider">
-                <span class="knob"></span>
-              </span>
-            </label>
+          <div id="lang-btn-div">
           </div>
 
           <div id="description-div">
@@ -25,4 +17,3 @@ const aboutMe = `<div id="about-me-div-content">
       </div>`;
 
 export default aboutMe;
-// This is a template for the "About Me" section.
