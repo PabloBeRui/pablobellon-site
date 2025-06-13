@@ -15,7 +15,7 @@
   opacity: 0.75;
   overflow-y: auto;
   border: 1px solid var(--neon-pink);
-  gap: 2rem;
+  gap: 1rem;
 }
 
 /* Photo and description container */
@@ -23,7 +23,7 @@
 #photo-and-description-div {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 1rem;
   padding: 0 1rem;
 }
 
@@ -41,7 +41,7 @@
   /* TL TR BR BL */
   border-radius: var(--corner-prop) calc(var(--corner-base) * 1.5)
     var(--corner-prop) calc(var(--corner-base) * 1.5);
-  height: 120%;
+  height: 110%;
   filter: drop-shadow(0 0 10px var(--neon-pink));
 }
 
@@ -175,7 +175,7 @@ span.skills-span {
   }
 
   #photo-and-description-div {
-    gap: 8rem;
+    gap: 4rem;
   }
 
   #photo-div img {
