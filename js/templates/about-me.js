@@ -1,11 +1,7 @@
 const aboutMe = `<div id="about-me-div-content">
         <nav><button class="nav-button" id="back-button">Back</button></nav>
         <div id="photo-and-description-div">
-          <div id="photo-div">
-            <img src="./images/profile-photo.png" alt="profile photo" />
-          </div>
-
-          <div id="toggle-div">
+          <div id="photo-div"><div id="toggle-div">
             <label class="toggle-switch">
               <input
                 type="checkbox"
@@ -17,6 +13,10 @@ const aboutMe = `<div id="about-me-div-content">
               </span>
             </label>
           </div>
+            <img src="./images/profile-photo.png" alt="profile photo" />
+          </div>
+
+          
 
           <div id="description-div">
          
