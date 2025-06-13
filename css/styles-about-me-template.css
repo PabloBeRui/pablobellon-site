@@ -81,10 +81,26 @@ span.skills-span {
     calc(var(--corner-small) * 0.4) var(--corner-small);
 }
 
+/* ───────────── language container ─────────────  */
+
 /*  language icon img */
 
-#lang-ico{
+img#lang-ico {
   height: 1.5rem;
+}
+
+/*  language button container  */
+
+#lang-btn-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+button#lang-btn.nav-button {
+  padding: 0.4rem;
+  border-radius: calc(var(--corner-small) * 0.4) var(--corner-small)
+    calc(var(--corner-small) * 0.4) var(--corner-small);
 }
 
 /* ─────────────Adapt layout for horizontal or larger screens ───────────── */
