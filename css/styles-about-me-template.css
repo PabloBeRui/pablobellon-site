@@ -43,6 +43,20 @@
   filter: drop-shadow(0 0 10px var(--neon-pink));
 }
 
+
+/* nav button  */
+
+#about-me-div-content nav {
+
+display: flex;
+
+justify-content: flex-start;
+
+
+}
+
+
+
 /* Description styling */
 
 div#description-div {
