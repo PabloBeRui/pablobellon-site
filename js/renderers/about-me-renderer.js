@@ -1,4 +1,4 @@
-const descriptionEs = `<p>
+const descriptionEs = `<p class="smooth-fade-in-upward">
         He pasado la mayor parte de mi vida profesional trabajando en la
         industria, pero siempre he sentido una gran pasión por la informática y
         la tecnología. Hace un tiempo, decidí dar un giro a mi carrera y
@@ -8,7 +8,7 @@ const descriptionEs = `<p>
       </p>
       <br />
 
-      <p>
+      <p class="smooth-fade-in-upward">
         Para ello, he completado varios bootcamps intensivos como
         <span class="about-me-span">&nbsp;HackABoss&nbsp;</span>,
         <span class="about-me-span">&nbsp;TokioSchool&nbsp;</span> y
@@ -27,8 +27,10 @@ const descriptionEs = `<p>
         >).
       </p>`;
 
+
+
 const descriptionEn = `
-      <p>
+      <p class="smooth-fade-in-upward">
         I have spent most of my professional life working in industry, but I
         have always felt a great passion for computing and technology. Some time
         ago, I decided to shift my career and focus on what truly excites me:
@@ -37,7 +39,7 @@ const descriptionEn = `
       </p>
       <br />
 
-      <p>
+      <p class="smooth-fade-in-upward">
         To that end, I completed several intensive bootcamps such as
         <span class="about-me-span">&nbsp;HackABoss&nbsp;</span>,
         <span class="about-me-span">&nbsp;TokioSchool&nbsp;</span> and
@@ -56,6 +58,8 @@ const descriptionEn = `
         >).
       </p>
       `;
+
+
 
 const ButtonEs = `<button id="lang-btn" class="lang-toggle-btn nav-button"><img src="../../images/icons/globe_green_transparent_language.png" id="lang-ico"> EN</button>`;
 const ButtonEn = `<button id="lang-btn" class="lang-toggle-btn nav-button"><img src="../../images/icons/globe_green_transparent_language.png" id="lang-ico"> ES</button>`;

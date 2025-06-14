@@ -1,4 +1,4 @@
-const myProgress = `<div id="my-progress-div-content">
+const myProgress = `<div id="my-progress-div-content" class="smooth-fade-in-upward">
     <nav>
       <button class="nav-button" id="back-button">Back</button>
     </nav>

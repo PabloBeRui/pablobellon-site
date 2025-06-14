@@ -1,6 +1,6 @@
 // This is a template for the "About Me" section.
 
-const aboutMe = `<div id="about-me-div-content">
+const aboutMe = `<div id="about-me-div-content" class="smooth-fade-in-upward">
         <nav><button class="nav-button" id="back-button">Back</button></nav>
         <div id="photo-and-description-div">
           <div id="photo-div">
@@ -10,7 +10,7 @@ const aboutMe = `<div id="about-me-div-content">
           <div id="lang-btn-div">
           </div>
 
-          <div id="description-div">
+          <div id="description-div" >
          
           </div>
         </div>
