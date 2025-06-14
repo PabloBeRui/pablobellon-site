@@ -233,6 +233,21 @@ figure#coming-soon-figure .typewriter-class-2 {
   outline-offset: 2px;
 }
 
+/*  Smooth fade-in and upward slide effect for elements. */
+
+.smooth-fade-in-upward {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInSlide 1s ease forwards;
+}
+
+@keyframes fadeInSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /*───────────── Adapt layout for horizontal or larger screens───────────── */
 
 @media (orientation: landscape) {

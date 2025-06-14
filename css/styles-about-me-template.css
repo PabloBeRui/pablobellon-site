@@ -93,15 +93,19 @@ img#lang-ico {
 
 #lang-btn-div {
   display: flex;
+  width: 100%;
   flex-direction: row;
   justify-content: flex-end;
+  margin-left: 1rem;
 }
 
 button#lang-btn.nav-button {
   padding: 0.4rem;
   border-radius: calc(var(--corner-small) * 0.4) var(--corner-small)
     calc(var(--corner-small) * 0.4) var(--corner-small);
+  padding: 0.5rem 1rem;
 }
+
 
 /* ─────────────Adapt layout for horizontal or larger screens ───────────── */
 
@@ -122,10 +126,6 @@ button#lang-btn.nav-button {
       var(--corner-prop) calc(var(--corner-base) * 2);
     height: 200%;
   }
-
-  /* div#description-div {
-    gap: 1.5rem;
-  } */
 
   p {
     font-size: 2rem;
