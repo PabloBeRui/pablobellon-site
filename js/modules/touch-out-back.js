@@ -1,4 +1,5 @@
 import home from "../templates/home.js";
+import { replaceWithFadeOut } from "./replace-with-fade-out.js";
 
 // touchOutBack module:
 // Listens for clicks anywhere in the window.
@@ -17,7 +18,9 @@ export const touchOutBack = (idValue) => {
     // If click was neither inside the container nor on a button,
     // reset the container to the home template
     if (!clickedInsideContent && !clickedOnButton) {
-      variableContent.innerHTML = home;
+      // Triggers a smooth fade-out animation, then replaces the container's content with the home template
+
+      replaceWithFadeOut(variableContent, home);
     }
   });
 };

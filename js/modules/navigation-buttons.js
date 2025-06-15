@@ -3,6 +3,7 @@ import { aboutMeRenderer } from "../renderers/about-me-renderer.js";
 import aboutMe from "../templates/about-me.js";
 import myProgress from "../templates/my-progress.js";
 import home from "../templates/home.js";
+import { replaceWithFadeOut } from "./replace-with-fade-out.js";
 
 // Nav and buttons
 
@@ -38,7 +39,9 @@ export const navigationButtons = (idValue, wait) => {
     }
     // Button "Back"
     else if (event.target && event.target.id === "back-button") {
-      variableContent.innerHTML = home; // Carga el template 'home' con texto y botones ya visibles
+      // Triggers a smooth fade-out animation, then replaces the container's content with the home template
+
+      replaceWithFadeOut(variableContent, home);
     }
   });
 };
