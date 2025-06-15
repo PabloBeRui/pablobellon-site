@@ -233,8 +233,10 @@ figure#coming-soon-figure .typewriter-class-2 {
   outline-offset: 2px;
 }
 
-/*  Smooth fade-in and upward slide effect for elements. */
 
+/* ───────────── Smooth Effects ───────────── */
+
+/* Fade-in with upward slide */
 .smooth-fade-in-upward {
   opacity: 0;
   transform: translateY(10px);
@@ -247,6 +249,24 @@ figure#coming-soon-figure .typewriter-class-2 {
     transform: translateY(0);
   }
 }
+
+/* Fade-out with downward slide (inverse of fade-in) */
+.smooth-fade-out-upward {
+  animation: fadeOutSlide 1s ease forwards;
+}
+
+@keyframes fadeOutSlide {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+
 
 /*───────────── Adapt layout for horizontal or larger screens───────────── */
 
