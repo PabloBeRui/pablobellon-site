@@ -1,5 +1,5 @@
 
-const home=` <figure id="coming-soon-figure">
+const home=` <figure id="coming-soon-figure" class="smooth-fade-in-upward">
             <video
               id="coming-soon-vid"
               src="./assets/video/personal-stud-vid-in-out.mp4"

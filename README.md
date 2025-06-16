@@ -1,8 +1,8 @@
-# 🌐 Web Temporal de Pablo Bellón Ruibal / Temporary Website
+# 🌐 Web de Pablo Bellón Ruibal
 
 ## 🇪🇸 Español
 
-Bienvenido a la **web personal temporal** de **Pablo Bellón Ruibal**.
+Bienvenido a la **web personal** de **Pablo Bellón Ruibal**.
 
 Este sitio web está en desarrollo y sirve como presentación personal mientras se finalizan otros proyectos más complejos.
 
@@ -21,9 +21,9 @@ Este sitio web está en desarrollo y sirve como presentación personal mientras 
 
 ---
 
-## 🇬🇧 English
+## EN English
 
-Welcome to the **temporary personal website** of **Pablo Bellón Ruibal**.
+Welcome to the **personal website** of **Pablo Bellón Ruibal**.
 
 This website is currently under development and serves as a personal introduction while more complex projects are being finalized.
 

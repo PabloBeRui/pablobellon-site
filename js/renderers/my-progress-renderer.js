@@ -1,10 +1,23 @@
+/**
+ * my-progress-renderer.js
+ * Renders the progress cards for completed and in-progress courses, with expandable details.
+ */
+
+/* *********************************
+ * ─── Module Imports & Data ─────
+ * ********************************* */
+
 import { courses } from "../data/my-progress-data.js";
 
+/* *********************************
+ * ────── Progress Renderer ──────
+ * ********************************* */
+
 export const myProgressRenderer = () => {
+  // Select the container for course cards
   const cardContainer = document.querySelector("#progress-cards-container");
 
   // Clear out any existing cards
-
   cardContainer.innerHTML = "";
 
   courses.forEach((course) => {
@@ -16,6 +29,7 @@ export const myProgressRenderer = () => {
 
     // Build the list of subjects if any
     let subjectsHTML = "";
+    // Ensure subjects is an array and has at least one item
 
     if (Array.isArray(course.subjects) && course.subjects.length > 0) {
       subjectsHTML = `
@@ -29,17 +43,17 @@ export const myProgressRenderer = () => {
                 ${subj.approved ? "✅" : "⌛"}
               </li> <br>`
               )
-              .join("")}
+              /* Join the array of strings into a single HTML string with no separators */
+              .join("")} 
           </ul>
         </div>
       `;
     }
-
-    // Build the list of projects if any
+    // Build projects list if available
+    // Prepare projectsHTML only if projects array is valid and non-empty
 
     let projectsHTML = "";
     if (Array.isArray(course.projects) && course.projects.length > 0) {
-      // Abrimos un <div> con título y luego un <ul> de proyectos
       projectsHTML = `
         <div class="course-projects">
           
@@ -47,7 +61,8 @@ export const myProgressRenderer = () => {
           <ul>
             ${course.projects
               .map((proj) => `<li>Proyecto ${proj}</li>`)
-              .join("")}
+              /* Join the array of strings into a single HTML string with no separators */
+              .join("")} 
           </ul>
         </div>
       `;
@@ -91,12 +106,12 @@ export const myProgressRenderer = () => {
   </div>
 `;
 
-    // Add the card to the container
+    // Insert card into container
 
     cardContainer.insertAdjacentHTML("beforeend", cardHTML);
   });
 
-  // Make each card toggle its details when clicked
+  // Attach click listener to each summary for expand/collapse behavior
 
   document.querySelectorAll(".course-summary").forEach((summary) => {
     summary.addEventListener("click", () => {

@@ -1,10 +1,17 @@
-// VHS Background Video playback speed
+/**
+ * background-video.js
+ * Controls VHS background video playback speed.
+ */
+
+/* *********************************
+ * ───────── Background Video ─────────
+ * ********************************* */
 
 export const backgroundVideo = (idValue) => {
   const video = document.getElementById(idValue);
 
-  // Listen for 'canplaythrough' to know the video is fully buffered,
-  // then slow playback to 0.2x and restart for a smooth, glitch-free effect
+  /* Listen for 'canplaythrough' to ensure the video is fully buffered,
+     then set playback rate to 0.2x and replay for a smooth loop */
 
   video.addEventListener("canplaythrough", () => {
     video.playbackRate = 0.2;

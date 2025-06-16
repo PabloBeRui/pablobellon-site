@@ -14,9 +14,10 @@ import {
 // before running any initialization code
 
 document.addEventListener("DOMContentLoaded", () => {
-  // —————————————————————————————
-  // Intro Animations
-  // —————————————————————————————
+
+   /* *********************************
+   * ───────── Intro Animations ─────────
+   * ********************************* */
 
   // Slow down the VHS background video and restart smoothly
 
@@ -30,9 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   personalVideoAnimation("coming-soon-vid");
 
-  // —————————————————————————————
-  // Navigation Setup
-  // —————————————————————————————
+   /* *********************************
+   * ───────── Navigation Setup ─────────
+   * ********************************* */
 
   // Show navigation buttons once the typewriter has finished
 

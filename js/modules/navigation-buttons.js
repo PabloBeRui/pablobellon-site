@@ -1,3 +1,12 @@
+/**
+ * navigation-buttons.js
+ * Manages navigation button visibility and page content switching.
+ */
+
+/* *********************************
+ * ───────── Module Imports ─────────
+ * ********************************* */
+
 import { myProgressRenderer } from "../renderers/my-progress-renderer.js";
 import { aboutMeRenderer } from "../renderers/about-me-renderer.js";
 import aboutMe from "../templates/about-me.js";
@@ -5,13 +14,14 @@ import myProgress from "../templates/my-progress.js";
 import home from "../templates/home.js";
 import { replaceWithFadeOut } from "./replace-with-fade-out.js";
 
-// Nav and buttons
-
-/*  This code will handle the visibility of the navigation buttons
-   and optional (bool) will show them after the typewriter effect is finished. */
+/* *********************************
+ * ────── Navigation Button Logic ──────
+ * ********************************* */
 
 export const navigationButtons = (idValue, wait) => {
   const navButtons = document.querySelector("#nav-buttons");
+
+  /* Control visibility: if wait=true, show buttons after 'typewriterFinished' event; otherwise show immediately */
 
   if (wait) {
     document.addEventListener("typewriterFinished", () => {
@@ -21,26 +31,29 @@ export const navigationButtons = (idValue, wait) => {
     navButtons.classList.add("visible");
   }
 
-  // Navigation buttons functionality
+  /* *********************************
+   * ───────── Content Switching ─────────
+   * ********************************* */
 
   const variableContent = document.querySelector(idValue);
 
-  //Changing Content
   variableContent.addEventListener("click", (event) => {
-    // Button "About me"
-    if (event.target && event.target.id === "about-me-button") {
+
+/* Using optional chaining for safer ID checks */ 
+
+    // "About Me" button clicked 
+    if (event.target?.id === "about-me-button") {
       variableContent.innerHTML = aboutMe;
       aboutMeRenderer();
     }
-    // Button "My Progress"
-    else if (event.target && event.target.id === "my-progress-button") {
+    // "My Progress" button clicked
+    else if (event.target?.id === "my-progress-button") {
       variableContent.innerHTML = myProgress;
       myProgressRenderer();
     }
-    // Button "Back"
-    else if (event.target && event.target.id === "back-button") {
-      // Triggers a smooth fade-out animation, then replaces the container's content with the home template
-
+    // "Back" button clicked
+    else if (event.target?.id === "back-button") {
+      /* Perform smooth fade-out then load home template */
       replaceWithFadeOut(variableContent, home);
     }
   });

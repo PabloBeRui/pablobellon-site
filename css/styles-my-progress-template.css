@@ -1,4 +1,4 @@
-/* ───────────── Main container styles ───────────── */
+/* ───────── Main Container Styles ───────── */
 #my-progress-div-content {
   height: 100%;
   width: 100%;
@@ -18,8 +18,7 @@
   overflow-y: auto; /* enable vertical scrolling if content overflows */
 }
 
-/* nav button  */
-
+/* ───────── Navigation Styles ───────── */
 #my-progress-div-content nav {
   width: 100%;
   display: flex;
@@ -27,8 +26,7 @@
   align-items: flex-start;
 }
 
-/* Container for individual course cards */
-
+/* ───────── Progress Cards Container ───────── */
 #progress-cards-container {
   width: 90%;
   display: flex;
@@ -36,8 +34,7 @@
   gap: 1rem;
 }
 
-/* Styles for each course card */
-
+/* ───────── Course Card Styles ───────── */
 .course-card {
   background: rgba(0, 0, 0, 0.85);
   border: 1px solid var(--neon-pink);
@@ -50,21 +47,17 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease; /* smooth hover transition */
 }
 
-/* Hover effects for course cards */
-
 .course-card:hover {
   transform: translateY(-5px); /* lift card slightly on hover */
   box-shadow: 0 5px 15px rgba(255, 20, 147, 0.7); /* enhanced shadow on hover */
 }
 
-/* Course summary section (always visible) */
-
+/* ───────── Course Summary ───────── */
 .course-summary {
   cursor: pointer; /* indicate clickable summary */
 }
 
-/* Header section within the course card */
-
+/* ───────── Course Header ───────── */
 .course-header {
   display: flex;
   align-items: center;
@@ -72,50 +65,44 @@
   justify-content: center;
 }
 
-/* Styles for the course link */
-
+/* ───────── Course Link Styles ───────── */
 .course-link {
   flex: 1; /* take available space */
   text-decoration: none;
   color: var(--neon-pink);
 }
 
-/* Container for course information (title, year, emoji) */
-
+/* ───────── Course Info ───────── */
 .course-info {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-/* Course year text */
+/* ───────── Course Year ───────── */
 .course-year {
   font-size: 0.9rem;
   color: var(--terminal-green);
   margin-right: 0.25rem; /* space before the status emoji */
 }
 
-/* Course approved/loading emoji */
-
+/* ───────── Course Approved Emoji ───────── */
 .course-approved-emoji {
   font-size: 1.2rem;
 }
 
-/* Course hours text */
-
+/* ───────── Course Hours ───────── */
 .course-hours {
   margin: 0.75rem 0 0.5rem;
   font-size: 0.9rem;
 }
 
-/* Course title  */
-
+/* ───────── Course Title ───────── */
 h3.course-title {
   font-size: 1.4rem;
 }
 
-/* Bold hours display */
-
+/* ───────── Bold Hours Display ───────── */
 b#b-hours {
   font-size: 1.2rem;
   border: 1px solid var(--terminal-green);
@@ -123,16 +110,22 @@ b#b-hours {
   /* TL TR BR BL */
   border-radius: calc(var(--corner-small) * 0.4) var(--corner-small)
     calc(var(--corner-small) * 0.4) var(--corner-small);
+  /* Smooth transition for color, background and border */
+  transition: background-color 0.6s ease-in, color 0.6s ease-in;
 }
 
-/* Styles for list items (e.g., subjects, projects) */
+b#b-hours:hover {
+  border: 1px solid black;
+  background-color: var(--terminal-green);
+  color: black;
+}
 
+/* ───────── List Items ───────── */
 li {
   list-style: none;
 }
 
-/* Course details section (hidden by default) */
-
+/* ───────── Course Details ───────── */
 .course-details {
   max-height: 0; /* Collapse the container’s height to zero so content is hidden */
   opacity: 0;
@@ -140,22 +133,19 @@ li {
   transition: max-height 1s ease, opacity 1s ease; /* Animate changes to max-height and opacity */
 }
 
-/* When a course card is expanded, show its details */
-
+/* ───────── Expanded Course Details ───────── */
 .course-card.expanded .course-details {
   max-height: 800px; /* Must exceed the content’s maximum height for the expand/collapse animation to work */
   opacity: 1;
 }
 
-/* Styles for subjects and projects within details */
-
+/* ───────── Subjects & Projects Styles ───────── */
 .course-subjects,
 .course-projects {
   margin-top: 0.5rem;
 }
 
-/* Logo icons */
-
+/* ───────── Logo Icons ───────── */
 img#logo-img {
   height: 4rem;
   padding: 5px;
@@ -169,13 +159,20 @@ img#logo-img[alt="CampusDual TIC icon"] {
   background-color: white;
 }
 
+img#logo-img:hover {
+  padding: 4px;
+}
+
+/* ───────── Logo Hours Div ───────── */
 div.logo-hours-div {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/*───────────── Adapt layout for horizontal or larger screens ───────────── */
+/* *********************************
+ * ───────── Media Queries ─────────
+ * ********************************* */
 
 @media (orientation: landscape) {
   /* Main container adjustments for landscape */
@@ -187,23 +184,21 @@ div.logo-hours-div {
   }
 
   /* Font size for course titles in landscape */
-
   h3.course-title {
     font-size: 2.2rem;
   }
 
   /* Font size for course year in landscape */
-
   span.course-year {
     font-size: 1.5rem;
   }
 
   /* Font size for subject list items in landscape */
-
   .course-subjects li {
     font-size: 1.5rem;
   }
 
+  /* Bold hours adjustments in landscape */
   b#b-hours {
     margin-left: 2rem;
     font-size: 1.5rem;
@@ -212,12 +207,12 @@ div.logo-hours-div {
       calc(var(--corner-small) * 0.3) var(--corner-small);
   }
 
-  /* logo icons  */
-
+  /* Logo icon size for landscape */
   img#logo-img {
     height: 6rem;
   }
 
+  /* Logo hours div adjustments for landscape */
   div.logo-hours-div {
     justify-content: space-around;
     gap: 10rem;
