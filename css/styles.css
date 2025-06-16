@@ -190,6 +190,12 @@ figure#coming-soon-figure .typewriter-class-2 {
   pointer-events: auto;
 }
 
+#nav-back-button {
+  position: sticky;
+  top: 0; /* Offset: distance (in px) from the top edge of its container at which it becomes fixed */
+  z-index: 10; /* Ensure the button stays above other content */
+}
+
 /* nav buttons */
 .nav-button {
   display: flex;

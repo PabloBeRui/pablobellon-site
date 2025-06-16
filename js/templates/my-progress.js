@@ -1,5 +1,5 @@
 const myProgress = `<div id="my-progress-div-content" class="smooth-fade-in-upward">
-    <nav>
+    <nav id="nav-back-button">
       <button class="nav-button" id="back-button">Back</button>
     </nav>
     <div id="progress-cards-container"></div>
