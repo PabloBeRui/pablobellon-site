@@ -108,6 +108,12 @@
   font-size: 0.9rem;
 }
 
+/* Course title  */
+
+h3.course-title {
+  font-size: 1.4rem;
+}
+
 /* Bold hours display */
 
 b#b-hours {
@@ -128,8 +134,17 @@ li {
 /* Course details section (hidden by default) */
 
 .course-details {
-  display: none; /* hide details by default */
-  margin-top: 0.75rem;
+  max-height: 0; /* Collapse the container’s height to zero so content is hidden */
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 1s ease, opacity 1s ease; /* Animate changes to max-height and opacity */
+}
+
+/* When a course card is expanded, show its details */
+
+.course-card.expanded .course-details {
+  max-height: 800px; /* Must exceed the content’s maximum height for the expand/collapse animation to work */
+  opacity: 1;
 }
 
 /* Styles for subjects and projects within details */
@@ -137,12 +152,6 @@ li {
 .course-subjects,
 .course-projects {
   margin-top: 0.5rem;
-}
-
-/* When a course card is expanded, show its details */
-
-.course-card.expanded .course-details {
-  display: block; /* show details when expanded */
 }
 
 /* Logo icons */
@@ -179,8 +188,8 @@ div.logo-hours-div {
 
   /* Font size for course titles in landscape */
 
-  h3 {
-    font-size: 2rem;
+  h3.course-title {
+    font-size: 2.2rem;
   }
 
   /* Font size for course year in landscape */
@@ -211,5 +220,6 @@ div.logo-hours-div {
 
   div.logo-hours-div {
     justify-content: space-around;
+    gap: 10rem;
   }
 }
