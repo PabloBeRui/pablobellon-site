@@ -1,24 +1,20 @@
-/* ───────────── Shared Variables ───────────── */
+/* ───────── Global Variables ───────── */
 :root {
   --neon-pink: #ff1493;
   --terminal-green: #00cc00;
   --main-font: "VT323-Regular", sans-serif;
 
-  /* custom corner radio */
+  /* custom corner radius */
   --corner-base: 20px; /* base radius for TR/BL */
   --corner-prop: calc(
     var(--corner-base) * 0.4
   ); /* 40% of base = 8px for TL/BR */
   --corner-med: 15px; /* 0.75× scale */
   --corner-small: 15px; /* 0.5× scale */
-  --knob: 6px; /* toggle knob height */
-  --knob-prop: calc(var(--knob) * 0.4); /* 40% of knob = ~5px */
 }
 
-/* ───────────── styles.css ───────────── */
-
+/* ───────── Base Styles & Resets ───────── */
 /* Import custom retro font (VCR-OSD-Mono) */
-
 @font-face {
   font-family: "VT323-Regular";
   src: url(../assets/fonts/VT323-Regular.ttf);
@@ -26,7 +22,6 @@
 }
 
 /* Universal Reset */
-
 * {
   margin: 0;
   padding: 0;
@@ -34,7 +29,6 @@
 }
 
 /* Body styling */
-
 body {
   /* fallback static background */
   background-color: black;
@@ -53,8 +47,8 @@ body {
   -ms-overflow-style: none;
 }
 
+/* ───────── Layout Styles ───────── */
 /* the canvas is always positioned behind content */
-
 video#bg-video {
   position: absolute;
   width: 100%;
@@ -93,6 +87,18 @@ div#div-section-container {
   align-items: center;
 }
 
+/* ───────── Link Styles ───────── */
+a {
+  text-decoration: none;
+  color: var(--neon-pink);
+  transition: color 0.5s ease-in-out;
+}
+
+a:hover {
+  color: var(--terminal-green);
+}
+
+/* ───────── Footer Styles ───────── */
 footer {
   position: fixed;
   left: 0;
@@ -116,23 +122,13 @@ img.footer-ico:hover {
 ul#ul-footer {
   display: flex;
   list-style: none;
-  gap: 1rem;
-}
-
-a {
-  text-decoration: none;
-  color: var(--neon-pink);
-  transition: color 0.5s ease-in-out;
-}
-
-a:hover {
-  color: var(--terminal-green);
 }
 
 footer a {
   font-size: 1.2rem;
 }
 
+/* ───────── Coming Soon Figure Styles ───────── */
 figure#coming-soon-figure {
   display: flex;
   flex-direction: column;
@@ -158,7 +154,8 @@ figure#coming-soon-figure figcaption {
   margin-bottom: 1rem;
 }
 
-/* Retro Terminal Typewriter Effect (green to pink) */
+/* ───────── Typewriter Effect ───────── */
+/* Retro Terminal Typewriter Effect (terminal green to neon pink) */
 .typewriter-class-1 {
   color: var(--terminal-green);
   transition: color 1s ease-in-out;
@@ -169,16 +166,13 @@ figure#coming-soon-figure .typewriter-class-2 {
 }
 
 /* Balancing lines */
-
 #typewriter-text {
   line-height: 1.5;
   word-break: break-word;
   text-align: left;
 }
 
-/* Nav and Buttons */
-/* navigation container */
-
+/* ───────── Navigation Styles ───────── */
 #nav-buttons {
   display: flex;
   justify-content: center;
@@ -197,7 +191,6 @@ figure#coming-soon-figure .typewriter-class-2 {
 }
 
 /* nav buttons */
-
 .nav-button {
   display: flex;
   background-color: var(--neon-pink);
@@ -233,8 +226,7 @@ figure#coming-soon-figure .typewriter-class-2 {
   outline-offset: 2px;
 }
 
-/* ───────────── Smooth Effects ───────────── */
-
+/* ───────── Smooth Effects ───────── */
 /* Fade-in with upward slide */
 .smooth-fade-in-upward {
   opacity: 0;
@@ -265,9 +257,15 @@ figure#coming-soon-figure .typewriter-class-2 {
   }
 }
 
+/* *********************************
+ * ───────── Media Queries ─────────
+ * ********************************* */
+
 /*───────────── Adapt layout for horizontal or larger screens───────────── */
 
 @media (orientation: landscape) {
+  /* initial video  */
+
   figure#coming-soon-figure {
     flex-direction: row;
     justify-content: center;
@@ -283,6 +281,8 @@ figure#coming-soon-figure .typewriter-class-2 {
     font-size: 3rem;
   }
 
+  /* footer  */
+
   footer a {
     font-size: 2rem;
   }
@@ -291,6 +291,12 @@ figure#coming-soon-figure .typewriter-class-2 {
     justify-content: center;
     gap: 4rem;
   }
+
+  ul#ul-footer {
+    gap: 1rem;
+  }
+
+  /* nav buttons  */
 
   .nav-button {
     font-size: 2rem;
