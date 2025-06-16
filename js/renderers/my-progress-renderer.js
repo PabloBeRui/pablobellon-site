@@ -60,9 +60,7 @@ export const myProgressRenderer = () => {
     <!-- RESUMEN: siempre visible -->
     <div class="course-summary">
       <div class="course-header">
-        <img src="${course.img}" id="logo-img" alt="${
-      course.name
-    } icon" class="course-icon" />
+        
         <div class="course-info">
           <a href="${
             course.url
@@ -74,11 +72,14 @@ export const myProgressRenderer = () => {
         </div>
       </div>
       <br>
-      <p class="course-hours">
+      <div class="logo-hours-div"><img src="${course.img}" id="logo-img" alt="${
+      course.name
+    } icon" class="course-icon" /><p class="course-hours">
          <b id="b-hours"> ${
            course.totalHours === 0 ? "" : course.totalHours
          } hours  </b> 
-      </p>
+      </p></div>
+      
       <br>
     </div>
 

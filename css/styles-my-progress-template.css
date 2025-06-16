@@ -148,18 +148,22 @@ li {
 /* Logo icons */
 
 img#logo-img {
-  height: 110%;
-  padding: 3px;
+  height: 4rem;
+  padding: 5px;
   border: 1px solid var(--neon-pink);
   /* TL TR BR BL */
   border-radius: calc(var(--corner-small) * 0.4) var(--corner-small)
     calc(var(--corner-small) * 0.4) var(--corner-small);
 }
 
-img#logo-img[alt="TokioSchool icon"],
-[alt="CampusDual TIC icon"],
-[alt="DAW icon"] {
+img#logo-img[alt="CampusDual TIC icon"] {
   background-color: white;
+}
+
+div.logo-hours-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /*───────────── Adapt layout for horizontal or larger screens ───────────── */
@@ -197,5 +201,15 @@ img#logo-img[alt="TokioSchool icon"],
     /* TL TR BR BL */
     border-radius: calc(var(--corner-small) * 0.3) var(--corner-small)
       calc(var(--corner-small) * 0.3) var(--corner-small);
+  }
+
+  /* logo icons  */
+
+  img#logo-img {
+    height: 6rem;
+  }
+
+  div.logo-hours-div {
+    justify-content: space-around;
   }
 }
