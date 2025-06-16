@@ -1,3 +1,13 @@
+/**
+ * about-me-renderer.js
+ * Renders the 'About Me' section with language toggle (English/Spanish) and smooth fade-in effects.
+ */
+
+/* *********************************
+ * ───── About Me Templates ─────
+ * ********************************* */
+// HTML templates for English and Spanish descriptions
+
 const descriptionEs = `<p class="smooth-fade-in-upward">
         He pasado la mayor parte de mi vida profesional trabajando en la
         industria, pero siempre he sentido una gran pasión por la informática y
@@ -26,8 +36,6 @@ const descriptionEs = `<p class="smooth-fade-in-upward">
           >&nbsp;DAW&nbsp;</span
         >).
       </p>`;
-
-
 
 const descriptionEn = `
       <p class="smooth-fade-in-upward">
@@ -59,13 +67,17 @@ const descriptionEn = `
       </p>
       `;
 
-
+// HTML templates for language toggle buttons
 
 const ButtonEs = `<button id="lang-btn" class="lang-toggle-btn nav-button"><img src="../../images/icons/globe_green_transparent_language.png" id="lang-ico"> EN</button>`;
 const ButtonEn = `<button id="lang-btn" class="lang-toggle-btn nav-button"><img src="../../images/icons/globe_green_transparent_language.png" id="lang-ico"> ES</button>`;
 
-// Declared outside the renderer so its value isn't reset on each function call
+// Tracks current language state: false = English, true = Spanish
 let esOrEn = false;
+
+/* *********************************
+ * ───── About Me Renderer ─────
+ * ********************************* */
 
 export const aboutMeRenderer = () => {
   // Description Div

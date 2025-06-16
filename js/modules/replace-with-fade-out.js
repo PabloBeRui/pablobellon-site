@@ -1,17 +1,19 @@
-/*
- Replaces the innerHTML of a container element with a new template,
- applying a smooth fade-out animation before the replacement.
+/**
+ * replace-with-fade-out.js
+ * Performs a smooth fade-out transition on a container element before swapping its innerHTML.
  */
 
+/* *********************************
+ * ───── Replace With Fade-Out ─────
+ * ********************************* */
+
 export const replaceWithFadeOut = (container, newContent) => {
-  // Add fade-out class to trigger the exit animation
+  // Add fade-out class to start the exit animation
   container.classList.add("smooth-fade-out-upward");
 
-  // Wait for the animation to finish before replacing the content
+  // After animation duration, replace content and remove the fade-out class
   setTimeout(() => {
     container.innerHTML = newContent;
-
-    // Remove the fade-out class so that fade-in can work again next time
     container.classList.remove("smooth-fade-out-upward");
-  }, 1000); // Duration should match the CSS animation time (1s)
+  }, 1000); // Delay matches CSS animation duration (1s)
 };

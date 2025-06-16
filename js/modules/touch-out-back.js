@@ -1,7 +1,18 @@
+/**
+ * touch-out-back.js
+ * Listens for clicks outside the main content container and resets the view to home with a fade-out transition.
+ */
+
+/* *********************************
+ * ───────── Module Imports ─────────
+ * ********************************* */
 import home from "../templates/home.js";
 import { replaceWithFadeOut } from "./replace-with-fade-out.js";
 
-// touchOutBack module:
+/* *********************************
+ * ───────── Touch Out Back ─────────
+ * ********************************* */
+
 // Listens for clicks anywhere in the window.
 // If the click occurs outside the given container (and not on a button),
 // it replaces the container’s innerHTML with the imported `home` template.
