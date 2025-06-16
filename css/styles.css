@@ -21,11 +21,15 @@
   font-weight: normal;
 }
 
-/* Universal Reset */
 * {
+  /* Universal Reset */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* Remove touch highlight everywhere */
+  /* Prevent the default semi-transparent overlay that appears on touch (tap highlight)
+   across all elements in mobile browsers (iOS Safari, Chrome for Android, etc.) */
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Body styling */
