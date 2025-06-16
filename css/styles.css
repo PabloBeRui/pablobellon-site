@@ -233,7 +233,6 @@ figure#coming-soon-figure .typewriter-class-2 {
   outline-offset: 2px;
 }
 
-
 /* ───────────── Smooth Effects ───────────── */
 
 /* Fade-in with upward slide */
@@ -265,8 +264,6 @@ figure#coming-soon-figure .typewriter-class-2 {
     transform: translateY(10px);
   }
 }
-
-
 
 /*───────────── Adapt layout for horizontal or larger screens───────────── */
 
