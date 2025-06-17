@@ -13,6 +13,7 @@ import aboutMe from "../templates/about-me.js";
 import myProgress from "../templates/my-progress.js";
 import home from "../templates/home.js";
 import { replaceWithFadeOut } from "./replace-with-fade-out.js";
+import { toggleTheme } from "./theme-switching.js";
 
 /* *********************************
  * ────── Navigation Button Logic ──────
@@ -20,7 +21,7 @@ import { replaceWithFadeOut } from "./replace-with-fade-out.js";
 
 export const navigationButtons = (idValue, wait) => {
   const navButtons = document.querySelector("#nav-buttons");
-
+  
   /* Control visibility: if wait=true, show buttons after 'typewriterFinished' event; otherwise show immediately */
 
   if (wait) {
@@ -56,5 +57,16 @@ export const navigationButtons = (idValue, wait) => {
       /* Perform smooth fade-out then load home template */
       replaceWithFadeOut(variableContent, home);
     }
+    // home when style changed
+    else if (event.target?.id === "change-style-button") { 
+
+      console.log("back buton click")
+
+      toggleTheme();
+
+      replaceWithFadeOut(variableContent, home);
+    }
+
   });
 };
+

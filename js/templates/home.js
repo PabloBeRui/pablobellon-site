@@ -1,5 +1,8 @@
 
-const home=` <figure id="coming-soon-figure" class="smooth-fade-in-upward">
+const home =` 
+<nav id="change-style-button-nav">
+      <button id="change-style-button"  >Back to the present</button>
+    </nav><figure id="coming-soon-figure" class="smooth-fade-in-upward">
             <video
               id="coming-soon-vid"
               src="./assets/video/personal-stud-vid-in-out.mp4"
@@ -14,6 +17,7 @@ const home=` <figure id="coming-soon-figure" class="smooth-fade-in-upward">
               <nav id="nav-buttons"  class="visible">
                 <button class="nav-button" id="about-me-button">About me</button>
                 <button class="nav-button" id="my-progress-button">My Progress</button>
+      
               </nav>
             </div>
           </figure>`
