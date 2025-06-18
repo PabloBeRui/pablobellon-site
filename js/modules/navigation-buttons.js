@@ -21,15 +21,20 @@ import { toggleTheme } from "./theme-switching.js";
 
 export const navigationButtons = (idValue, wait) => {
   const navButtons = document.querySelector("#nav-buttons");
-  
+  const changeStyleButtonBack = document.querySelector(
+    "#change-style-button-nav"
+  );
+
   /* Control visibility: if wait=true, show buttons after 'typewriterFinished' event; otherwise show immediately */
 
   if (wait) {
     document.addEventListener("typewriterFinished", () => {
       navButtons.classList.add("visible");
+      changeStyleButtonBack.classList.add("visible")
     });
   } else {
     navButtons.classList.add("visible");
+    changeStyleButtonBack.classList.add("visible")
   }
 
   /* *********************************
@@ -39,10 +44,9 @@ export const navigationButtons = (idValue, wait) => {
   const variableContent = document.querySelector(idValue);
 
   variableContent.addEventListener("click", (event) => {
+    /* Using optional chaining for safer ID checks */
 
-/* Using optional chaining for safer ID checks */ 
-
-    // "About Me" button clicked 
+    // "About Me" button clicked
     if (event.target?.id === "about-me-button") {
       variableContent.innerHTML = aboutMe;
       aboutMeRenderer();
@@ -58,15 +62,11 @@ export const navigationButtons = (idValue, wait) => {
       replaceWithFadeOut(variableContent, home);
     }
     // home when style changed
-    else if (event.target?.id === "change-style-button") { 
-
-      console.log("back buton click")
-
+    else if (event.target?.id === "change-style-button") {
+      
       toggleTheme();
 
       replaceWithFadeOut(variableContent, home);
     }
-
   });
 };
-

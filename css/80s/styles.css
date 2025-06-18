@@ -177,7 +177,7 @@ figure#coming-soon-figure .typewriter-class-2 {
 }
 
 /* ───────── Navigation Styles ───────── */
-#nav-buttons {
+#nav-buttons, #change-style-button-nav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -188,7 +188,7 @@ figure#coming-soon-figure .typewriter-class-2 {
   pointer-events: none;
 }
 
-#nav-buttons.visible {
+#nav-buttons.visible, #change-style-button-nav.visible {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
