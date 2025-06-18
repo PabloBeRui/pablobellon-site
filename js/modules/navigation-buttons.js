@@ -25,16 +25,18 @@ export const navigationButtons = (idValue, wait) => {
     "#change-style-button-nav"
   );
 
+  let styleButtonBool = true;
+
   /* Control visibility: if wait=true, show buttons after 'typewriterFinished' event; otherwise show immediately */
 
   if (wait) {
     document.addEventListener("typewriterFinished", () => {
       navButtons.classList.add("visible");
-      changeStyleButtonBack.classList.add("visible")
+      changeStyleButtonBack.classList.add("visible");
     });
   } else {
     navButtons.classList.add("visible");
-    changeStyleButtonBack.classList.add("visible")
+    changeStyleButtonBack.classList.add("visible");
   }
 
   /* *********************************
@@ -63,10 +65,21 @@ export const navigationButtons = (idValue, wait) => {
     }
     // home when style changed
     else if (event.target?.id === "change-style-button") {
-      
+      // 1) Update the theme by swapping CSS links
       toggleTheme();
-
+      //2) Fade out the current section and swap in the `home` template
       replaceWithFadeOut(variableContent, home);
+      //3) Determine the next button label based on styleButtonBool
+      const label = styleButtonBool ? "80s" : "Now";
+
+      styleButtonBool = !styleButtonBool;
+      // 4) After the replaceWithFadeOut animation (1000ms), select the newly injected button
+      //    and update its visible text
+      setTimeout(() => {
+        const labelButton = document.querySelector("#change-style-button");
+
+        labelButton.textContent = label;
+      }, 1000);
     }
   });
 };
