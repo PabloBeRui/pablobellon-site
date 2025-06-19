@@ -14,6 +14,8 @@ import myProgress from "../templates/my-progress.js";
 import home from "../templates/home.js";
 import { replaceWithFadeOut } from "./replace-with-fade-out.js";
 import { toggleTheme } from "./theme-switching.js";
+import homeNow from "../templates/home-now.js";
+import { nowOr80s, toggleNowOr80s } from "./state.js";
 
 /* *********************************
  * ────── Navigation Button Logic ──────
@@ -24,8 +26,6 @@ export const navigationButtons = (idValue, wait) => {
   const changeStyleButtonBack = document.querySelector(
     "#change-style-button-nav"
   );
-
-  let styleButtonBool = true;
 
   /* Control visibility: if wait=true, show buttons after 'typewriterFinished' event; otherwise show immediately */
 
@@ -60,26 +60,19 @@ export const navigationButtons = (idValue, wait) => {
     }
     // "Back" button clicked
     else if (event.target?.id === "back-button") {
-      /* Perform smooth fade-out then load home template */
-      replaceWithFadeOut(variableContent, home);
+      //Perform smooth fade-out then load the corresponding home template
+      // Go back to the appropriate home template depending on the current style
+      replaceWithFadeOut(variableContent, nowOr80s ? homeNow : home);
     }
     // home when style changed
     else if (event.target?.id === "change-style-button") {
       // 1) Update the theme by swapping CSS links
       toggleTheme();
-      //2) Fade out the current section and swap in the `home` template
-      replaceWithFadeOut(variableContent, home);
-      //3) Determine the next button label based on styleButtonBool
-      const label = styleButtonBool ? "80s" : "Now";
 
-      styleButtonBool = !styleButtonBool;
-      // 4) After the replaceWithFadeOut animation (1000ms), select the newly injected button
-      //    and update its visible text
-      setTimeout(() => {
-        const labelButton = document.querySelector("#change-style-button");
-
-        labelButton.textContent = label;
-      }, 1000);
+      // Flip style mode and render the corresponding home template
+      toggleNowOr80s();
+      // nowOr80s bool imported from state.js
+      replaceWithFadeOut(variableContent, nowOr80s ? homeNow : home);
     }
   });
 };
