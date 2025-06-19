@@ -10,7 +10,6 @@ import {
   typewriterEffect,
 } from "./modules/index.js";
 
-import { nowOr80s } from "./modules/state.js";
 import home from "./templates/home.js";
 import homeNow from "./templates/home-now.js";
 
@@ -20,14 +19,18 @@ import homeNow from "./templates/home-now.js";
 document.addEventListener("DOMContentLoaded", () => {
   // Select the container to load
   const variableContent = document.querySelector("#section-global-container");
+  // Load the theme from sessionStorage (default to '80s' if not set)
+  const theme = sessionStorage.getItem("theme") || "80s";
+  const startInNowMode = theme === "present";
+
   variableContent.innerHTML = ""; // ensure full reset before inserting
-  variableContent.innerHTML = nowOr80s ? homeNow : home;
+  variableContent.innerHTML = startInNowMode ? homeNow : home;
 
   /* *********************************
    * ───────── Intro Animations ─────────
    * ********************************* */
 
-  if (nowOr80s) {
+  if (startInNowMode) {
     // Play the personal “coming soon” video after a short delay
     personalVideoAnimation("coming-soon-vid");
     // Slow down the VHS background video and restart smoothly in 80s theme
