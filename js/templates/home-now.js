@@ -2,7 +2,7 @@ const homeNow = `
 <nav id="change-style-button-nav" class="visible smooth-fade-in-upward">
           <button id="change-style-button" class="nav-button">80s</button>
         </nav><figure id="coming-soon-figure" class="smooth-fade-in-upward">
-            <img src="../../images/profile_photo-linear-now.svg">
+            <img src="../../images/photo_transition.webp">
             <div id="text-and-buttons-container">
               <figcaption
                 id="typewriter-text"
