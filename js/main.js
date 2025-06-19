@@ -10,28 +10,33 @@ import {
   typewriterEffect,
 } from "./modules/index.js";
 
+import { nowOr80s } from "./modules/state.js";
+import home from "./templates/home.js";
+import homeNow from "./templates/home-now.js";
+
 // Listen for DOMContentLoaded to ensure the HTML is fully parsed
 // before running any initialization code
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Select the container to load
+  const variableContent = document.querySelector("#section-global-container");
+  variableContent.innerHTML = ""; // ensure full reset before inserting
+  variableContent.innerHTML = nowOr80s ? homeNow : home;
 
-   /* *********************************
+  /* *********************************
    * ───────── Intro Animations ─────────
    * ********************************* */
 
-  // Slow down the VHS background video and restart smoothly
+  if (nowOr80s) {
+    // Play the personal “coming soon” video after a short delay
+    personalVideoAnimation("coming-soon-vid");
+    // Slow down the VHS background video and restart smoothly in 80s theme
+    backgroundVideo("bg-video");
+    // Run the retro terminal typewriter effect on the intro text
+    typewriterEffect("typewriter-text");
+  }
 
-  backgroundVideo("bg-video");
-
-  // Run the retro terminal typewriter effect on the intro text
-
-  typewriterEffect("typewriter-text");
-
-  // Play the personal “coming soon” video after a short delay
-
-  personalVideoAnimation("coming-soon-vid");
-
-   /* *********************************
+  /* *********************************
    * ───────── Navigation Setup ─────────
    * ********************************* */
 

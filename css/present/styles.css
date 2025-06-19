@@ -356,19 +356,3 @@ figure#coming-soon-figure .typewriter-class-2 {
 }
 
 
-/* Asegúrate de que el vídeo tenga posición para poder superponer */
-#coming-soon-vid {
-  position: relative;
-  z-index: 1;
-}
-
-/* Crea la capa de color encima */
-#coming-soon-vid::before {
-  content: "";
-  position: absolute;
-  inset: 0;  /* top:0; right:0; bottom:0; left:0 */
-  background: linear-gradient(135deg, #1c1c1e 0%, #00ffb3 100%);
-  mix-blend-mode: color;     /* colorea sólo los matices */
-  pointer-events: none;      /* no bloquea clicks */
-  z-index: 2;
-}

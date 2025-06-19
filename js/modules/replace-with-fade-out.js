@@ -13,6 +13,7 @@ export const replaceWithFadeOut = (container, newContent) => {
 
   // After animation duration, replace content and remove the fade-out class
   setTimeout(() => {
+    container.innerHTML = "";
     container.innerHTML = newContent;
     container.classList.remove("smooth-fade-out-upward");
   }, 1000); // Delay matches CSS animation duration (1s)
