@@ -21,16 +21,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const variableContent = document.querySelector("#section-global-container");
   // Load the theme from sessionStorage (default to '80s' if not set)
   const theme = sessionStorage.getItem("theme") || "80s";
+
+  // Determine whether we should start in "now" mode (theme === 'present')
   const startInNowMode = theme === "present";
 
   variableContent.innerHTML = ""; // ensure full reset before inserting
+
+  // Load the correct template based on our mode flag:
+  // - homeNow when in "now" mode
+  // - home    when in "80s" mode
+
   variableContent.innerHTML = startInNowMode ? homeNow : home;
 
   /* *********************************
    * ───────── Intro Animations ─────────
    * ********************************* */
 
-  if (startInNowMode) {
+  if (!startInNowMode) {
     // Play the personal “coming soon” video after a short delay
     personalVideoAnimation("coming-soon-vid");
     // Slow down the VHS background video and restart smoothly in 80s theme

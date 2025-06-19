@@ -12,7 +12,7 @@ const home = `
             <div id="text-and-buttons-container">
               <figcaption
                 id="typewriter-text"
-                class="typewriter-class-2">I’m currently studying and working on new projects 👾 Stay tuned for updates!</figcaption>
+                class="typewriter-class-1">I’m currently studying and working on new projects 👾 Stay tuned for updates!</figcaption>
               <nav id="nav-buttons"  class="visible">
                 <button class="nav-button" id="about-me-button">About me</button>
                 <button class="nav-button" id="my-progress-button">My Progress</button>

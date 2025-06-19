@@ -8,6 +8,12 @@
  * ********************************* */
 
 export const typewriterEffect = (idValue) => {
+
+  // Clear any existing text before starting the typewriter animation
+
+  document.getElementById("typewriter-text").innerHTML=""
+
+  
   const text =
     "I’m currently studying and working on new projects 👾 Stay tuned for updates!";
 
