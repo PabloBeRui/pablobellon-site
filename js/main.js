@@ -1,4 +1,6 @@
-// main.js
+/* *********************************
+ * ────── main.js ──────
+ * ********************************* */
 
 // Import modules from index.js
 
@@ -8,33 +10,19 @@ import {
   personalVideoAnimation,
   touchOutBack,
   typewriterEffect,
+  loadInitialTemplate,
 } from "./modules/index.js";
 
-import home from "./templates/home.js";
-import homeNow from "./templates/home-now.js";
-
-// Listen for DOMContentLoaded to ensure the HTML is fully parsed
-// before running any initialization code
+/*Listen for DOMContentLoaded to ensure the HTML is fully parsed
+ before running any initialization code*/
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Select the container to load
-  const variableContent = document.querySelector("#section-global-container");
-  // Load the theme from sessionStorage (default to '80s' if not set)
-  const theme = sessionStorage.getItem("theme") || "80s";
+  // Load the appropriate template ('home' or 'homeNow') based on the saved theme
 
-  // Determine whether we should start in "now" mode (theme === 'present')
-  const startInNowMode = theme === "present";
-
-  variableContent.innerHTML = ""; // ensure full reset before inserting
-
-  // Load the correct template based on our mode flag:
-  // - homeNow when in "now" mode
-  // - home    when in "80s" mode
-
-  variableContent.innerHTML = startInNowMode ? homeNow : home;
+  const startInNowMode = loadInitialTemplate();
 
   /* *********************************
-   * ───────── Intro Animations ─────────
+   * ───────── Intro Animations (80s only)─────────
    * ********************************* */
 
   if (!startInNowMode) {
