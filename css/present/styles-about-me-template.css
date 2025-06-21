@@ -14,7 +14,7 @@
     var(--corner-prop) calc(var(--corner-base) * 2);
   opacity: 0.75;
   overflow-y: auto;
-  border: 1px solid var(--neon-pink);
+  border: 1px solid var(--electric-mint);
   gap: 1rem;
 }
 
@@ -43,7 +43,7 @@
   border-radius: var(--corner-prop) calc(var(--corner-base) * 1.5)
     var(--corner-prop) calc(var(--corner-base) * 1.5);
   height: 100%;
-  filter: drop-shadow(0 0 10px var(--neon-pink));
+  filter: drop-shadow(0 0 10px var(--electric-mint));
 }
 /* nav button  */
 
@@ -63,7 +63,7 @@ div#description-div {
 /* About me badge */
 
 span.about-me-span {
-  background-color: var(--terminal-green);
+  background-color: var(--charcoal-black);
   color: white;
   /* TL TR BR BL */
   border-radius: calc(var(--corner-small) * 0.4) var(--corner-small)
@@ -73,7 +73,7 @@ span.about-me-span {
 /* Skills badge */
 
 span.skills-span {
-  background-color: var(--neon-pink);
+  background-color: var(--electric-mint);
   color: white;
   /* TL TR BR BL */
   border-radius: calc(var(--corner-small) * 0.4) var(--corner-small)

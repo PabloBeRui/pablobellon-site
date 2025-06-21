@@ -13,7 +13,7 @@
   border-radius: var(--corner-prop) calc(var(--corner-base) * 2)
     var(--corner-prop) calc(var(--corner-base) * 2);
   opacity: 0.75;
-  border: 1px solid var(--neon-pink);
+  border: 1px solid var(--electric-mint);
   gap: 2rem;
   overflow-y: auto; /* enable vertical scrolling if content overflows */
 }
@@ -37,7 +37,7 @@
 /* ───────── Course Card Styles ───────── */
 .course-card {
   background: rgba(0, 0, 0, 0.85);
-  border: 1px solid var(--neon-pink);
+  border: 1px solid var(--electric-mint);
   /* TL TR BR BL */
   border-radius: var(--corner-prop) calc(var(--corner-base) * 2)
     var(--corner-prop) calc(var(--corner-base) * 2);
@@ -69,7 +69,7 @@
 .course-link {
   flex: 1; /* take available space */
   text-decoration: none;
-  color: var(--neon-pink);
+  color: var(--electric-mint);
 }
 
 /* ───────── Course Info ───────── */
@@ -82,7 +82,7 @@
 /* ───────── Course Year ───────── */
 .course-year {
   font-size: 0.9rem;
-  color: var(--terminal-green);
+  color: var(--charcoal-black);
   margin-right: 0.25rem; /* space before the status emoji */
 }
 
@@ -105,7 +105,7 @@ h3.course-title {
 /* ───────── Bold Hours Display ───────── */
 b#b-hours {
   font-size: 1.2rem;
-  border: 1px solid var(--terminal-green);
+  border: 1px solid var(--charcoal-black);
   padding: 0.5rem 0.5rem;
   /* TL TR BR BL */
   border-radius: calc(var(--corner-small) * 0.4) var(--corner-small)
@@ -116,7 +116,7 @@ b#b-hours {
 
 b#b-hours:hover {
   border: 1px solid black;
-  background-color: var(--terminal-green);
+  background-color: var(--charcoal-black);
   color: black;
 }
 
@@ -149,7 +149,7 @@ li {
 img#logo-img {
   height: 4rem;
   padding: 5px;
-  border: 1px solid var(--neon-pink);
+  border: 1px solid var(--electric-mint);
   /* TL TR BR BL */
   border-radius: calc(var(--corner-small) * 0.4) var(--corner-small)
     calc(var(--corner-small) * 0.4) var(--corner-small);
