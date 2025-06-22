@@ -1,7 +1,7 @@
 /* ───────── Global Variables ───────── */
 :root {
   --electric-mint: #00ffb3;
-  --charcoal-black: #1c1c1e;
+  --charcoal-black: rgba(28, 28, 30, 0.85);
   --main-font: "nunito", sans-serif;
 
   --corner-base: 12px; /* Base radius para todos los bordes */
@@ -52,13 +52,6 @@ body {
 /* the canvas is always positioned behind content */
 video#bg-video {
   display: none;
-  position: absolute;
-  width: 100%;
-  height: 100dvh;
-  top: 0;
-  left: 0;
-  object-fit: fill;
-  z-index: -1;
 }
 
 main#main-container {
@@ -111,7 +104,7 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-   border-top: 1px solid var(--electric-mint);
+  border-top: 1px solid var(--electric-mint);
 }
 
 img.footer-ico {
@@ -143,31 +136,26 @@ figure#coming-soon-figure {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 2rem;
   height: 100%;
   width: 100%;
   text-align: center;
 }
 
-
 figure#coming-soon-figure figcaption {
-  margin-top: 2rem;
-  padding-left: 0.5rem;
+  margin: 2rem auto 1rem auto; /* top auto bottom auto */
   font-size: 1.5rem;
   color: var(--charcoal-black);
-  margin-bottom: 1rem;
-}
-
-/* ───────── Typewriter Effect ───────── */
-/* Retro Terminal Typewriter Effect (terminal green to neon pink) */
-.typewriter-class-1 {
-  color: var(--charcoal-black);
-  transition: color 1s ease-in-out;
+  text-align: center;
+  /* width: fit-content; */
 }
 
 figure#coming-soon-figure .typewriter-class-2 {
   color: var(--electric-mint);
 }
+
+/* #img-transition-now{
+  background-color: var(--charcoal-black);
+} */
 
 /* Balancing lines */
 #typewriter-text {
@@ -177,7 +165,7 @@ figure#coming-soon-figure .typewriter-class-2 {
 }
 
 /* ───────── Navigation Styles ───────── */
-#nav-buttons,
+
 #change-style-button-nav {
   display: flex;
   justify-content: center;
@@ -187,12 +175,11 @@ figure#coming-soon-figure .typewriter-class-2 {
   margin-top: 1rem;
   transition: opacity 0.5s ease;
   pointer-events: none;
+  background-color: var(--charcoal-black);
+  /* background nav style   */
+  width: 100%;
 }
 
-#change-style-button-nav {
-  width: 100%;
-  justify-content: flex-end;
-}
 
 #nav-buttons.visible,
 #change-style-button-nav.visible {
@@ -233,12 +220,12 @@ figure#coming-soon-figure .typewriter-class-2 {
 }
 
 .nav-button:active {
-   background-color: #006f5f; /* darker mint */
+  background-color: #006f5f; /* darker mint */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .nav-button:focus {
-   outline: 2px solid var(--electric-mint);
+  outline: 2px solid var(--electric-mint);
   outline-offset: 3px;
 }
 
@@ -307,7 +294,8 @@ figure#coming-soon-figure .typewriter-class-2 {
 
   footer {
     justify-content: center;
-    gap: 4rem;
+    gap: 6rem;
+    padding-top: 0.5rem;
   }
 
   ul#ul-footer {
@@ -315,7 +303,13 @@ figure#coming-soon-figure .typewriter-class-2 {
   }
 
   /* nav buttons  */
-
+  #change-style-button-nav {
+    width: 50%;
+    justify-content: flex-end;
+    gap: 2rem;
+    border-radius: var(--corner-base);
+    background-color: var(--charcoal-black);
+  }
   .nav-button {
     font-size: 2rem;
     padding: 1rem 2rem;
