@@ -3,7 +3,7 @@
 #about-me-div-content {
   height: 100%;
   width: 100%;
-  background-color: black;
+  background-color: var(--charcoal-black);
   color: white;
   padding: 0.5rem;
   display: flex;
@@ -43,7 +43,10 @@
   border-radius: var(--corner-prop) calc(var(--corner-base) * 1.5)
     var(--corner-prop) calc(var(--corner-base) * 1.5);
   height: 100%;
-  filter: drop-shadow(0 0 10px var(--electric-mint));
+ filter: drop-shadow(2px 0 4px var(--electric-mint)) drop-shadow(-2px 0 4px var(--electric-mint));
+
+
+
 }
 /* nav button  */
 

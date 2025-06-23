@@ -2,7 +2,7 @@
 #my-progress-div-content {
   height: 100%;
   width: 100%;
-  background-color: black;
+  background-color: var(--charcoal-black);
   color: white;
   padding: 0.5rem;
   display: flex;
@@ -43,13 +43,13 @@
     var(--corner-prop) calc(var(--corner-base) * 2);
   padding: 1rem;
   margin-bottom: 1rem;
-  box-shadow: 0 0 10px rgba(255, 20, 147, 0.5); /* initial box shadow */
+  box-shadow: 0 0 10px rgba(0, 255, 179, 0.5); /* initial box shadow */
   transition: transform 0.2s ease, box-shadow 0.2s ease; /* smooth hover transition */
 }
 
 .course-card:hover {
   transform: translateY(-5px); /* lift card slightly on hover */
-  box-shadow: 0 5px 15px rgba(255, 20, 147, 0.7); /* enhanced shadow on hover */
+  box-shadow: 0 0 10px rgba(0, 255, 179, 0.5); /* enhanced shadow on hover */
 }
 
 /* ───────── Course Summary ───────── */
@@ -117,7 +117,7 @@ b#b-hours {
 b#b-hours:hover {
   border: 1px solid black;
   background-color: var(--charcoal-black);
-  color: black;
+  color: var(--electric-mint);
 }
 
 /* ───────── List Items ───────── */

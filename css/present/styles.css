@@ -176,10 +176,10 @@ figure#coming-soon-figure .typewriter-class-2 {
   transition: opacity 0.5s ease;
   pointer-events: none;
   background-color: var(--charcoal-black);
+  border-bottom: 1px solid var(--electric-mint);
   /* background nav style   */
   width: 100%;
 }
-
 
 #nav-buttons.visible,
 #change-style-button-nav.visible {
@@ -275,7 +275,6 @@ figure#coming-soon-figure .typewriter-class-2 {
     align-items: center;
     gap: 5rem;
     width: 50%;
-    border: 1px solid var(--electric-mint);
   }
 
   figure#coming-soon-figure video {
