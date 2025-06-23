@@ -67,7 +67,12 @@ export const navigationButtons = (idValue, wait) => {
     // home when style changed
     else if (event.target?.id === "change-style-button") {
       // 1) Update the theme by swapping CSS links
-      toggleTheme();
+      //Delay the theme swap slightly using setTimeout to allow the content
+      // to transition smoothly without flickering. This ensures the new styles are applied
+      // before rendering the new home template, avoiding brief visual glitches.
+      setTimeout(() => {
+        toggleTheme();
+      }, 1000);
 
       // Flip style mode and render the corresponding home template
       toggleNowOr80s();
