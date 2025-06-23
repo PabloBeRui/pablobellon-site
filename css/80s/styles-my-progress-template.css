@@ -218,3 +218,25 @@ div.logo-hours-div {
     gap: 10rem;
   }
 }
+
+/* ───────── Adaptive Layout for Smaller Screens ───────── */
+@media screen and (max-width: 1024px) {
+  #progress-cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;}}
+
+    /* ───────── Adjustments for Full HD Screens (1080p) ───────── */
+@media screen and (min-width: 1024px) and (max-width: 1920px) {
+  .progress-card {
+    transform: scale(0.9);
+  }
+
+  #progress-cards-container {
+    gap: 1rem;
+  }
+
+  .course-title {
+    font-size: 0.95rem;
+  }
+}

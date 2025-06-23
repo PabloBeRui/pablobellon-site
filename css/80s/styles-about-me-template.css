@@ -134,3 +134,22 @@ button#lang-btn.nav-button {
     font-size: 2rem;
   }
 }
+
+/* ───────── Adaptive Layout for Smaller Screens ───────── */
+@media screen and (max-width: 1080px) {
+  section#about-me {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  #photo-container,
+  #text-container {
+    width: 90%;
+    text-align: center;
+  }
+
+  #photo-container img {
+    max-width: 200px;
+  }
+}

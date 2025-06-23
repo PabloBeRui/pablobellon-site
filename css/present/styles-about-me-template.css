@@ -136,3 +136,33 @@ button#lang-btn.nav-button {
     font-size: 2rem;
   }
 }
+
+/* ───────── Adaptive Layout for Smaller Screens ───────── */
+@media screen and (max-width: 1024px) {
+  section#about-me {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  #photo-container,
+  #text-container {
+    width: 90%;
+    text-align: center;
+  }
+
+  #photo-container img {
+    max-width: 200px;
+  }
+}
+/* ───────── Adjustments for Full HD Screens (1080p) ───────── */
+@media screen and (min-width: 1024px) and (max-width: 1920px) {
+  #photo-container img {
+    max-width: 200px;
+    transform: scale(0.85);
+  }
+
+  #text-container {
+    font-size: 0.9rem;
+  }
+}

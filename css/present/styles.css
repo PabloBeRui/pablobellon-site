@@ -201,7 +201,7 @@ figure#coming-soon-figure .typewriter-class-2 {
   color: var(--charcoal-black);
   font-weight: 600;
   font-family: var(--main-font);
-  font-size: 1.2rem;
+  font-size: 1.2rem !important;
   padding: 0.6rem 1.2rem;
   margin: 0.5rem;
   border: none;
@@ -343,4 +343,32 @@ figure#coming-soon-figure .typewriter-class-2 {
     /* Add a 100px transparent top border to shift the thumb down inside its track */
     border-top: 100px solid transparent;
   }
+}
+
+
+
+/* ───────── Adjustments for screens max (1080p) ───────── */
+@media screen and (max-width: 1920px) {
+  body {
+    font-size: 0.85rem;
+  }
+
+  figcaption#typewriter-text {
+    font-size: 2rem !important;
+  }
+
+  footer a{
+    font-size: 1rem;
+  }
+
+  #img-transition-now{
+
+   height: 15rem;
+  }
+nav#change-style-button-nav button{
+
+font-size: 1rem;
+
+}
+
 }
