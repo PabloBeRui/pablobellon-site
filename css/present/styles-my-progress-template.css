@@ -135,7 +135,7 @@ li {
 
 /* ───────── Expanded Course Details ───────── */
 .course-card.expanded .course-details {
-  max-height: 800px; /* Must exceed the content’s maximum height for the expand/collapse animation to work */
+  max-height: 1500px; /* Must exceed the content’s maximum height for the expand/collapse animation to work */
   opacity: 1;
 }
 
@@ -217,16 +217,13 @@ div.logo-hours-div {
     justify-content: space-around;
     gap: 10rem;
   }
+
+  #progress-cards-container {
+    margin-bottom: 2rem;
+  }
 }
 
-/* ───────── Adaptive Layout for Smaller Screens ───────── */
-@media screen and (max-width: 1024px) {
-  #progress-cards-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;}}
-
-    /* ───────── Adjustments for Full HD Screens (1080p) ───────── */
+/* ───────── Adjustments for screens max (1080p) ───────── */
 @media screen and (min-width: 1024px) and (max-width: 1920px) {
   .progress-card {
     transform: scale(0.9);
@@ -240,3 +237,5 @@ div.logo-hours-div {
     font-size: 0.95rem;
   }
 }
+
+

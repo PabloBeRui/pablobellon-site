@@ -43,10 +43,8 @@
   border-radius: var(--corner-prop) calc(var(--corner-base) * 1.5)
     var(--corner-prop) calc(var(--corner-base) * 1.5);
   height: 100%;
- filter: drop-shadow(2px 0 4px var(--electric-mint)) drop-shadow(-2px 0 4px var(--electric-mint));
-
-
-
+  filter: drop-shadow(2px 0 4px var(--electric-mint))
+    drop-shadow(-2px 0 4px var(--electric-mint));
 }
 /* nav button  */
 
@@ -67,7 +65,7 @@ div#description-div {
 
 span.about-me-span {
   background-color: var(--charcoal-black);
-  color: white;
+  color: var(--electric-mint);
   /* TL TR BR BL */
   border-radius: calc(var(--corner-small) * 0.4) var(--corner-small)
     calc(var(--corner-small) * 0.4) var(--corner-small);
@@ -119,7 +117,7 @@ button#lang-btn.nav-button {
     width: 40%;
     border-radius: var(--corner-prop) calc(var(--corner-base) * 5)
       var(--corner-prop) calc(var(--corner-base) * 5);
-    gap: 6rem;
+    gap: 4rem;
   }
 
   #photo-and-description-div {
@@ -129,40 +127,29 @@ button#lang-btn.nav-button {
   #photo-div img {
     border-radius: var(--corner-prop) calc(var(--corner-base) * 2)
       var(--corner-prop) calc(var(--corner-base) * 2);
-    height: 200%;
+    height: 150%;
   }
 
   p {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
-/* ───────── Adaptive Layout for Smaller Screens ───────── */
-@media screen and (max-width: 1024px) {
-  section#about-me {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  #photo-container,
-  #text-container {
-    width: 90%;
-    text-align: center;
-  }
-
-  #photo-container img {
-    max-width: 200px;
-  }
-}
-/* ───────── Adjustments for Full HD Screens (1080p) ───────── */
+/* ───────── Adjustments for screens max (1080p) ───────── */
 @media screen and (min-width: 1024px) and (max-width: 1920px) {
-  #photo-container img {
-    max-width: 200px;
-    transform: scale(0.85);
-  }
-
   #text-container {
     font-size: 0.9rem;
+  }
+
+  #photo-div img {
+    height: 100%;
+  }
+
+  #about-me-div-content {
+    gap: 1rem;
+  }
+
+  p {
+    font-size: 1.2rem;
   }
 }
