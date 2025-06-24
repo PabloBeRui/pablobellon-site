@@ -136,10 +136,14 @@ button#lang-btn.nav-button {
 }
 
 /* ───────── Adaptive Layout for Smaller Screens ───────── */
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1920px) and (orientation: landscape) {
   section#about-me {
     flex-direction: column;
     align-items: center;
+    gap: 2rem;
+  }
+
+  #about-me-div-content {
     gap: 2rem;
   }
 
@@ -149,7 +153,14 @@ button#lang-btn.nav-button {
     text-align: center;
   }
 
-  #photo-container img {
-    max-width: 200px;
+  #photo-div img {
+    height: 8rem;
+  }
+
+  #photo-and-description-div {
+    gap: 3rem;
+  }
+  p {
+    font-size: 1.2rem;
   }
 }

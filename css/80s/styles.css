@@ -177,7 +177,8 @@ figure#coming-soon-figure .typewriter-class-2 {
 }
 
 /* ───────── Navigation Styles ───────── */
-#nav-buttons, #change-style-button-nav {
+#nav-buttons,
+#change-style-button-nav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -188,12 +189,13 @@ figure#coming-soon-figure .typewriter-class-2 {
   pointer-events: none;
 }
 
-#change-style-button-nav{
+#change-style-button-nav {
   width: 100%;
   justify-content: flex-end;
 }
 
-#nav-buttons.visible, #change-style-button-nav.visible {
+#nav-buttons.visible,
+#change-style-button-nav.visible {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -349,54 +351,95 @@ figure#coming-soon-figure .typewriter-class-2 {
   }
 }
 
-/* ───────── Adaptive Main Layout for Smaller Screens ───────── */
-@media screen and (max-width: 1024px) {
-  main#main-container {
-    width: 95%;
-    height: auto;
-    padding: 1rem 0;
+/* *********************************
+ * ───────── Media Queries ─────────
+ * ********************************* */
+
+/*───────────── Adapt layout for horizontal or larger screens───────────── */
+
+@media (orientation: landscape) {
+  /* initial video  */
+
+  figure#coming-soon-figure {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
   }
 
-  section#section-global-container {
-    width: 100%;
-    height: auto;
+  figure#coming-soon-figure video {
+    width: 30%;
   }
 
-  div#div-section-container {
-    flex-direction: column;
+  figure#coming-soon-figure figcaption {
+    font-size: 3rem;
+  }
+
+  /* footer  */
+
+  footer a {
+    font-size: 2rem;
+  }
+
+  footer {
+    justify-content: center;
+    gap: 4rem;
+  }
+
+  ul#ul-footer {
+    gap: 1rem;
+  }
+
+  /* nav buttons  */
+
+  .nav-button {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+  }
+
+  #nav-buttons {
     gap: 2rem;
   }
 
-  footer {
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 1rem 0;
-  }
+  /* Custom Scrollbar */
 
-  img.footer-ico {
-    height: 2.5rem;}}
-
-  /* ───────── Adjustments for Full HD Screens (1080p) ───────── */
-@media screen and (min-width: 1024px) and (max-width: 1920px) {
   body {
-    font-size: 0.85rem;
+    scrollbar-width: auto;
+    scrollbar-color: var(--neon-pink);
   }
 
-  h1, h2, h3 {
-    font-size: 90%;
+  /* WebKit browsers (Chrome, Safari, Edge) */
+  ::-webkit-scrollbar {
+    width: 12px; /* width of the scrollbar */
   }
 
-  main#main-container,
-  section#section-global-container,
-  div#div-section-container {
-    transform: scale(0.9);
+  ::-webkit-scrollbar-track {
+    background: transparent; /* transparent track */
   }
 
-  footer {
-    font-size: 0.85rem;
+  ::-webkit-scrollbar-thumb {
+    background: var(--neon-pink);
+    border-radius: 6px;
+    border: 3px solid transparent; /* inner margin for padding effect */
+    /* Limit the background to the content box so the transparent border acts as inner padding */
+    background-clip: content-box;
+    /* Add a 100px transparent top border to shift the thumb down inside its track */
+    border-top: 100px solid transparent;
+  }
+}
+
+/* minor resolution screens  */
+
+@media screen and (max-width: 1920px) and (orientation: landscape) {
+  figcaption#typewriter-text.typewriter-class-1 {
+    font-size: 2rem;
   }
 
-  img.footer-ico {
-    transform: scale(0.85);
+  button.nav-button {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+  figure#coming-soon-figure video {
+    width: 25%;
   }
 }

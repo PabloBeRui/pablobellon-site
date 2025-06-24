@@ -345,30 +345,24 @@ figure#coming-soon-figure .typewriter-class-2 {
   }
 }
 
+/* minor resolution screens  */
 
+@media screen and (max-width: 1920px) and (orientation: landscape) {
+  /* Estilos para pantallas horizontales de 1080p o menores */
 
-/* ───────── Adjustments for screens max (1080p) ───────── */
-@media screen and (max-width: 1920px) {
-  body {
-    font-size: 0.85rem;
+  #img-transition-now {
+    height: 15rem;
   }
 
-  figcaption#typewriter-text {
-    font-size: 2rem !important;
-  }
-
-  footer a{
+  footer a {
     font-size: 1rem;
   }
 
-  #img-transition-now{
-
-   height: 15rem;
+  nav#change-style-button-nav button {
+    font-size: 1rem;
   }
-nav#change-style-button-nav button{
 
-font-size: 1rem;
-
-}
-
+  figure#coming-soon-figure figcaption#typewriter-text {
+    font-size: 2rem;
+  }
 }

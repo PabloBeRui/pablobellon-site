@@ -219,14 +219,7 @@ div.logo-hours-div {
   }
 }
 
-/* ───────── Adaptive Layout for Smaller Screens ───────── */
-@media screen and (max-width: 1024px) {
-  #progress-cards-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-}
+
 
 /* ───────── Adjustments for Full HD Screens (1080p) ───────── */
 @media screen and (min-width: 1024px) and (max-width: 1920px) {
