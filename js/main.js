@@ -1,37 +1,32 @@
-// main.js
+/* *********************************
+ * ────── main.js ──────
+ * ********************************* */
 
 // Import modules from index.js
 
 import {
-  backgroundVideo,
   navigationButtons,
-  personalVideoAnimation,
   touchOutBack,
-  typewriterEffect,
+  loadInitialTemplate,
+  introAnimations,
 } from "./modules/index.js";
 
-// Listen for DOMContentLoaded to ensure the HTML is fully parsed
-// before running any initialization code
+/*Listen for DOMContentLoaded to ensure the HTML is fully parsed
+ before running any initialization code*/
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Load the appropriate template ('home' or 'homeNow') based on the saved theme
+  // Expected return is a boolean indicating the selected mode.
 
-   /* *********************************
-   * ───────── Intro Animations ─────────
+  const startInNowMode = loadInitialTemplate();
+
+  /* *********************************
+   * ───────── Intro Animations (80s only)─────────
    * ********************************* */
-
-  // Slow down the VHS background video and restart smoothly
-
-  backgroundVideo("bg-video");
-
-  // Run the retro terminal typewriter effect on the intro text
-
-  typewriterEffect("typewriter-text");
-
-  // Play the personal “coming soon” video after a short delay
-
-  personalVideoAnimation("coming-soon-vid");
-
-   /* *********************************
+  if (!startInNowMode) {
+    introAnimations();
+  }
+  /* *********************************
    * ───────── Navigation Setup ─────────
    * ********************************* */
 

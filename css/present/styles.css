@@ -1,0 +1,370 @@
+/* ───────── Global Variables ───────── */
+:root {
+  --electric-mint: #00ffb3;
+  --charcoal-black: rgba(28, 28, 30, 0.85);
+  --main-font: "nunito", sans-serif;
+
+  --corner-base: 12px; /* Base radius para todos los bordes */
+  --corner-prop: 12px; /* Ahora igual al base, para consistencia */
+  --corner-med: 10px; /* Un poco más pequeño si se necesita */
+  --corner-small: 8px; /* Para detalles finos como botones pequeños */
+}
+
+/* ───────── Base Styles & Resets ───────── */
+/* Import custom retro font (VCR-OSD-Mono) */
+
+@font-face {
+  font-family: "nunito";
+  src: url(../../assets/fonts/NunitoSans-VariableFont.ttf);
+  font-weight: normal;
+}
+
+* {
+  /* Universal Reset */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Remove touch highlight everywhere */
+  /* Prevent the default semi-transparent overlay that appears on touch (tap highlight)
+   across all elements in mobile browsers (iOS Safari, Chrome for Android, etc.) */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Body styling */
+body {
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  font-family: var(--main-font);
+  background-color: white;
+
+  /* hide scroll bar  */
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+  -ms-overflow-style: none;
+}
+
+/* ───────── Layout Styles ───────── */
+/* the canvas is always positioned behind content */
+video#bg-video {
+  display: none;
+}
+
+main#main-container {
+  height: 85%;
+  width: 85%;
+  border-radius: var(--corner-base);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5;
+}
+
+section#section-global-container {
+  height: 95%;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div#div-section-container {
+  height: 95%;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ───────── Link Styles ───────── */
+a {
+  text-decoration: none;
+  color: var(--electric-mint);
+  transition: color 0.5s ease-in-out;
+}
+
+a:hover {
+  color: var(--charcoal-black);
+}
+
+/* ───────── Footer Styles ───────── */
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(28, 28, 30, 0.85); /* fondo translúcido */
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid var(--electric-mint);
+}
+
+img.footer-ico {
+  transition: box-shadow 0.5s ease-in-out;
+  height: 3rem;
+  /* electric mint filter  */
+  filter: brightness(0) saturate(100%) invert(47%) sepia(84%) saturate(489%)
+    hue-rotate(114deg) brightness(105%) contrast(101%);
+}
+
+img.footer-ico:hover {
+  box-shadow: 0 0 20px var(--charcoal-black);
+  border-radius: 100%;
+}
+
+ul#ul-footer {
+  display: flex;
+  list-style: none;
+}
+
+footer a {
+  font-size: 1.2rem;
+}
+
+/* ───────── Coming Soon Figure Styles ───────── */
+figure#coming-soon-figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+figure#coming-soon-figure figcaption {
+  margin: 2rem auto 1rem auto; /* top auto bottom auto */
+  font-size: 1.5rem;
+  color: var(--charcoal-black);
+  text-align: center;
+  /* width: fit-content; */
+}
+
+figure#coming-soon-figure .typewriter-class-2 {
+  color: var(--electric-mint);
+}
+
+#img-transition-now {
+  border-radius: 10%;
+}
+
+/* Balancing lines */
+#typewriter-text {
+  line-height: 1.5;
+  word-break: break-word;
+  text-align: left;
+}
+
+/* ───────── Navigation Styles ───────── */
+
+#change-style-button-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  margin-top: 1rem;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  background-color: var(--charcoal-black);
+  border-bottom: 1px solid var(--electric-mint);
+  /* background nav style   */
+  width: 100%;
+}
+
+#nav-buttons.visible,
+#change-style-button-nav.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+#nav-back-button {
+  position: sticky;
+  top: 0; /* Offset: distance (in px) from the top edge of its container at which it becomes fixed */
+  z-index: 10; /* Ensure the button stays above other content */
+}
+
+/* nav buttons */
+.nav-button {
+  display: flex;
+  background-color: var(--electric-mint);
+  color: var(--charcoal-black);
+  font-weight: 600;
+  font-family: var(--main-font);
+  font-size: 1.2rem !important;
+  padding: 0.6rem 1.2rem;
+  margin: 0.5rem;
+  border: none;
+  /* TL TR BR BL */
+  border-radius: var(--corner-base);
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-button:hover {
+  background-color: var(--charcoal-black);
+  color: var(--electric-mint);
+  box-shadow: 0 6px 20px rgba(28, 28, 30, 0.25);
+}
+
+.nav-button:active {
+  background-color: #006f5f; /* darker mint */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.nav-button:focus {
+  outline: 2px solid var(--electric-mint);
+  outline-offset: 3px;
+}
+
+/* ───────── Smooth Effects ───────── */
+/* Fade-in with upward slide */
+.smooth-fade-in-upward {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInSlide 1s ease forwards;
+}
+
+@keyframes fadeInSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-out with downward slide (inverse of fade-in) */
+.smooth-fade-out-upward {
+  animation: fadeOutSlide 1s ease forwards;
+}
+
+@keyframes fadeOutSlide {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* *********************************
+ * ───────── Media Queries ─────────
+ * ********************************* */
+
+/*───────────── Adapt layout for horizontal or larger screens───────────── */
+
+@media (orientation: landscape) {
+  /* initial video  */
+
+  figure#coming-soon-figure {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    width: 50%;
+  }
+
+  figure#coming-soon-figure video {
+    width: 30%;
+  }
+
+  figure#coming-soon-figure figcaption {
+    font-size: 3rem;
+  }
+
+  /* footer  */
+
+  footer a {
+    font-size: 2rem;
+  }
+
+  footer {
+    justify-content: center;
+    gap: 6rem;
+    padding-top: 0.5rem;
+  }
+
+  ul#ul-footer {
+    gap: 1rem;
+  }
+
+  /* nav buttons  */
+  #change-style-button-nav {
+    width: 50%;
+    justify-content: flex-end;
+    gap: 2rem;
+    border-radius: var(--corner-base);
+    background-color: var(--charcoal-black);
+  }
+  .nav-button {
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  #nav-buttons {
+    gap: 2rem;
+  }
+
+  /* Custom Scrollbar */
+
+  body {
+    scrollbar-width: auto;
+    scrollbar-color: var(--electric-mint);
+  }
+
+  /* WebKit browsers (Chrome, Safari, Edge) */
+  ::-webkit-scrollbar {
+    width: 12px; /* width of the scrollbar */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent; /* transparent track */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--electric-mint);
+    border-radius: 6px;
+    border: 3px solid transparent; /* inner margin for padding effect */
+    /* Limit the background to the content box so the transparent border acts as inner padding */
+    background-clip: content-box;
+    /* Add a 100px transparent top border to shift the thumb down inside its track */
+    border-top: 100px solid transparent;
+  }
+}
+
+/* minor resolution screens  */
+
+@media screen and (max-width: 1920px) and (orientation: landscape) {
+  /* Estilos para pantallas horizontales de 1080p o menores */
+
+  #img-transition-now {
+    height: 15rem;
+  }
+
+  footer a {
+    font-size: 1rem;
+  }
+
+  nav#change-style-button-nav button {
+    font-size: 1rem;
+  }
+
+  figure#coming-soon-figure figcaption#typewriter-text {
+    font-size: 2rem;
+  }
+
+  figure#coming-soon-figure {
+    gap: 1rem;
+  }
+}

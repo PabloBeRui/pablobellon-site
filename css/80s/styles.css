@@ -17,7 +17,7 @@
 /* Import custom retro font (VCR-OSD-Mono) */
 @font-face {
   font-family: "VT323-Regular";
-  src: url(../assets/fonts/VT323-Regular.ttf);
+  src: url(../../assets/fonts/VT323-Regular.ttf);
   font-weight: normal;
 }
 
@@ -144,7 +144,7 @@ figure#coming-soon-figure {
 }
 
 figure#coming-soon-figure video {
-  width: 100%;
+  width: 85%;
   height: auto;
   border-radius: 75%;
   opacity: 0.5;
@@ -177,7 +177,8 @@ figure#coming-soon-figure .typewriter-class-2 {
 }
 
 /* ───────── Navigation Styles ───────── */
-#nav-buttons {
+#nav-buttons,
+#change-style-button-nav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -188,7 +189,13 @@ figure#coming-soon-figure .typewriter-class-2 {
   pointer-events: none;
 }
 
-#nav-buttons.visible {
+#change-style-button-nav {
+  width: 100%;
+  justify-content: flex-end;
+}
+
+#nav-buttons.visible,
+#change-style-button-nav.visible {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -341,5 +348,21 @@ figure#coming-soon-figure .typewriter-class-2 {
     background-clip: content-box;
     /* Add a 100px transparent top border to shift the thumb down inside its track */
     border-top: 100px solid transparent;
+  }
+}
+
+/* minor resolution screens  */
+
+@media screen and (max-width: 1920px) and (orientation: landscape) {
+  figcaption#typewriter-text.typewriter-class-1 {
+    font-size: 2rem;
+  }
+
+  button.nav-button {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+  figure#coming-soon-figure video {
+    width: 25%;
   }
 }

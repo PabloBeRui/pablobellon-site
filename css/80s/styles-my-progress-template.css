@@ -2,7 +2,7 @@
 #my-progress-div-content {
   height: 100%;
   width: 100%;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 0.5rem;
   display: flex;
@@ -135,7 +135,7 @@ li {
 
 /* ───────── Expanded Course Details ───────── */
 .course-card.expanded .course-details {
-  max-height: 800px; /* Must exceed the content’s maximum height for the expand/collapse animation to work */
+  max-height: 1500px; /* Must exceed the content’s maximum height for the expand/collapse animation to work */
   opacity: 1;
 }
 
@@ -215,6 +215,21 @@ div.logo-hours-div {
   /* Logo hours div adjustments for landscape */
   div.logo-hours-div {
     justify-content: space-around;
-    gap: 10rem;
+    gap: 5rem;
+  }
+}
+
+/* ───────── Adjustments for Full HD Screens (1080p) ───────── */
+@media screen and (min-width: 1024px) and (max-width: 1920px) {
+  .progress-card {
+    transform: scale(0.9);
+  }
+
+  #progress-cards-container {
+    gap: 1rem;
+  }
+
+  .course-title {
+    font-size: 0.95rem;
   }
 }

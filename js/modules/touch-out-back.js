@@ -6,8 +6,10 @@
 /* *********************************
  * ───────── Module Imports ─────────
  * ********************************* */
+import homeNow from "../templates/home-now.js";
 import home from "../templates/home.js";
 import { replaceWithFadeOut } from "./replace-with-fade-out.js";
+import { nowOr80s } from "./state.js";
 
 /* *********************************
  * ───────── Touch Out Back ─────────
@@ -29,9 +31,9 @@ export const touchOutBack = (idValue) => {
     // If click was neither inside the container nor on a button,
     // reset the container to the home template
     if (!clickedInsideContent && !clickedOnButton) {
-      // Triggers a smooth fade-out animation, then replaces the container's content with the home template
+      // Triggers a smooth fade-out animation, then replaces the container's content with the home or home now template
 
-      replaceWithFadeOut(variableContent, home);
+      replaceWithFadeOut(variableContent, nowOr80s ? homeNow : home);
     }
   });
 };

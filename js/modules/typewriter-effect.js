@@ -3,13 +3,19 @@
  * Simulates a retro terminal typewriter effect and dispatches an event upon completion.
  */
 
+//typewriter text content
+import { typewriterText } from "../data/fragments.js";
+
 /* *********************************
  * ────── Typewriter Effect ──────
  * ********************************* */
 
 export const typewriterEffect = (idValue) => {
-  const text =
-    "I’m currently studying and working on new projects 👾 Stay tuned for updates!";
+  // Clear any existing text before starting the typewriter animation
+
+  document.getElementById("typewriter-text").innerHTML = "";
+
+  const text = typewriterText;
 
   const typewriterElement = document.getElementById(idValue);
 
