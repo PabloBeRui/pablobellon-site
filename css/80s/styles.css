@@ -144,7 +144,7 @@ figure#coming-soon-figure {
 }
 
 figure#coming-soon-figure video {
-  width: 100%;
+  width: 85%;
   height: auto;
   border-radius: 75%;
   opacity: 0.5;
@@ -350,7 +350,6 @@ figure#coming-soon-figure .typewriter-class-2 {
     border-top: 100px solid transparent;
   }
 }
-
 
 /* minor resolution screens  */
 

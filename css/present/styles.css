@@ -151,9 +151,9 @@ figure#coming-soon-figure .typewriter-class-2 {
   color: var(--electric-mint);
 }
 
-/* #img-transition-now{
-  background-color: var(--charcoal-black);
-} */
+#img-transition-now {
+  border-radius: 10%;
+}
 
 /* Balancing lines */
 #typewriter-text {

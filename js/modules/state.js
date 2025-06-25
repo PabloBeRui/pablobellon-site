@@ -12,15 +12,13 @@
  */
 
 // Default value: false = now mode, true = 80s mode
-export let nowOr80s = sessionStorage.getItem("theme") ==="present"
-
+export let nowOr80s = sessionStorage.getItem("theme") === "present";
 
 /**
  * Toggles the current theme mode.
  * Call this to switch between "now" and "80s".
  */
 export const toggleNowOr80s = () => {
-    nowOr80s = !nowOr80s;
-    sessionStorage.setItem("theme", nowOr80s ? "present" : "80s");
+  nowOr80s = !nowOr80s;
+  sessionStorage.setItem("theme", nowOr80s ? "present" : "80s");
 };
-
