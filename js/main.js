@@ -16,6 +16,7 @@ import {
 
 document.addEventListener("DOMContentLoaded", () => {
   // Load the appropriate template ('home' or 'homeNow') based on the saved theme
+  // Expected return is a boolean indicating the selected mode.
 
   const startInNowMode = loadInitialTemplate();
 
