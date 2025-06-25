@@ -133,6 +133,10 @@ button#lang-btn.nav-button {
   p {
     font-size: 2rem;
   }
+
+  img#lang-ico {
+    height: 2rem;
+  }
 }
 
 /* ───────── Adaptive Layout for Smaller Screens ───────── */
@@ -162,5 +166,8 @@ button#lang-btn.nav-button {
   }
   p {
     font-size: 1.2rem;
+  }
+  img#lang-ico {
+    height: 1.5rem;
   }
 }
