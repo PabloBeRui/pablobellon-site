@@ -110,6 +110,9 @@ footer {
 img.footer-ico {
   transition: box-shadow 0.5s ease-in-out;
   height: 3rem;
+  /* electric mint filter  */
+  filter: brightness(0) saturate(100%) invert(47%) sepia(84%) saturate(489%)
+    hue-rotate(114deg) brightness(105%) contrast(101%);
 }
 
 img.footer-ico:hover {
@@ -124,11 +127,6 @@ ul#ul-footer {
 
 footer a {
   font-size: 1.2rem;
-}
-/* electric mint filter  */
-img.footer-ico {
-  filter: brightness(0) saturate(100%) invert(47%) sepia(84%) saturate(489%)
-    hue-rotate(114deg) brightness(105%) contrast(101%);
 }
 
 /* ───────── Coming Soon Figure Styles ───────── */

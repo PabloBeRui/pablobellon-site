@@ -224,15 +224,21 @@ div.logo-hours-div {
 
 /* ───────── Adjustments for screens max (1080p) ───────── */
 @media screen and (min-width: 1024px) and (max-width: 1920px) {
-  .progress-card {
-    transform: scale(0.9);
-  }
-
   #progress-cards-container {
     gap: 1rem;
   }
 
-  .course-title {
-    font-size: 0.95rem;
+  h3.course-title {
+    font-size: 1rem;
+  }
+  span.course-year {
+    font-size: 1rem;
+  }
+  b#b-hours {
+    font-size: 1rem;
+  }
+
+  div.course-subjects ul li {
+    font-size: 1rem;
   }
 }
