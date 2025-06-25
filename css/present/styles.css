@@ -40,7 +40,7 @@ body {
   align-items: center;
   user-select: none;
   font-family: var(--main-font);
-  background-color: white;
+  background-color: #F8FFFA;  /*Mint white*/
 
   /* hide scroll bar  */
   scrollbar-width: none;
