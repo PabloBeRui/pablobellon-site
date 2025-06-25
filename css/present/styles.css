@@ -363,4 +363,8 @@ figure#coming-soon-figure .typewriter-class-2 {
   figure#coming-soon-figure figcaption#typewriter-text {
     font-size: 2rem;
   }
+
+  figure#coming-soon-figure {
+    gap: 1rem;
+  }
 }

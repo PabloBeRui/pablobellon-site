@@ -215,7 +215,7 @@ div.logo-hours-div {
   /* Logo hours div adjustments for landscape */
   div.logo-hours-div {
     justify-content: space-around;
-    gap: 10rem;
+    gap: 5rem;
   }
 }
 
