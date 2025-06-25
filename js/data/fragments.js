@@ -64,8 +64,8 @@ export const descriptionEn = `
 
 // HTML templates for language toggle buttons
 
-export const ButtonEs = `<button id="lang-btn" class="lang-toggle-btn nav-button"><img src="../../images/icons/globe_green_transparent_language.png" id="lang-ico"> EN</button>`;
-export const ButtonEn = `<button id="lang-btn" class="lang-toggle-btn nav-button"><img src="../../images/icons/globe_green_transparent_language.png" id="lang-ico"> ES</button>`;
+export const ButtonEs = `<button id="lang-btn" class="lang-toggle-btn nav-button"><img src="../../assets/images/icons/globe_green_transparent_language.png" id="lang-ico"> EN</button>`;
+export const ButtonEn = `<button id="lang-btn" class="lang-toggle-btn nav-button"><img src="../../assets/images/icons/globe_green_transparent_language.png" id="lang-ico"> ES</button>`;
 
 /* *********************************
  * ───── Typewriter text ─────

@@ -75,7 +75,7 @@ span.about-me-span {
 
 span.skills-span {
   background-color: var(--electric-mint);
-  color: white;
+  color: var(--charcoal-black);
   /* TL TR BR BL */
   border-radius: calc(var(--corner-small) * 0.4) var(--corner-small)
     calc(var(--corner-small) * 0.4) var(--corner-small);

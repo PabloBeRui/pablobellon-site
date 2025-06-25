@@ -7,7 +7,7 @@ export const courses = [
     year: 2023,
     totalHours: 400,
     approved: true,
-    img: "../../images/icons/my-progress-icons/hackaboss.png",
+    img: "../../assets/images/icons/my-progress-icons/hackaboss.png",
     url: "https://www.hackaboss.com/",
     projects: [],
     subjects: [
@@ -24,7 +24,7 @@ export const courses = [
     year: 2023,
     totalHours: 480,
     approved: true,
-    img: "../../images/icons/my-progress-icons/campusdual.png",
+    img: "../../assets/images/icons/my-progress-icons/campusdual.png",
     url: "https://www.campusdual.com/",
     projects: [],
     subjects: [
@@ -41,7 +41,7 @@ export const courses = [
     year: 2024,
     totalHours: 400,
     approved: true,
-    img: "../../images/icons/my-progress-icons/tokioschool.png",
+    img: "../../assets/images/icons/my-progress-icons/tokioschool.png",
     url: "https://www.tokioschool.com/",
     projects: [
       "<a href='https://elelegido.netlify.app/'>Restaurante El Elegido</a>",
@@ -60,7 +60,7 @@ export const courses = [
     year: 2025,
     totalHours: 2000,
     approved: false,
-    img: "../../images/icons/my-progress-icons/ilerna.png",
+    img: "../../assets/images/icons/my-progress-icons/ilerna.png",
     url: "https://www.ilerna.es/",
     projects: [],
     subjects: [

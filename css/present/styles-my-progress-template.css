@@ -82,7 +82,6 @@
 /* ───────── Course Year ───────── */
 .course-year {
   font-size: 0.9rem;
-  color: var(--charcoal-black);
   margin-right: 0.25rem; /* space before the status emoji */
 }
 
@@ -237,5 +236,3 @@ div.logo-hours-div {
     font-size: 0.95rem;
   }
 }
-
-

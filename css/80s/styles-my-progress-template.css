@@ -2,7 +2,7 @@
 #my-progress-div-content {
   height: 100%;
   width: 100%;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 0.5rem;
   display: flex;
@@ -218,8 +218,6 @@ div.logo-hours-div {
     gap: 10rem;
   }
 }
-
-
 
 /* ───────── Adjustments for Full HD Screens (1080p) ───────── */
 @media screen and (min-width: 1024px) and (max-width: 1920px) {
