@@ -7,18 +7,30 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Dependency directories
+node_modules/
+
+# Vite build output (keep 'dist/' tracked for OVHcloud deploy)
+dist-ssr/
 *.local
 
-# Editor directories and files
+# Env files
+.env
+.env.*.local
+
+# VS Code settings (keep useful ones)
 .vscode/*
+!.vscode/settings.json
 !.vscode/extensions.json
-.idea
+
+# IDEs and OS metadata
 .DS_Store
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Optional build/cache folders
+.cache/

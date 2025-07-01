@@ -1,0 +1,11 @@
+{
+  // This file does not affect compilation.
+  // It helps VS Code understand paths and aliases, and update imports when files are moved.
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["**/*"]
+}

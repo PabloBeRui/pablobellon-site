@@ -15,7 +15,7 @@
 
 @font-face {
   font-family: "nunito";
-  src: url(../../assets/fonts/NunitoSans-VariableFont.ttf);
+  src: url(../../public/assets/fonts/NunitoSans-VariableFont.ttf);
   font-weight: normal;
 }
 
@@ -40,7 +40,7 @@ body {
   align-items: center;
   user-select: none;
   font-family: var(--main-font);
-  background-color: #F8FFFA;  /*Mint white*/
+  background-color: #f8fffa; /*Mint white*/
 
   /* hide scroll bar  */
   scrollbar-width: none;
