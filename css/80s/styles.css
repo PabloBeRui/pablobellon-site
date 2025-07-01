@@ -1,0 +1,368 @@
+/* ───────── Global Variables ───────── */
+:root {
+  --neon-pink: #ff1493;
+  --terminal-green: #00cc00;
+  --main-font: "VT323-Regular", sans-serif;
+
+  /* custom corner radius */
+  --corner-base: 20px; /* base radius for TR/BL */
+  --corner-prop: calc(
+    var(--corner-base) * 0.4
+  ); /* 40% of base = 8px for TL/BR */
+  --corner-med: 15px; /* 0.75× scale */
+  --corner-small: 15px; /* 0.5× scale */
+}
+
+/* ───────── Base Styles & Resets ───────── */
+/* Import custom retro font (VCR-OSD-Mono) */
+@font-face {
+  font-family: "VT323-Regular";
+  src: url(/assets/fonts/VT323-Regular.ttf);
+  font-weight: normal;
+}
+
+* {
+  /* Universal Reset */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Remove touch highlight everywhere */
+  /* Prevent the default semi-transparent overlay that appears on touch (tap highlight)
+   across all elements in mobile browsers (iOS Safari, Chrome for Android, etc.) */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Body styling */
+body {
+  /* fallback static background */
+  background-color: black;
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  font-family: var(--main-font);
+
+  /* hide scroll bar  */
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+  -ms-overflow-style: none;
+}
+
+/* ───────── Layout Styles ───────── */
+/* the canvas is always positioned behind content */
+video#bg-video {
+  position: absolute;
+  width: 100%;
+  height: 100dvh;
+  top: 0;
+  left: 0;
+  object-fit: fill;
+  z-index: -1;
+}
+
+main#main-container {
+  height: 85%;
+  width: 85%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.1;
+}
+
+section#section-global-container {
+  height: 95%;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div#div-section-container {
+  height: 95%;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ───────── Link Styles ───────── */
+a {
+  text-decoration: none;
+  color: var(--neon-pink);
+  transition: color 0.5s ease-in-out;
+}
+
+a:hover {
+  color: var(--terminal-green);
+}
+
+/* ───────── Footer Styles ───────── */
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+img.footer-ico {
+  transition: box-shadow 0.5s ease-in-out;
+  height: 3rem;
+}
+
+img.footer-ico:hover {
+  box-shadow: 0 0 20px var(--terminal-green);
+  border-radius: 100%;
+}
+
+ul#ul-footer {
+  display: flex;
+  list-style: none;
+}
+
+footer a {
+  font-size: 1.2rem;
+}
+
+/* ───────── Coming Soon Figure Styles ───────── */
+figure#coming-soon-figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2rem;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+figure#coming-soon-figure video {
+  width: 85%;
+  height: auto;
+  border-radius: 75%;
+  opacity: 0.5;
+}
+
+figure#coming-soon-figure figcaption {
+  margin-top: 2rem;
+  padding-left: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--terminal-green);
+  margin-bottom: 1rem;
+}
+
+/* ───────── Typewriter Effect ───────── */
+/* Retro Terminal Typewriter Effect (terminal green to neon pink) */
+.typewriter-class-1 {
+  color: var(--terminal-green);
+  transition: color 1s ease-in-out;
+}
+
+figure#coming-soon-figure .typewriter-class-2 {
+  color: var(--neon-pink);
+}
+
+/* Balancing lines */
+#typewriter-text {
+  line-height: 1.5;
+  word-break: break-word;
+  text-align: left;
+}
+
+/* ───────── Navigation Styles ───────── */
+#nav-buttons,
+#change-style-button-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  margin-top: 1rem;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+#change-style-button-nav {
+  width: 100%;
+  justify-content: flex-end;
+}
+
+#nav-buttons.visible,
+#change-style-button-nav.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+#nav-back-button {
+  position: sticky;
+  top: 0; /* Offset: distance (in px) from the top edge of its container at which it becomes fixed */
+  z-index: 10; /* Ensure the button stays above other content */
+}
+
+/* nav buttons */
+.nav-button {
+  display: flex;
+  background-color: var(--neon-pink);
+  color: black;
+  font-weight: 700;
+  font-family: var(--main-font);
+  font-size: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  margin: 0.75rem;
+  border: none;
+  /* TL TR BR BL */
+  border-radius: var(--corner-prop) var(--corner-base) var(--corner-prop)
+    var(--corner-base);
+  cursor: pointer;
+  box-shadow: 0 0 0.625rem var(--neon-pink);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-button:hover {
+  background-color: var(--terminal-green);
+  color: black;
+  box-shadow: 0 0 15px var(--terminal-green);
+}
+
+.nav-button:active {
+  background-color: #008800;
+  box-shadow: 0 0 8px #008800;
+}
+
+.nav-button:focus {
+  outline: 2px solid var(--terminal-green);
+  outline-offset: 2px;
+}
+
+/* ───────── Smooth Effects ───────── */
+/* Fade-in with upward slide */
+.smooth-fade-in-upward {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInSlide 1s ease forwards;
+}
+
+@keyframes fadeInSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-out with downward slide (inverse of fade-in) */
+.smooth-fade-out-upward {
+  animation: fadeOutSlide 1s ease forwards;
+}
+
+@keyframes fadeOutSlide {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* *********************************
+ * ───────── Media Queries ─────────
+ * ********************************* */
+
+/*───────────── Adapt layout for horizontal or larger screens───────────── */
+
+@media (orientation: landscape) {
+  /* initial video  */
+
+  figure#coming-soon-figure {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  figure#coming-soon-figure video {
+    width: 30%;
+  }
+
+  figure#coming-soon-figure figcaption {
+    font-size: 3rem;
+  }
+
+  /* footer  */
+
+  footer a {
+    font-size: 2rem;
+  }
+
+  footer {
+    justify-content: center;
+    gap: 4rem;
+  }
+
+  ul#ul-footer {
+    gap: 1rem;
+  }
+
+  /* nav buttons  */
+
+  .nav-button {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+  }
+
+  #nav-buttons {
+    gap: 2rem;
+  }
+
+  /* Custom Scrollbar */
+
+  body {
+    scrollbar-width: auto;
+    scrollbar-color: var(--neon-pink);
+  }
+
+  /* WebKit browsers (Chrome, Safari, Edge) */
+  ::-webkit-scrollbar {
+    width: 12px; /* width of the scrollbar */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent; /* transparent track */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--neon-pink);
+    border-radius: 6px;
+    border: 3px solid transparent; /* inner margin for padding effect */
+    /* Limit the background to the content box so the transparent border acts as inner padding */
+    background-clip: content-box;
+    /* Add a 100px transparent top border to shift the thumb down inside its track */
+    border-top: 100px solid transparent;
+  }
+}
+
+/* minor resolution screens  */
+
+@media screen and (max-width: 1920px) and (orientation: landscape) {
+  figcaption#typewriter-text.typewriter-class-1 {
+    font-size: 2rem;
+  }
+
+  button.nav-button {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+  figure#coming-soon-figure video {
+    width: 25%;
+  }
+}
