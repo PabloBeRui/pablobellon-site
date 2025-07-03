@@ -58,9 +58,9 @@
     <button
       id="change-style-button"
       class="nav-button"
-      aria-label="Switch to present theme"
-      title="Switch to present theme">
-      Now
+      aria-label="Switch theme"
+      title="Switch theme">
+      <img src="/assets/images/change.png"
     </button>
   </nav>
 
@@ -117,9 +117,9 @@
         <button
           id="change-style-button"
           class="nav-button"
-          aria-label="Switch to 80s theme"
-          title="Switch to 80s theme">
-          80s
+          aria-label="Switch theme"
+          title="Switch theme">
+          <img src="/assets/images/change.png"
         </button>
       </nav>
       <figure id="coming-soon-figure" class="smooth-fade-in-upward">
@@ -208,4 +208,4 @@
         </nav>
         <div id="progress-cards-container"></div>
       </div>
-`,u=(t,e)=>{t.classList.add("smooth-fade-out-upward"),setTimeout(()=>{t.innerHTML=e,t.classList.remove("smooth-fade-out-upward")},1e3)},j=document.querySelectorAll("link[data-theme-link]");let l=sessionStorage.getItem("theme")||"80s";function b(t){j.forEach(e=>{e.href=e.href.replace(/\/(80s|present)\//,`/${t}/`)})}function A(){l=l==="80s"?"present":"80s",b(l),sessionStorage.setItem("theme",l)}b(l);let r=sessionStorage.getItem("theme")==="present";const B=()=>{r=!r,sessionStorage.setItem("theme",r?"present":"80s")},C=(t,e)=>{const a=document.querySelector("#nav-buttons"),o=document.querySelector("#change-style-button-nav");document.addEventListener("typewriterFinished",()=>{a.classList.add("visible"),o.classList.add("visible")});const s=document.querySelector(t);s.addEventListener("click",n=>{n.target?.id==="about-me-button"?(s.innerHTML=I,M()):n.target?.id==="my-progress-button"?(s.innerHTML=H,T()):n.target?.id==="back-button"?u(s,r?d:c):n.target?.id==="change-style-button"&&(setTimeout(()=>{A()},1e3),B(),u(s,r?d:c))})},D=t=>{window.addEventListener("click",e=>{const a=document.querySelector("#section-global-container"),o=e.target.closest(t),s=e.target.closest("button");!o&&!s&&u(a,r?d:c)})};document.addEventListener("DOMContentLoaded",()=>{L()||S(),C("#section-global-container"),D("#section-global-container")});
+`,u=(t,e)=>{t.classList.add("smooth-fade-out-upward"),setTimeout(()=>{t.innerHTML=e,t.classList.remove("smooth-fade-out-upward")},1e3)},j=document.querySelectorAll("link[data-theme-link]");let l=sessionStorage.getItem("theme")||"80s";function b(t){j.forEach(e=>{e.href=e.href.replace(/\/(80s|present)\//,`/${t}/`)})}function A(){l=l==="80s"?"present":"80s",b(l),sessionStorage.setItem("theme",l)}b(l);let r=sessionStorage.getItem("theme")==="present";const B=()=>{r=!r,sessionStorage.setItem("theme",r?"present":"80s")},C=(t,e)=>{const a=document.querySelector("#nav-buttons"),o=document.querySelector("#change-style-button-nav");document.addEventListener("typewriterFinished",()=>{a.classList.add("visible"),o.classList.add("visible")});const s=document.querySelector(t);s.addEventListener("click",n=>{n.target?.id==="about-me-button"?(s.innerHTML=I,M()):n.target?.id==="my-progress-button"?(s.innerHTML=H,T()):n.target?.id==="back-button"?u(s,r?d:c):n.target.closest?.("#change-style-button")&&(setTimeout(()=>{A()},1e3),B(),u(s,r?d:c))})},D=t=>{window.addEventListener("click",e=>{const a=document.querySelector("#section-global-container"),o=e.target.closest(t),s=e.target.closest("button");!o&&!s&&u(a,r?d:c)})};document.addEventListener("DOMContentLoaded",()=>{L()||S(),C("#section-global-container"),D("#section-global-container")});

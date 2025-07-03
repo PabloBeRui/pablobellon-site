@@ -7,9 +7,9 @@ const home = `
     <button
       id="change-style-button"
       class="nav-button"
-      aria-label="Switch to present theme"
+      aria-label="Switch theme"
       title="Switch theme">
-      <img src="/public/assets/images/change.png"
+      <img src="/assets/images/change.png"
     </button>
   </nav>
 

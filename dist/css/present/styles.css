@@ -227,6 +227,15 @@ figure#coming-soon-figure .typewriter-class-2 {
   outline-offset: 3px;
 }
 
+#change-style-button img {
+  transition: filter 0.3s ease;
+}
+
+#change-style-button:hover img {
+  filter: brightness(0) saturate(100%) invert(47%) sepia(84%) saturate(800%)
+    hue-rotate(114deg) brightness(130%) contrast(110%);
+}
+
 /* ───────── Smooth Effects ───────── */
 /* Fade-in with upward slide */
 .smooth-fade-in-upward {
