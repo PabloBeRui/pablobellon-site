@@ -22,8 +22,8 @@ const homeNow = `
           id="change-style-button"
           class="nav-button"
           aria-label="Switch to 80s theme"
-          title="Switch to 80s theme">
-          80s
+          title="Switch theme">
+          <img src="/public/assets/images/change.png"
         </button>
       </nav>
       <figure id="coming-soon-figure" class="smooth-fade-in-upward">

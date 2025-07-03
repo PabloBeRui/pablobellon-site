@@ -8,8 +8,8 @@ const home = `
       id="change-style-button"
       class="nav-button"
       aria-label="Switch to present theme"
-      title="Switch to present theme">
-      Now
+      title="Switch theme">
+      <img src="/public/assets/images/change.png"
     </button>
   </nav>
 

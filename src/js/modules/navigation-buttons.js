@@ -65,7 +65,7 @@ export const navigationButtons = (idValue, wait) => {
       replaceWithFadeOut(variableContent, nowOr80s ? homeNow : home);
     }
     // home when style changed
-    else if (event.target?.id === "change-style-button") {
+    else if (event.target.closest?.("#change-style-button")) {
       // 1) Update the theme by swapping CSS links
       //Delay the theme swap slightly using setTimeout to allow the content
       // to transition smoothly without flickering. This ensures the new styles are applied
