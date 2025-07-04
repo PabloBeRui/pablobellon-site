@@ -114,13 +114,13 @@ footer {
 }
 
 img.footer-ico {
-  transition: box-shadow 0.5s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   height: 3rem;
 }
 
 img.footer-ico:hover {
-  box-shadow: 0 0 20px var(--terminal-green);
   border-radius: 100%;
+  transform: translateY(-4px);
 }
 
 ul#ul-footer {
