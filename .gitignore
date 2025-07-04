@@ -34,3 +34,7 @@ dist-ssr/
 
 # Optional build/cache folders
 .cache/
+
+# Vite temporal cache
+
+.vite
