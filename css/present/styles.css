@@ -107,19 +107,6 @@ footer {
   border-top: 1px solid var(--electric-mint);
 }
 
-img.footer-ico {
-  transition: box-shadow 0.5s ease-in-out;
-  height: 3rem;
-  /* electric mint filter  */
-  filter: brightness(0) saturate(100%) invert(47%) sepia(84%) saturate(489%)
-    hue-rotate(114deg) brightness(105%) contrast(101%);
-}
-
-img.footer-ico:hover {
-  box-shadow: 0 0 20px var(--charcoal-black);
-  border-radius: 100%;
-}
-
 ul#ul-footer {
   display: flex;
   list-style: none;
@@ -295,13 +282,25 @@ figure#coming-soon-figure .typewriter-class-2 {
   /* footer  */
 
   footer a {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   footer {
     justify-content: center;
     gap: 6rem;
     padding-top: 0.5rem;
+  }
+  img.footer-ico {
+    transition: transform 0.3s ease-in-out;
+    height: 3rem;
+    /* electric mint filter  */
+    filter: brightness(0) saturate(100%) invert(47%) sepia(84%) saturate(489%)
+      hue-rotate(114deg) brightness(105%) contrast(101%);
+  }
+
+  img.footer-ico:hover {
+    border-radius: 100%;
+    transform: translateY(-4px);
   }
 
   ul#ul-footer {
