@@ -1,4 +1,4 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))o(s);new MutationObserver(s=>{for(const n of s)if(n.type==="childList")for(const i of n.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&o(i)}).observe(document,{childList:!0,subtree:!0});function a(s){const n={};return s.integrity&&(n.integrity=s.integrity),s.referrerPolicy&&(n.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?n.credentials="include":s.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(s){if(s.ep)return;s.ep=!0;const n=a(s);fetch(s.href,n)}})();const g=t=>{const e=document.getElementById(t);e.addEventListener("canplaythrough",()=>{e.playbackRate=.2,e.play()})},v=(t,e=5e3)=>{const a=document.getElementById(t);a&&setTimeout(()=>{a.play()},e)},f=`<p class="smooth-fade-in-upward">
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))o(s);new MutationObserver(s=>{for(const n of s)if(n.type==="childList")for(const i of n.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&o(i)}).observe(document,{childList:!0,subtree:!0});function a(s){const n={};return s.integrity&&(n.integrity=s.integrity),s.referrerPolicy&&(n.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?n.credentials="include":s.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(s){if(s.ep)return;s.ep=!0;const n=a(s);fetch(s.href,n)}})();const g=t=>{const e=document.getElementById(t);e.addEventListener("canplaythrough",()=>{e.playbackRate=.2,e.play()})},v=(t,e=5e3)=>{const a=document.getElementById(t);a&&setTimeout(()=>{a.play()},e)},h=`<p class="smooth-fade-in-upward">
         He pasado la mayor parte de mi vida profesional trabajando en la
         industria, pero siempre he sentido una gran pasión por la informática y
         la tecnología. Hace un tiempo, decidí dar un giro a mi carrera y
@@ -25,7 +25,7 @@
           class="skills-span"
           >&nbsp;DAW&nbsp;</span
         >).
-      </p>`,h=`
+      </p>`,f=`
       <p class="smooth-fade-in-upward">
         I have spent most of my professional life working in industry, but I
         have always felt a great passion for computing and technology. Some time
@@ -53,15 +53,25 @@
           >&nbsp;DAW&nbsp;</span
         >).
       </p>
-      `,y='<button id="lang-btn" class="lang-toggle-btn nav-button"><img src="../../assets/images/icons/globe_green_transparent_language.png" id="lang-ico"> EN</button>',w='<button id="lang-btn" class="lang-toggle-btn nav-button"><img src="../../assets/images/icons/globe_green_transparent_language.png" id="lang-ico"> ES</button>',m="I’m currently studying and working on new projects 👾 Stay tuned for updates!",k=t=>{document.getElementById("typewriter-text").innerHTML="";const e=m,a=document.getElementById(t);let o=0;function s(){if(o<e.length)a.innerHTML+=e.charAt(o),o++,setTimeout(s,60);else{a.classList.add("typewriter-class-2");const n=new CustomEvent("typewriterFinished");document.dispatchEvent(n)}}a&&s()},S=()=>{v("coming-soon-vid"),g("bg-video"),k("typewriter-text")},c=`  
+      `,y='<button id="lang-btn" class="lang-toggle-btn nav-button"><img src="../../assets/images/icons/globe_green_transparent_language.png" id="lang-ico"> EN</button>',w='<button id="lang-btn" class="lang-toggle-btn nav-button"><img src="../../assets/images/icons/globe_green_transparent_language.png" id="lang-ico"> ES</button>',m="I’m currently studying and working on new projects 👾 Stay tuned for updates!",S=t=>{document.getElementById("typewriter-text").innerHTML="";const e=m,a=document.getElementById(t);let o=0;function s(){if(o<e.length)a.innerHTML+=e.charAt(o),o++,setTimeout(s,60);else{a.classList.add("typewriter-class-2");const n=new CustomEvent("typewriterFinished");document.dispatchEvent(n)}}a&&s()},k=()=>{v("coming-soon-vid"),g("bg-video"),S("typewriter-text")},c=`  
   <nav id="change-style-button-nav" class="visible smooth-fade-in-upward">
     <button
-      id="change-style-button"
-      class="nav-button"
-      aria-label="Switch theme"
-      title="Switch theme">
-      <img src="/assets/images/change.png"
-    </button>
+  id="change-style-button"
+  class="nav-button"
+  aria-label="Switch theme"
+  title="Switch theme">
+  <div class="changer-wrapper">
+    <img src="/assets/images/change.png" alt="Switch icon" />
+    <div class="changer">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </div>
+</button>
+
   </nav>
 
   <figure id="coming-soon-figure" class="smooth-fade-in-upward">
@@ -119,7 +129,7 @@
           class="nav-button"
           aria-label="Switch theme"
           title="Switch theme">
-          <img src="/assets/images/change.png"
+          <img src="/assets/images/change.png">
         </button>
       </nav>
       <figure id="coming-soon-figure" class="smooth-fade-in-upward">
@@ -180,7 +190,7 @@
       ${s}
     </div>
   </div>
-`;t.insertAdjacentHTML("beforeend",n)}),document.querySelectorAll(".course-summary").forEach(e=>{e.addEventListener("click",()=>{e.parentElement.classList.toggle("expanded")})})};let p=!1;const M=()=>{const t=document.querySelector("#description-div"),e=document.querySelector("#lang-btn-div"),a=()=>{p?(t.innerHTML=f,e.innerHTML=y):(t.innerHTML=h,e.innerHTML=w),document.querySelector("#lang-btn").addEventListener("click",()=>{p=!p,a()})};a()},I=`<div id="about-me-div-content" class="smooth-fade-in-upward">
+`;t.insertAdjacentHTML("beforeend",n)}),document.querySelectorAll(".course-summary").forEach(e=>{e.addEventListener("click",()=>{e.parentElement.classList.toggle("expanded")})})};let p=!1;const M=()=>{const t=document.querySelector("#description-div"),e=document.querySelector("#lang-btn-div"),a=()=>{p?(t.innerHTML=h,e.innerHTML=y):(t.innerHTML=f,e.innerHTML=w),document.querySelector("#lang-btn").addEventListener("click",()=>{p=!p,a()})};a()},I=`<div id="about-me-div-content" class="smooth-fade-in-upward">
         <nav id="nav-back-button"><button class="nav-button" id="back-button" aria-label="Go back to main view" title="Back">Back</button></nav>
         <div id="photo-and-description-div">
           <div id="photo-div">
@@ -208,4 +218,4 @@
         </nav>
         <div id="progress-cards-container"></div>
       </div>
-`,u=(t,e)=>{t.classList.add("smooth-fade-out-upward"),setTimeout(()=>{t.innerHTML=e,t.classList.remove("smooth-fade-out-upward")},1e3)},j=document.querySelectorAll("link[data-theme-link]");let l=sessionStorage.getItem("theme")||"80s";function b(t){j.forEach(e=>{e.href=e.href.replace(/\/(80s|present)\//,`/${t}/`)})}function A(){l=l==="80s"?"present":"80s",b(l),sessionStorage.setItem("theme",l)}b(l);let r=sessionStorage.getItem("theme")==="present";const B=()=>{r=!r,sessionStorage.setItem("theme",r?"present":"80s")},C=(t,e)=>{const a=document.querySelector("#nav-buttons"),o=document.querySelector("#change-style-button-nav");document.addEventListener("typewriterFinished",()=>{a.classList.add("visible"),o.classList.add("visible")});const s=document.querySelector(t);s.addEventListener("click",n=>{n.target?.id==="about-me-button"?(s.innerHTML=I,M()):n.target?.id==="my-progress-button"?(s.innerHTML=H,T()):n.target?.id==="back-button"?u(s,r?d:c):n.target.closest?.("#change-style-button")&&(setTimeout(()=>{A()},1e3),B(),u(s,r?d:c))})},D=t=>{window.addEventListener("click",e=>{const a=document.querySelector("#section-global-container"),o=e.target.closest(t),s=e.target.closest("button");!o&&!s&&u(a,r?d:c)})};document.addEventListener("DOMContentLoaded",()=>{L()||S(),C("#section-global-container"),D("#section-global-container")});
+`,u=(t,e)=>{t.classList.add("smooth-fade-out-upward"),setTimeout(()=>{t.innerHTML=e,t.classList.remove("smooth-fade-out-upward")},1e3)},j=document.querySelectorAll("link[data-theme-link]");let l=sessionStorage.getItem("theme")||"80s";function b(t){j.forEach(e=>{e.href=e.href.replace(/\/(80s|present)\//,`/${t}/`)})}function A(){l=l==="80s"?"present":"80s",b(l),sessionStorage.setItem("theme",l)}b(l);let r=sessionStorage.getItem("theme")==="present";const B=()=>{r=!r,sessionStorage.setItem("theme",r?"present":"80s")},C=(t,e)=>{const a=document.querySelector("#nav-buttons"),o=document.querySelector("#change-style-button-nav");document.addEventListener("typewriterFinished",()=>{a.classList.add("visible"),o.classList.add("visible")});const s=document.querySelector(t);s.addEventListener("click",n=>{n.target?.id==="about-me-button"?(s.innerHTML=I,M()):n.target?.id==="my-progress-button"?(s.innerHTML=H,T()):n.target?.id==="back-button"?u(s,r?d:c):n.target.closest?.("#change-style-button")&&(setTimeout(()=>{A()},1e3),B(),u(s,r?d:c))})},D=t=>{window.addEventListener("click",e=>{const a=document.querySelector("#section-global-container"),o=e.target.closest(t),s=e.target.closest("button");!o&&!s&&u(a,r?d:c)})};document.addEventListener("DOMContentLoaded",()=>{L()||k(),C("#section-global-container"),D("#section-global-container")});
