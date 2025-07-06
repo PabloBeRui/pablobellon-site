@@ -243,6 +243,88 @@ figure#coming-soon-figure .typewriter-class-2 {
   outline-offset: 2px;
 }
 
+/* ───────── Change Theme Button Styling ───────── */
+
+#change-style-button {
+  height: 3rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Wrapper that holds both the image and the animation side-by-side */
+
+.changer-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Space between the image and the animation */
+  flex-wrap: nowrap;
+}
+
+/* Theme icon image inside the button */
+
+#change-style-button img {
+  height: 1.2rem;
+  width: auto;
+}
+
+/* Container for the animated bars (equalizer style) */
+
+.changer {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+/* Animated bar (individual vertical line) */
+
+.bar {
+  width: 4px;
+  height: 10px;
+  border-radius: 3px;
+  background: var(--terminal-green);
+  animation: wave 1.2s ease-in-out infinite;
+  animation-delay: var(--bar-delay);
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  animation-fill-mode: both;
+  animation-name: wave;
+  animation-duration: 4s; /* Animation wave cycle */
+}
+
+/* Individual delay for each bar to create a wave effect */
+
+.bar:nth-child(1) {
+  --bar-delay: 0s;
+}
+.bar:nth-child(2) {
+  --bar-delay: 0.1s;
+}
+.bar:nth-child(3) {
+  --bar-delay: 0.2s;
+}
+.bar:nth-child(4) {
+  --bar-delay: 0.3s;
+}
+.bar:nth-child(5) {
+  --bar-delay: 0.4s;
+}
+
+/* Wave animation definition */
+
+@keyframes wave {
+  0%,
+  10%,
+  100% {
+    height: 10px; /* Start and end with base height */
+  }
+  5% {
+    height: 30px; /* Midpoint peak for wave pulse */
+  }
+}
+
 /* ───────── Smooth Effects ───────── */
 /* Fade-in with upward slide */
 .smooth-fade-in-upward {

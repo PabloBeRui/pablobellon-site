@@ -5,12 +5,22 @@ import { typewriterText } from "../data/fragments.js";
 const home = `  
   <nav id="change-style-button-nav" class="visible smooth-fade-in-upward">
     <button
-      id="change-style-button"
-      class="nav-button"
-      aria-label="Switch theme"
-      title="Switch theme">
-      <img src="/assets/images/change.png"
-    </button>
+  id="change-style-button"
+  class="nav-button"
+  aria-label="Switch theme"
+  title="Switch theme">
+  <div class="changer-wrapper">
+    <img src="/assets/images/change.png" alt="Switch icon" />
+    <div class="changer">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </div>
+</button>
+
   </nav>
 
   <figure id="coming-soon-figure" class="smooth-fade-in-upward">
