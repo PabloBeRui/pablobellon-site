@@ -54,14 +54,7 @@
         >).
       </p>
       `,y='<button id="lang-btn" class="lang-toggle-btn nav-button"><img src="../../assets/images/icons/globe_green_transparent_language.png" id="lang-ico"> EN</button>',w='<button id="lang-btn" class="lang-toggle-btn nav-button"><img src="../../assets/images/icons/globe_green_transparent_language.png" id="lang-ico"> ES</button>',m="I’m currently studying and working on new projects 👾 Stay tuned for updates!",S=t=>{document.getElementById("typewriter-text").innerHTML="";const e=m,a=document.getElementById(t);let o=0;function s(){if(o<e.length)a.innerHTML+=e.charAt(o),o++,setTimeout(s,60);else{a.classList.add("typewriter-class-2");const n=new CustomEvent("typewriterFinished");document.dispatchEvent(n)}}a&&s()},k=()=>{v("coming-soon-vid"),g("bg-video"),S("typewriter-text")},c=`  
-  <nav id="change-style-button-nav" class="visible smooth-fade-in-upward">
-    <button
-  id="change-style-button"
-  class="nav-button"
-  aria-label="Switch theme"
-  title="Switch theme">
-  <div class="changer-wrapper">
-    <img src="/assets/images/change.png" alt="Switch icon" />
+ <nav id="change-style-button-nav" class="visible smooth-fade-in-upward">
     <div class="changer">
       <div class="bar"></div>
       <div class="bar"></div>
@@ -69,9 +62,13 @@
       <div class="bar"></div>
       <div class="bar"></div>
     </div>
-  </div>
-</button>
-
+    <button
+      id="change-style-button"
+      class="nav-button"
+      aria-label="Switch theme"
+      title="Switch theme">
+      <img src="/assets/images/change.png" alt="Switch icon" />
+    </button>
   </nav>
 
   <figure id="coming-soon-figure" class="smooth-fade-in-upward">
