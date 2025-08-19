@@ -55,6 +55,23 @@ export const courses = [
     ],
   },
   {
+    id: "java-udemy-2025",
+    name: "JavaScript Udemy",
+    year: 2025,
+    totalHours: 22.5,
+    approved: true,
+    img: "../../assets/images/icons/my-progress-icons/udemy.png",
+    url: "https://www.udemy.com/course/javascript-fernando-herrera/",
+    projects: [],
+    subjects: [
+      {
+        id: "udemy-javascript",
+        name: "JavaScript Moderno: Guía para dominar el lenguaje",
+        approved: true,
+      },
+    ],
+  },
+  {
     id: "daw-2025",
     name: "DAW",
     year: 2025,
