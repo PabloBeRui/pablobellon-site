@@ -72,6 +72,23 @@ export const courses = [
     ],
   },
   {
+    id: "git-udemy-2025",
+    name: "Git Udemy",
+    year: 2025,
+    totalHours: 12,
+    approved: true,
+    img: "../../assets/images/icons/my-progress-icons/udemy.png",
+    url: "https://www.udemy.com/course/git-github/",
+    projects: [],
+    subjects: [
+      {
+        id: "udemy-git",
+        name: "GIT+GitHub: Todo un sistema de control de versiones de cero",
+        approved: true,
+      },
+    ],
+  },
+  {
     id: "daw-2025",
     name: "DAW",
     year: 2025,
