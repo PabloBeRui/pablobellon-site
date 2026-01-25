@@ -146,27 +146,27 @@ export const courses = [
       {
         id: "itinerario-personal-para-la-empleabilidad-i",
         name: "Itinerario personal para la empleabilidad I",
-        approved: false,
+        approved: true,
       },
       {
         id: "desarrollo-web-entorno-cliente",
         name: "Desarrollo web entorno cliente",
-        approved: false,
+        approved: true,
       },
       {
         id: "desarrollo-web-entorno-servidor",
         name: "Desarrollo web entorno servidor",
-        approved: false,
+        approved: true,
       },
       {
         id: "despliegue-de-aplicaciones-web",
         name: "Despliegue de aplicaciones web",
-        approved: false,
+        approved: true,
       },
       {
         id: "itinerario-personal-para-la-empleabilidad-ii",
         name: "Itinerario personal para la empleabilidad II",
-        approved: false,
+        approved: true,
       },
       {
         id: "proyecto-intermodular-de-desarrollo-de-aplicaciones-web",
@@ -176,7 +176,7 @@ export const courses = [
       {
         id: "modulo-profesional-optativo",
         name: "Módulo profesional optativo",
-        approved: false,
+        approved: true,
       },
     ],
   },
