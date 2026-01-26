@@ -2,6 +2,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
+  base: "./",
   root: ".", // root of the project
   build: {
     outDir: "dist", // folder where the production build will be generated
