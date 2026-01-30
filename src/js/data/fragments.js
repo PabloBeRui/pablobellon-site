@@ -3,64 +3,72 @@
  * ********************************* */
 // HTML templates for English and Spanish descriptions
 
-export const descriptionEs = `<p class="smooth-fade-in-upward">
-        He pasado la mayor parte de mi vida profesional trabajando en la
-        industria, pero siempre he sentido una gran pasión por la informática y
-        la tecnología. Hace un tiempo, decidí dar un giro a mi carrera y
-        enfocarme en lo que realmente me apasiona: la programación,
-        especialmente el desarrollo
-        <span class="about-me-span">&nbsp;front-end&nbsp;</span>.
-      </p>
-      <br />
+export const descriptionEs = `
+<p class="smooth-fade-in-upward">
+  He pasado la mayor parte de mi vida profesional trabajando en la industria, pero siempre he sentido una gran pasión por la informática y la tecnología. Hace un tiempo decidí dar un giro a mi carrera y enfocarme en lo que realmente me apasiona: la programación, especialmente el desarrollo <span class="about-me-span">&nbsp;front-end&nbsp;</span>.
+</p>
+<br />
 
-      <p class="smooth-fade-in-upward">
-        Para ello, he completado varios bootcamps intensivos como
-        <span class="about-me-span">&nbsp;HackABoss&nbsp;</span>,
-        <span class="about-me-span">&nbsp;TokioSchool&nbsp;</span> y
-        <span class="about-me-span">&nbsp;CampusDual&nbsp;</span>, donde aprendí de forma
-        práctica y rápida las herramientas y tecnologías más utilizadas, como
-        <span class="skills-span">&nbsp;HTML&nbsp;</span>,
-        <span class="skills-span">&nbsp;CSS&nbsp;</span>,
-        <span class="skills-span">&nbsp;JavaScript&nbsp;</span>,
-        <span class="skills-span">&nbsp;React&nbsp; </span> (<a
-          href="https://elelegido.netlify.app/"
-          >https://elelegido.netlify.app/</a
-        >) y <span class="skills-span">&nbsp;Git&nbsp</span>. Actualmente, estoy cursando
-        el segundo año del ciclo de Desarrollo de Aplicaciones Web (<span
-          class="skills-span"
-          >&nbsp;DAW&nbsp;</span
-        >).
-      </p>`;
+<p class="smooth-fade-in-upward">
+  Para dar el salto completé varios bootcamps intensivos como <span class="about-me-span">&nbsp;HackABoss&nbsp;</span>, <span class="about-me-span">&nbsp;TokioSchool&nbsp;</span> y <span class="about-me-span">&nbsp;CampusDual&nbsp;</span>, y posteriormente finalicé el ciclo superior de <span class="skills-span">&nbsp;DAW&nbsp;</span> (Desarrollo de Aplicaciones Web).
+</p>
+
+<p class="smooth-fade-in-upward">
+  Mi proyecto final de ciclo es <a href="https://www.gymnomads.dev" target="_blank" rel="noopener" class="project-link"><strong>GymNomads</strong></a>: una aplicación pensada para deportistas viajeros.
+</p>
+<br />
+<p class="smooth-fade-in-upward">
+  Desarrollado como fullstack con fuerte enfoque frontend, incorpora:
+  <br /><br />
+  <span class="skills-span">&nbsp;React + TypeScript&nbsp;</span> · <span class="skills-span">&nbsp;Vite&nbsp;</span> · 
+  <span class="skills-span">&nbsp;SCSS / Bootstrap &nbsp;</span> · <br />
+  <br />
+  Backend: <span class="skills-span">&nbsp;Node.js + Express&nbsp;</span> · <span class="skills-span">&nbsp;MySQL&nbsp;</span> <br /><br />
+  Testing: Vitest / React Testing Library y Jest / Supertest
+</p><br />
+
+<p class="smooth-fade-in-upward">
+  He prestado especial atención a la <span class="skills-span">&nbsp;UI/UX&nbsp;</span> con una experiencia intuitiva y responsive.
+</p>
+
+<p class="smooth-fade-in-upward">
+  Actualmente estoy en búsqueda activa de empresa donde realizar las prácticas formativas (FCT). Busco incorporarme a un equipo donde pueda seguir creciendo en desarrollo frontend, contribuir y aportar desde el primer momento con una actitud inmejorable. 
+</p><br /><br />
+`;
 
 export const descriptionEn = `
-      <p class="smooth-fade-in-upward">
-        I have spent most of my professional life working in industry, but I
-        have always felt a great passion for computing and technology. Some time
-        ago, I decided to shift my career and focus on what truly excites me:
-        programming, especially
-        <span class="about-me-span">&nbsp;front-end&nbsp;</span> development.
-      </p>
-      <br />
+<p class="smooth-fade-in-upward">
+  I have spent most of my professional life working in industry, but I have always felt a strong passion for computing and technology. Some time ago, I decided to make a career shift and focus on what truly excites me: programming, especially <span class="about-me-span">&nbsp;front-end&nbsp;</span> development.
+</p>
+<br />
 
-      <p class="smooth-fade-in-upward">
-        To that end, I completed several intensive bootcamps such as
-        <span class="about-me-span">&nbsp;HackABoss&nbsp;</span>,
-        <span class="about-me-span">&nbsp;TokioSchool&nbsp;</span> and
-        <span class="about-me-span">&nbsp;CampusDual&nbsp;</span>, where I learned in a
-        practical and fast-paced way the most widely used tools and technologies
-        like <span class="skills-span">&nbsp;HTML&nbsp;</span>,
-        <span class="skills-span">&nbsp;CSS&nbsp;</span>,
-        <span class="skills-span">&nbsp;JavaScript&nbsp;</span>,
-        <span class="skills-span">&nbsp;React&nbsp; </span> (<a
-          href="https://elelegido.netlify.app/"
-          >https://elelegido.netlify.app/</a
-        >) and <span class="skills-span">&nbsp;Git&nbsp;</span>. Currently, I am
-        in my second year of the Web Application Development program (<span
-          class="skills-span"
-          >&nbsp;DAW&nbsp;</span
-        >).
-      </p>
-      `;
+<p class="smooth-fade-in-upward">
+  To make the transition, I completed several intensive bootcamps such as <span class="about-me-span">&nbsp;HackABoss&nbsp;</span>, <span class="about-me-span">&nbsp;TokioSchool&nbsp;</span> and <span class="about-me-span">&nbsp;CampusDual&nbsp;</span>, and later finished the higher-level cycle in <span class="skills-span">&nbsp;DAW&nbsp;</span> (Web Application Development).
+</p>
+
+<p class="smooth-fade-in-upward">
+  My final cycle project is <a href="https://www.gymnomads.dev" target="_blank" rel="noopener" class="project-link"><strong>GymNomads</strong></a>: an application designed for traveling athletes.
+</p>
+<br />
+
+<p class="smooth-fade-in-upward">
+  Developed as fullstack with a strong frontend focus, it incorporates:
+  <br /><br />
+  <span class="skills-span">&nbsp;React + TypeScript&nbsp;</span> · <span class="skills-span">&nbsp;Vite&nbsp;</span> · 
+  <span class="skills-span">&nbsp;SCSS / Bootstrap&nbsp;</span> · <br />
+  <br />
+  Backend: <span class="skills-span">&nbsp;Node.js + Express&nbsp;</span> · <span class="skills-span">&nbsp;MySQL&nbsp;</span> <br /><br />
+  Testing: Vitest / React Testing Library and Jest / Supertest
+</p><br />
+
+<p class="smooth-fade-in-upward">
+  I have paid special attention to <span class="skills-span">&nbsp;UI/UX&nbsp;</span> to deliver an intuitive and responsive experience.
+</p>
+
+<p class="smooth-fade-in-upward">
+  I am currently actively looking for a company to carry out my mandatory internship (FCT). I am seeking to join a team where I can continue growing in frontend development, contribute, and add value from day one with an excellent attitude.
+</p><br /><br />
+`;
 
 // HTML templates for language toggle buttons
 
@@ -72,4 +80,4 @@ export const ButtonEn = `<button id="lang-btn" class="lang-toggle-btn nav-button
  * ********************************* */
 
 export const typewriterText =
-  "I’m currently studying and working on new projects 👾 Stay tuned for updates!";
+  "Junior Developer with a relentless growth mindset. 100% driven, always learning 👾 ";

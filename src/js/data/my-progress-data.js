@@ -54,49 +54,18 @@ export const courses = [
       },
     ],
   },
-  {
-    id: "java-udemy-2025",
-    name: "JavaScript Udemy",
-    year: 2025,
-    totalHours: 22.5,
-    approved: true,
-    img: "../../assets/images/icons/my-progress-icons/udemy.png",
-    url: "https://www.udemy.com/course/javascript-fernando-herrera/",
-    projects: [],
-    subjects: [
-      {
-        id: "udemy-javascript",
-        name: "JavaScript Moderno: Guía para dominar el lenguaje",
-        approved: true,
-      },
-    ],
-  },
-  {
-    id: "git-udemy-2025",
-    name: "Git Udemy",
-    year: 2025,
-    totalHours: 12,
-    approved: true,
-    img: "../../assets/images/icons/my-progress-icons/udemy.png",
-    url: "https://www.udemy.com/course/git-github/",
-    projects: [],
-    subjects: [
-      {
-        id: "udemy-git",
-        name: "GIT+GitHub: Todo un sistema de control de versiones de cero",
-        approved: true,
-      },
-    ],
-  },
+ 
   {
     id: "daw-2025",
     name: "DAW",
     year: 2025,
     totalHours: 2000,
-    approved: false,
+    approved: true,
     img: "../../assets/images/icons/my-progress-icons/ilerna.png",
     url: "https://www.ilerna.es/",
-    projects: [],
+    projects: [
+      "<a href='https://www.gymnomads.dev/'>GymNomads</a>",
+    ],
     subjects: [
       {
         id: "lenguajes-de-marcas-y-sistemas-de-gestion-de-informacion",
@@ -171,11 +140,44 @@ export const courses = [
       {
         id: "proyecto-intermodular-de-desarrollo-de-aplicaciones-web",
         name: "Proyecto intermodular de desarrollo de aplicaciones web",
-        approved: false,
+        approved: true,
       },
       {
         id: "modulo-profesional-optativo",
         name: "Módulo profesional optativo",
+        approved: true,
+      },
+    ],
+  }, {
+    id: "java-udemy-2025",
+    name: "JavaScript Udemy",
+    year: 2025,
+    totalHours: 22.5,
+    approved: true,
+    img: "../../assets/images/icons/my-progress-icons/udemy.png",
+    url: "https://www.udemy.com/course/javascript-fernando-herrera/",
+    projects: [],
+    subjects: [
+      {
+        id: "udemy-javascript",
+        name: "JavaScript Moderno: Guía para dominar el lenguaje",
+        approved: true,
+      },
+    ],
+  },
+  {
+    id: "git-udemy-2025",
+    name: "Git Udemy",
+    year: 2025,
+    totalHours: 12,
+    approved: true,
+    img: "../../assets/images/icons/my-progress-icons/udemy.png",
+    url: "https://www.udemy.com/course/git-github/",
+    projects: [],
+    subjects: [
+      {
+        id: "udemy-git",
+        name: "GIT+GitHub: Todo un sistema de control de versiones de cero",
         approved: true,
       },
     ],
