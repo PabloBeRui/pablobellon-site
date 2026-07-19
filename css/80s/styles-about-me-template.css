@@ -3,7 +3,7 @@
 #about-me-div-content {
   height: 100%;
   width: 100%;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.88);
   color: white;
   padding: 0.5rem;
   display: flex;
@@ -12,9 +12,9 @@
   /* TL TR BR BL */
   border-radius: var(--corner-prop) calc(var(--corner-base) * 2)
     var(--corner-prop) calc(var(--corner-base) * 2);
-  opacity: 0.75;
   overflow-y: auto;
   border: 1px solid var(--neon-pink);
+  box-shadow: 0 0 15px rgba(255, 20, 147, 0.3);
   gap: 1rem;
 }
 
@@ -53,29 +53,41 @@
   justify-content: flex-start;
 }
 
-/* Description styling */
-
+/* Description styling & typography readability (80s Mode) */
 div#description-div {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.5rem;
+}
+
+div#description-div p {
+  line-height: 1.45;
+  letter-spacing: 0.5px;
+  font-size: 1.25rem;
+  color: #f0f0f0;
 }
 
 /* About me badge */
-
 span.about-me-span {
   background-color: var(--terminal-green);
-  color: white;
+  color: black;
+  font-weight: bold;
+  padding: 0.15rem 0.4rem;
+  display: inline-block;
+  line-height: 1;
   /* TL TR BR BL */
   border-radius: calc(var(--corner-small) * 0.4) var(--corner-small)
     calc(var(--corner-small) * 0.4) var(--corner-small);
 }
 
 /* Skills badge */
-
 span.skills-span {
   background-color: var(--neon-pink);
-  color: white;
+  color: black;
+  font-weight: bold;
+  padding: 0.15rem 0.4rem;
+  display: inline-block;
+  line-height: 1;
   /* TL TR BR BL */
   border-radius: calc(var(--corner-small) * 0.4) var(--corner-small)
     calc(var(--corner-small) * 0.4) var(--corner-small);
@@ -130,8 +142,9 @@ button#lang-btn.nav-button {
     height: 200%;
   }
 
-  p {
-    font-size: 2rem;
+  div#description-div p {
+    font-size: 1.5rem;
+    line-height: 1.5;
   }
 
   img#lang-ico {
@@ -164,8 +177,9 @@ button#lang-btn.nav-button {
   #photo-and-description-div {
     gap: 3rem;
   }
-  p {
-    font-size: 1.2rem;
+  div#description-div p {
+    font-size: 1.25rem;
+    line-height: 1.45;
   }
   img#lang-ico {
     height: 1.5rem;

@@ -3,7 +3,10 @@
 #about-me-div-content {
   height: 100%;
   width: 100%;
-  background-color: var(--charcoal-black);
+  /* Modern glassmorphism with backdrop blur / Cristal esmerilado moderno con desfoque de fondo */
+  background-color: rgba(24, 24, 27, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: white;
   padding: 0.5rem;
   display: flex;
@@ -12,9 +15,9 @@
   /* TL TR BR BL */
   border-radius: var(--corner-prop) calc(var(--corner-base) * 2)
     var(--corner-prop) calc(var(--corner-base) * 2);
-  opacity: 0.75;
   overflow-y: auto;
-  border: 1px solid var(--electric-mint);
+  border: 1px solid rgba(0, 255, 179, 0.4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25), 0 0 15px rgba(0, 255, 179, 0.12);
   gap: 1rem;
 }
 

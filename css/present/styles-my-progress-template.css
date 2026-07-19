@@ -2,7 +2,10 @@
 #my-progress-div-content {
   height: 100%;
   width: 100%;
-  background-color: var(--charcoal-black);
+  /* Modern glassmorphism with backdrop blur / Cristal esmerilado moderno con desfoque de fondo */
+  background-color: rgba(24, 24, 27, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: white;
   padding: 0.5rem;
   display: flex;
@@ -12,8 +15,8 @@
   /* TL TR BR BL */
   border-radius: var(--corner-prop) calc(var(--corner-base) * 2)
     var(--corner-prop) calc(var(--corner-base) * 2);
-  opacity: 0.75;
-  border: 1px solid var(--electric-mint);
+  border: 1px solid rgba(0, 255, 179, 0.4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25), 0 0 15px rgba(0, 255, 179, 0.12);
   gap: 2rem;
   overflow-y: auto; /* enable vertical scrolling if content overflows */
 }
@@ -36,20 +39,21 @@
 
 /* ───────── Course Card Styles ───────── */
 .course-card {
-  background: rgba(0, 0, 0, 0.85);
-  border: 1px solid var(--electric-mint);
+  background: rgba(18, 18, 20, 0.95);
+  border: 1px solid rgba(0, 255, 179, 0.25);
   /* TL TR BR BL */
   border-radius: var(--corner-prop) calc(var(--corner-base) * 2)
     var(--corner-prop) calc(var(--corner-base) * 2);
   padding: 1rem;
   margin-bottom: 1rem;
-  box-shadow: 0 0 10px rgba(0, 255, 179, 0.5); /* initial box shadow */
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* smooth hover transition */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* initial box shadow */
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; /* smooth hover transition */
 }
 
 .course-card:hover {
-  transform: translateY(-5px); /* lift card slightly on hover */
-  box-shadow: 0 0 10px rgba(0, 255, 179, 0.5); /* enhanced shadow on hover */
+  transform: translateY(-4px); /* lift card slightly on hover */
+  border-color: var(--electric-mint);
+  box-shadow: 0 8px 25px rgba(0, 255, 179, 0.2); /* enhanced shadow on hover */
 }
 
 /* ───────── Course Summary ───────── */
@@ -57,12 +61,66 @@
   cursor: pointer; /* indicate clickable summary */
 }
 
-/* ───────── Course Header ───────── */
+/* ───────── Course Header & Meta ───────── */
 .course-header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.course-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* ───────── Status Badges ───────── */
+/* Compact circular check status badge */
+.status-badge {
+  font-size: 0.95rem;
+  font-weight: 700;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
+  text-align: center;
+  line-height: 1;
+}
+
+.status-badge.completed {
+  background: rgba(0, 255, 179, 0.2);
+  color: var(--electric-mint);
+  border: 1px solid rgba(0, 255, 179, 0.5);
+  box-shadow: 0 0 8px rgba(0, 255, 179, 0.3);
+}
+
+.status-badge.in-progress {
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffca28;
+  border: 1px solid rgba(255, 193, 7, 0.5);
+}
+
+/* ───────── Accordion Expansion Chevron Icon ───────── */
+/* Accordion expansion chevron icon with rotation animation */
+.accordion-icon {
+  font-size: 1.1rem;
+  color: var(--electric-mint);
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  user-select: none;
+  display: inline-block;
+  margin-left: 0.25rem;
+  opacity: 0.85;
+}
+
+.course-card.expanded .accordion-icon {
+  transform: rotate(180deg);
+  opacity: 1;
 }
 
 /* ───────── Course Link Styles ───────── */
@@ -72,51 +130,70 @@
   color: var(--electric-mint);
 }
 
-/* ───────── Course Info ───────── */
-.course-info {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
 /* ───────── Course Year ───────── */
 .course-year {
-  font-size: 0.9rem;
-  margin-right: 0.25rem; /* space before the status emoji */
-}
-
-/* ───────── Course Approved Emoji ───────── */
-.course-approved-emoji {
-  font-size: 1.2rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
 }
 
 /* ───────── Course Hours ───────── */
 .course-hours {
-  margin: 0.75rem 0 0.5rem;
+  margin: 0.5rem 0;
   font-size: 0.9rem;
 }
 
 /* ───────── Course Title ───────── */
 h3.course-title {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
+  font-weight: 700;
 }
 
 /* ───────── Bold Hours Display ───────── */
 b#b-hours {
-  font-size: 1.2rem;
-  border: 1px solid var(--charcoal-black);
-  padding: 0.5rem 0.5rem;
-  /* TL TR BR BL */
-  border-radius: calc(var(--corner-small) * 0.4) var(--corner-small)
-    calc(var(--corner-small) * 0.4) var(--corner-small);
-  /* Smooth transition for color, background and border */
-  transition: background-color 0.6s ease-in, color 0.6s ease-in;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--electric-mint);
+  border: 1px solid rgba(0, 255, 179, 0.3);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--corner-small);
+  transition: all 0.3s ease;
 }
 
 b#b-hours:hover {
-  border: 1px solid black;
-  background-color: var(--charcoal-black);
+  border-color: var(--electric-mint);
+  background-color: var(--electric-mint);
+  color: var(--charcoal-black);
+}
+
+/* ───────── Subjects & Projects Hierarchy ───────── */
+.subjects-header,
+.projects-header {
+  font-size: 0.85rem;
   color: var(--electric-mint);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.subject-item,
+.project-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.2rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+}
+
+.subject-status.approved {
+  color: var(--electric-mint);
+  font-weight: bold;
+}
+
+.subject-status.pending {
+  color: #ffca28;
 }
 
 /* ───────── List Items ───────── */
