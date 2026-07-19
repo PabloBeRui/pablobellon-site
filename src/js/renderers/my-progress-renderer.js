@@ -76,11 +76,11 @@ export const myProgressRenderer = () => {
       ? `<span class="accordion-icon" title="Toggle details" aria-hidden="true">▾</span>`
       : "";
 
-    // Assemble the card HTML
+    // Assemble the card HTML with accessibility attributes
     const cardHTML = `
-  <div class="course-card">
+  <div class="course-card" id="card-${course.id}">
     <!-- SUMMARY: always visible -->
-    <div class="course-summary">
+    <div class="course-summary" tabindex="0" role="button" aria-expanded="false" aria-controls="details-${course.id}">
       <div class="course-header">
         <a href="${
           course.url
@@ -107,7 +107,7 @@ export const myProgressRenderer = () => {
     </div>
 
     <!-- DETAILS: hidden by default -->
-    <div class="course-details">
+    <div class="course-details" id="details-${course.id}">
       ${subjectsHTML}
       ${projectsHTML}
     </div>
@@ -118,10 +118,22 @@ export const myProgressRenderer = () => {
     cardContainer.insertAdjacentHTML("beforeend", cardHTML);
   });
 
-  // Attach click listener to each summary for expand/collapse behavior
+  // Attach click and keyboard listeners to each summary for accessible expand/collapse behavior
   document.querySelectorAll(".course-summary").forEach((summary) => {
-    summary.addEventListener("click", () => {
-      summary.parentElement.classList.toggle("expanded");
+    const toggleExpand = () => {
+      const card = summary.parentElement;
+      const isExpanded = card.classList.toggle("expanded");
+      summary.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+    };
+
+    summary.addEventListener("click", toggleExpand);
+
+    // Support keyboard activation using Enter or Space key
+    summary.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggleExpand();
+      }
     });
   });
 };

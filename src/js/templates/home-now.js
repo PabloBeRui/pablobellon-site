@@ -23,7 +23,7 @@ const homeNow = `
           class="nav-button"
           aria-label="Switch theme"
           title="Switch theme">
-          <img src="/assets/images/change.png">
+          <img src="/assets/images/change.png" alt="Switch theme icon" />
         </button>
       </nav>
       <figure id="coming-soon-figure" class="smooth-fade-in-upward">
