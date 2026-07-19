@@ -13,7 +13,7 @@ import aboutMe from "../templates/about-me.js";
 import myProgress from "../templates/my-progress.js";
 import home from "../templates/home.js";
 import { replaceWithFadeOut } from "./replace-with-fade-out.js";
-import { toggleTheme } from "./theme-switching.js";
+import { toggleThemeWithTransition } from "./theme-switching.js";
 import homeNow from "../templates/home-now.js";
 import { nowOr80s, toggleNowOr80s } from "./state.js";
 
@@ -64,20 +64,14 @@ export const navigationButtons = (idValue, wait) => {
       // Go back to the appropriate home template depending on the current style
       replaceWithFadeOut(variableContent, nowOr80s ? homeNow : home);
     }
-    // home when style changed
+    // Home when style changed / Cambio de estilo de tema
     else if (event.target.closest?.("#change-style-button")) {
-      // 1) Update the theme by swapping CSS links
-      //Delay the theme swap slightly using setTimeout to allow the content
-      // to transition smoothly without flickering. This ensures the new styles are applied
-      // before rendering the new home template, avoiding brief visual glitches.
-      setTimeout(() => {
-        toggleTheme();
-      }, 1000);
-
-      // Flip style mode and render the corresponding home template
-      toggleNowOr80s();
-      // nowOr80s bool imported from state.js
-      replaceWithFadeOut(variableContent, nowOr80s ? homeNow : home);
+      // Trigger smooth screen transition overlay to swap styles seamlessly without visual glitching
+      // // Ejecutar capa de transición suave para cambiar estilos sin parpadeos visuales // Trigger smooth screen transition overlay to swap styles seamlessly without visual glitching
+      toggleThemeWithTransition(() => {
+        toggleNowOr80s();
+        variableContent.innerHTML = nowOr80s ? homeNow : home;
+      });
     }
   });
 };

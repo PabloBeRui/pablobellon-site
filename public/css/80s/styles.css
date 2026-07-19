@@ -372,6 +372,26 @@ figure#coming-soon-figure .typewriter-class-2 {
   }
 }
 
+/* ───────── Theme Transition Overlay ───────── */
+/* Capa superpuesta para transición suave entre temas // Overlay layer for smooth theme transitions */
+#theme-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #050505;
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease-in-out;
+}
+
+#theme-transition-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* *********************************
  * ───────── Media Queries ─────────
  * ********************************* */
