@@ -2,7 +2,10 @@
 #my-progress-div-content {
   height: 100%;
   width: 100%;
-  background-color: var(--charcoal-black);
+  /* Modern glassmorphism with backdrop blur / Cristal esmerilado moderno con desfoque de fondo */
+  background-color: rgba(24, 24, 27, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: white;
   padding: 0.5rem;
   display: flex;
@@ -12,8 +15,8 @@
   /* TL TR BR BL */
   border-radius: var(--corner-prop) calc(var(--corner-base) * 2)
     var(--corner-prop) calc(var(--corner-base) * 2);
-  opacity: 0.75;
-  border: 1px solid var(--electric-mint);
+  border: 1px solid rgba(0, 255, 179, 0.4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25), 0 0 15px rgba(0, 255, 179, 0.12);
   gap: 2rem;
   overflow-y: auto; /* enable vertical scrolling if content overflows */
 }
@@ -36,20 +39,21 @@
 
 /* ───────── Course Card Styles ───────── */
 .course-card {
-  background: rgba(0, 0, 0, 0.85);
-  border: 1px solid var(--electric-mint);
+  background: rgba(18, 18, 20, 0.95);
+  border: 1px solid rgba(0, 255, 179, 0.25);
   /* TL TR BR BL */
   border-radius: var(--corner-prop) calc(var(--corner-base) * 2)
     var(--corner-prop) calc(var(--corner-base) * 2);
   padding: 1rem;
   margin-bottom: 1rem;
-  box-shadow: 0 0 10px rgba(0, 255, 179, 0.5); /* initial box shadow */
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* smooth hover transition */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* initial box shadow */
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; /* smooth hover transition */
 }
 
 .course-card:hover {
-  transform: translateY(-5px); /* lift card slightly on hover */
-  box-shadow: 0 0 10px rgba(0, 255, 179, 0.5); /* enhanced shadow on hover */
+  transform: translateY(-4px); /* lift card slightly on hover */
+  border-color: var(--electric-mint);
+  box-shadow: 0 8px 25px rgba(0, 255, 179, 0.2); /* enhanced shadow on hover */
 }
 
 /* ───────── Course Summary ───────── */
