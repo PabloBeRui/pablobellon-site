@@ -131,29 +131,36 @@ a:hover {
 }
 
 /* ───────── Footer Styles ───────── */
+/* Estilos del pie de página e iconos normalizados // Footer styles and normalized icons */
 footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
+  padding: 0.5rem 1rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-
-img.footer-ico {
-  transition: transform 0.3s ease-in-out;
-  height: 3rem;
-}
-
-img.footer-ico:hover {
-  border-radius: 100%;
-  transform: translateY(-4px);
+  z-index: 100;
 }
 
 ul#ul-footer {
   display: flex;
   list-style: none;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+img.footer-ico {
+  height: 2.2rem;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+img.footer-ico:hover {
+  transform: translateY(-4px) scale(1.1);
+  filter: drop-shadow(0 0 8px var(--terminal-green));
 }
 
 footer a {

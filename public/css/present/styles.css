@@ -98,30 +98,45 @@ a:hover {
 }
 
 /* ───────── Footer Styles ───────── */
+/* Estilos del pie de página e iconos normalizados // Footer styles and normalized icons */
 footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgba(28, 28, 30, 0.85); /* fondo translúcido */
-  backdrop-filter: blur(6px);
+  padding: 0.5rem 1rem;
+  background-color: rgba(24, 24, 27, 0.9); /* fondo translúcido esmerilado */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-top: 1px solid var(--electric-mint);
-}
-
-img.footer-ico {
-  transition: transform 0.3s ease-in-out;
-  height: 3rem;
-  /* electric mint filter  */
-  filter: brightness(0) saturate(100%) invert(47%) sepia(84%) saturate(489%)
-    hue-rotate(114deg) brightness(105%) contrast(101%);
+  border-top: 1px solid rgba(0, 255, 179, 0.3);
+  z-index: 100;
 }
 
 ul#ul-footer {
   display: flex;
   list-style: none;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+img.footer-ico {
+  height: 2.2rem;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  /* electric mint filter  */
+  filter: brightness(0) saturate(100%) invert(47%) sepia(84%) saturate(489%)
+    hue-rotate(114deg) brightness(105%) contrast(101%);
+}
+
+img.footer-ico:hover {
+  transform: translateY(-4px) scale(1.1);
+  filter: brightness(0) saturate(100%) invert(47%) sepia(84%) saturate(800%)
+    hue-rotate(114deg) brightness(130%) contrast(110%)
+    drop-shadow(0 0 6px rgba(0, 255, 179, 0.6));
 }
 
 footer a {
