@@ -22,3 +22,21 @@ export const toggleNowOr80s = () => {
   nowOr80s = !nowOr80s;
   sessionStorage.setItem("theme", nowOr80s ? "present" : "80s");
 };
+
+/* *********************************
+ * ────── Language State (i18n) ──────
+ * *********************************
+ * Tracks current language preference: false = English ('en'), true = Spanish ('es').
+ * Persisted in localStorage for cross-session consistency.
+ */
+
+export let esOrEn = localStorage.getItem("lang") === "es";
+
+/**
+ * Toggles the current language between English and Spanish and saves state in localStorage.
+ */
+export const toggleLanguage = () => {
+  esOrEn = !esOrEn;
+  localStorage.setItem("lang", esOrEn ? "es" : "en");
+  return esOrEn;
+};

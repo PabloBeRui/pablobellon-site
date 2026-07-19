@@ -1,33 +1,28 @@
-// import HTML templates for English and Spanish descriptions
-// import HTML templates for language toggle buttons
-
 import {
   ButtonEn,
   ButtonEs,
   descriptionEn,
   descriptionEs,
 } from "../data/fragments.js";
+import { esOrEn, toggleLanguage } from "../modules/state.js";
 
 /**
  * about-me-renderer.js
- * Renders the 'About Me' section with language toggle (English/Spanish) and smooth fade-in effects.
+ * Renders the 'About Me' section with persistent language toggle (English/Spanish).
  */
-
-// Tracks current language state: false = English, true = Spanish
-let esOrEn = false;
 
 /* *********************************
  * ───── About Me Renderer ─────
  * ********************************* */
 
 export const aboutMeRenderer = () => {
-  // Description Div
   const descriptionDiv = document.querySelector("#description-div");
-  // Language button container div
   const langDivBtn = document.querySelector("#lang-btn-div");
 
-  //render function based on esOrEn boolean
-  const lanConditionalChange = () => {
+  // Render function based on persistent esOrEn state
+  const renderLanguage = () => {
+    if (!descriptionDiv || !langDivBtn) return;
+
     if (esOrEn) {
       descriptionDiv.innerHTML = descriptionEs;
       langDivBtn.innerHTML = ButtonEs;
@@ -35,16 +30,16 @@ export const aboutMeRenderer = () => {
       descriptionDiv.innerHTML = descriptionEn;
       langDivBtn.innerHTML = ButtonEn;
     }
-    // language button
-    const langBtn = document.querySelector("#lang-btn");
-    //listener to re render on language change
-    langBtn.addEventListener("click", () => {
-      esOrEn = !esOrEn;
 
-      lanConditionalChange();
-    });
+    const langBtn = document.querySelector("#lang-btn");
+    if (langBtn) {
+      langBtn.addEventListener("click", () => {
+        toggleLanguage();
+        renderLanguage();
+      });
+    }
   };
 
-  //initial render
-  lanConditionalChange();
+  // Initial render on module load
+  renderLanguage();
 };
