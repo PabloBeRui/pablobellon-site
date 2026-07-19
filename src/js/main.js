@@ -9,6 +9,7 @@ import {
   touchOutBack,
   loadInitialTemplate,
   introAnimations,
+  initRouter,
 } from "./modules/index.js";
 
 /*Listen for DOMContentLoaded to ensure the HTML is fully parsed
@@ -27,15 +28,16 @@ document.addEventListener("DOMContentLoaded", () => {
     introAnimations();
   }
   /* *********************************
-   * ───────── Navigation Setup ─────────
+   * ───────── Navigation & Routing Setup ─────────
    * ********************************* */
 
-  // Show navigation buttons once the typewriter has finished
+  // Initialize hash router for SPA navigation and deep linking
+  initRouter();
 
+  // Show navigation buttons once the typewriter has finished
   navigationButtons("#section-global-container", true);
 
   // If the user clicks outside the main content (and not on a button),
   // reset the view back to the home template
-
   touchOutBack("#section-global-container");
 });

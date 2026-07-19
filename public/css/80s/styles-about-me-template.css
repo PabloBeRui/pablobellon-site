@@ -54,7 +54,6 @@
 }
 
 /* Description styling & typography readability (80s Mode) */
-/* Estilos de descripción y legibilidad tipográfica (Modo 80s) // Description styling and typography readability (80s Mode) */
 div#description-div {
   display: flex;
   flex-direction: column;

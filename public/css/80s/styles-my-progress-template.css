@@ -75,7 +75,7 @@
 }
 
 /* ───────── Status Badges (80s Mode) ───────── */
-/* Badge de check circular compacto estilo retro // Compact retro style circular check badge */
+/* Compact retro style circular check badge */
 .status-badge {
   font-size: 1.2rem;
   font-weight: bold;
@@ -102,7 +102,7 @@
 }
 
 /* ───────── Accordion Expansion Chevron Icon (80s Mode) ───────── */
-/* Icono de flecha desplegable con animación de rotación // Accordion expansion chevron icon with rotation animation */
+/* Accordion expansion chevron icon with rotation animation */
 .accordion-icon {
   font-size: 1.4rem;
   color: var(--terminal-green);

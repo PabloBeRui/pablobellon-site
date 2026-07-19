@@ -21,19 +21,21 @@ import { nowOr80s } from "./state.js";
 
 export const touchOutBack = (idValue) => {
   window.addEventListener("click", (event) => {
-    // Select the main content container
-    const variableContent = document.querySelector("#section-global-container");
     // Check if the click was inside the target container
     const clickedInsideContent = event.target.closest(idValue);
     // Check if the click was on any button
     const clickedOnButton = event.target.closest("button");
 
     // If click was neither inside the container nor on a button,
-    // reset the container to the home template
+    // reset the route to home hash route
     if (!clickedInsideContent && !clickedOnButton) {
-      // Triggers a smooth fade-out animation, then replaces the container's content with the home or home now template
-
-      replaceWithFadeOut(variableContent, nowOr80s ? homeNow : home);
+      if (
+        window.location.hash &&
+        window.location.hash !== "#/" &&
+        window.location.hash !== "#"
+      ) {
+        window.location.hash = "#/";
+      }
     }
   });
 };

@@ -79,7 +79,7 @@
 }
 
 /* ───────── Status Badges ───────── */
-/* Badge de check circular compacto // Compact circular check status badge */
+/* Compact circular check status badge */
 .status-badge {
   font-size: 0.95rem;
   font-weight: 700;
@@ -107,7 +107,7 @@
 }
 
 /* ───────── Accordion Expansion Chevron Icon ───────── */
-/* Icono de flecha desplegable con animación de rotación // Accordion expansion chevron icon with rotation animation */
+/* Accordion expansion chevron icon with rotation animation */
 .accordion-icon {
   font-size: 1.1rem;
   color: var(--electric-mint);

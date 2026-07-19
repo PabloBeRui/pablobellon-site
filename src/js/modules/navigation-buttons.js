@@ -14,8 +14,8 @@ import myProgress from "../templates/my-progress.js";
 import home from "../templates/home.js";
 import { replaceWithFadeOut } from "./replace-with-fade-out.js";
 import { toggleThemeWithTransition } from "./theme-switching.js";
-import homeNow from "../templates/home-now.js";
-import { nowOr80s, toggleNowOr80s } from "./state.js";
+import { toggleNowOr80s } from "./state.js";
+import { handleRoute } from "./router.js";
 
 /* *********************************
  * ────── Navigation Button Logic ──────
@@ -31,12 +31,12 @@ export const navigationButtons = (idValue, wait) => {
 
   if (wait) {
     document.addEventListener("typewriterFinished", () => {
-      navButtons.classList.add("visible");
-      changeStyleButtonBack.classList.add("visible");
+      navButtons?.classList.add("visible");
+      changeStyleButtonBack?.classList.add("visible");
     });
   } else {
-    navButtons.classList.add("visible");
-    changeStyleButtonBack.classList.add("visible");
+    navButtons?.classList.add("visible");
+    changeStyleButtonBack?.classList.add("visible");
   }
 
   /* *********************************
@@ -45,32 +45,27 @@ export const navigationButtons = (idValue, wait) => {
 
   const variableContent = document.querySelector(idValue);
 
-  variableContent.addEventListener("click", (event) => {
+  variableContent?.addEventListener("click", (event) => {
     /* Using optional chaining for safer ID checks */
 
-    // "About Me" button clicked
+    // "About Me" button clicked -> Update hash route
     if (event.target?.id === "about-me-button") {
-      variableContent.innerHTML = aboutMe;
-      aboutMeRenderer();
+      window.location.hash = "#/about-me";
     }
-    // "My Progress" button clicked
+    // "My Progress" button clicked -> Update hash route
     else if (event.target?.id === "my-progress-button") {
-      variableContent.innerHTML = myProgress;
-      myProgressRenderer();
+      window.location.hash = "#/my-progress";
     }
-    // "Back" button clicked
+    // "Back" button clicked -> Return to home hash route
     else if (event.target?.id === "back-button") {
-      //Perform smooth fade-out then load the corresponding home template
-      // Go back to the appropriate home template depending on the current style
-      replaceWithFadeOut(variableContent, nowOr80s ? homeNow : home);
+      window.location.hash = "#/";
     }
-    // Home when style changed / Cambio de estilo de tema
+    // Home when style changed
     else if (event.target.closest?.("#change-style-button")) {
-      // Trigger smooth screen transition overlay to swap styles seamlessly without visual glitching
-      // // Ejecutar capa de transición suave para cambiar estilos sin parpadeos visuales // Trigger smooth screen transition overlay to swap styles seamlessly without visual glitching
+      // Trigger smooth screen transition overlay to swap styles seamlessly
       toggleThemeWithTransition(() => {
         toggleNowOr80s();
-        variableContent.innerHTML = nowOr80s ? homeNow : home;
+        handleRoute(false);
       });
     }
   });

@@ -52,7 +52,7 @@ body {
 }
 
 /* ───────── CRT Scanlines & Screen Vignette Overlay (80s Mode) ───────── */
-/* Efecto de líneas de escaneo CRT y viñeta retro en pantalla // CRT scanlines and retro screen vignette overlay effect */
+/* CRT scanlines and retro screen vignette overlay effect */
 body::after {
   content: " ";
   display: block;
@@ -62,12 +62,12 @@ body::after {
   bottom: 0;
   right: 0;
   background: 
-    /* Horizontal CRT scanlines / Líneas de escaneo CRT horizontales */
+    /* Horizontal CRT scanlines */
     linear-gradient(
       rgba(18, 16, 16, 0) 50%, 
       rgba(0, 0, 0, 0.25) 50%
     ),
-    /* Radial CRT vignette edge shadowing / Sombreado de viñeta radial en bordes CRT */
+    /* Radial CRT vignette edge shadowing */
     radial-gradient(
       circle at center,
       rgba(0, 0, 0, 0) 60%,
@@ -75,7 +75,7 @@ body::after {
     );
   background-size: 100% 4px, 100% 100%;
   z-index: 999;
-  pointer-events: none; /* Permite interacción con elementos subyacentes // Allows full interaction with underlying elements */
+  pointer-events: none; /* Allows full interaction with underlying elements */
   opacity: 0.85;
 }
 
@@ -131,7 +131,7 @@ a:hover {
 }
 
 /* ───────── Footer Styles ───────── */
-/* Estilos del pie de página e iconos normalizados // Footer styles and normalized icons */
+/* Footer styles and normalized icons */
 footer {
   position: fixed;
   left: 0;

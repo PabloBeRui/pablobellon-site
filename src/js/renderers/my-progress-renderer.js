@@ -15,7 +15,6 @@ import { courses } from "../data/my-progress-data.js";
 
 export const myProgressRenderer = () => {
   // Select the container for course cards
-  // // Seleccionar el contenedor para las tarjetas de cursos // Select the container for course cards
   const cardContainer = document.querySelector("#progress-cards-container");
 
   // Clear out any existing cards
@@ -23,10 +22,9 @@ export const myProgressRenderer = () => {
 
   courses.forEach((course) => {
     // Compact status badge check icon instead of long text to prevent overflow on mobile
-    // // Badge de estado compacto con check (✓) para evitar desbordamientos en pantallas estrechas // Compact status badge check icon (✓) to prevent overflow on narrow screens
     const statusHTML = course.approved
-      ? `<span class="status-badge completed" title="Completado" aria-label="Completado">✓</span>`
-      : `<span class="status-badge in-progress" title="En curso" aria-label="En curso">⌛</span>`;
+      ? `<span class="status-badge completed" title="Completed" aria-label="Completed">✓</span>`
+      : `<span class="status-badge in-progress" title="In Progress" aria-label="In Progress">⌛</span>`;
 
     // Build the list of subjects if any
     let subjectsHTML = "";
@@ -71,18 +69,17 @@ export const myProgressRenderer = () => {
     }
 
     // Check if course has expandable details and build accordion chevron icon
-    // // Comprobar si el curso tiene detalles desplegables y construir icono de acordeón // Check if course has expandable details and build accordion chevron icon
     const hasDetails =
       (Array.isArray(course.subjects) && course.subjects.length > 0) ||
       (Array.isArray(course.projects) && course.projects.length > 0);
     const accordionHTML = hasDetails
-      ? `<span class="accordion-icon" title="Ver detalles / Toggle details" aria-hidden="true">▾</span>`
+      ? `<span class="accordion-icon" title="Toggle details" aria-hidden="true">▾</span>`
       : "";
 
     // Assemble the card HTML
     const cardHTML = `
   <div class="course-card">
-    <!-- RESUMEN: siempre visible / SUMMARY: always visible -->
+    <!-- SUMMARY: always visible -->
     <div class="course-summary">
       <div class="course-header">
         <a href="${
@@ -109,7 +106,7 @@ export const myProgressRenderer = () => {
       </div>
     </div>
 
-    <!-- DETALLES: por defecto escondidos / DETAILS: hidden by default -->
+    <!-- DETAILS: hidden by default -->
     <div class="course-details">
       ${subjectsHTML}
       ${projectsHTML}
