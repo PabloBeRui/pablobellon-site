@@ -70,6 +70,15 @@ export const myProgressRenderer = () => {
       `;
     }
 
+    // Check if course has expandable details and build accordion chevron icon
+    // // Comprobar si el curso tiene detalles desplegables y construir icono de acordeón // Check if course has expandable details and build accordion chevron icon
+    const hasDetails =
+      (Array.isArray(course.subjects) && course.subjects.length > 0) ||
+      (Array.isArray(course.projects) && course.projects.length > 0);
+    const accordionHTML = hasDetails
+      ? `<span class="accordion-icon" title="Ver detalles / Toggle details" aria-hidden="true">▾</span>`
+      : "";
+
     // Assemble the card HTML
     const cardHTML = `
   <div class="course-card">
@@ -84,6 +93,7 @@ export const myProgressRenderer = () => {
         <div class="course-meta">
           <span class="course-year">${course.year}</span>
           ${statusHTML}
+          ${accordionHTML}
         </div>
       </div>
       

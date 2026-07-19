@@ -101,6 +101,22 @@
   box-shadow: 0 0 8px var(--neon-pink);
 }
 
+/* ───────── Accordion Expansion Chevron Icon (80s Mode) ───────── */
+/* Icono de flecha desplegable con animación de rotación // Accordion expansion chevron icon with rotation animation */
+.accordion-icon {
+  font-size: 1.4rem;
+  color: var(--terminal-green);
+  transition: transform 0.35s ease, color 0.35s ease;
+  user-select: none;
+  display: inline-block;
+  margin-left: 0.25rem;
+}
+
+.course-card.expanded .accordion-icon {
+  transform: rotate(180deg);
+  color: var(--neon-pink);
+}
+
 /* ───────── Course Link Styles ───────── */
 .course-link {
   flex: 1; /* take available space */
