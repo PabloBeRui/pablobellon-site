@@ -1,9 +1,8 @@
 /**
  * typewriter-effect.js
- * Simulates a retro terminal typewriter effect and dispatches an event upon completion.
+ * Simulates a retro terminal typewriter effect, supports click-to-skip, and remembers session state.
  */
 
-//typewriter text content
 import { typewriterText } from "../data/fragments.js";
 
 /* *********************************
@@ -11,38 +10,68 @@ import { typewriterText } from "../data/fragments.js";
  * ********************************* */
 
 export const typewriterEffect = (idValue) => {
-  // Clear any existing text before starting the typewriter animation
-
-  document.getElementById("typewriter-text").innerHTML = "";
+  const typewriterElement = document.getElementById(idValue);
+  if (!typewriterElement) return;
 
   const text = typewriterText;
-
-  const typewriterElement = document.getElementById(idValue);
-
   let textIndex = 0;
+  let timeoutId = null;
+  let isFinished = false;
+
+  // Complete typewriter animation instantly
+  const finishTypewriter = () => {
+    if (isFinished) return;
+    isFinished = true;
+
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+
+    typewriterElement.innerHTML = text;
+    typewriterElement.classList.add("typewriter-class-2");
+    typewriterElement.style.cursor = "default";
+    typewriterElement.removeAttribute("title");
+
+    // Remember in session storage that animation has been completed
+    sessionStorage.setItem("typewriterSeen", "true");
+
+    // Dispatch global custom event signaling animation completion
+    const typewriterFinishedEvent = new CustomEvent("typewriterFinished");
+    document.dispatchEvent(typewriterFinishedEvent);
+  };
+
+  // Skip animation if already seen in current session
+  const alreadySeen = sessionStorage.getItem("typewriterSeen") === "true";
+
+  if (alreadySeen) {
+    finishTypewriter();
+    return;
+  }
+
+  // Prepare element for typing and set up click-to-skip listener
+  typewriterElement.innerHTML = "";
+  typewriterElement.style.cursor = "pointer";
+  typewriterElement.setAttribute("title", "Click to skip animation");
+
+  const clickHandler = () => {
+    typewriterElement.removeEventListener("click", clickHandler);
+    finishTypewriter();
+  };
+
+  typewriterElement.addEventListener("click", clickHandler);
 
   function typeWriter() {
-    // Append next character
+    if (isFinished) return;
+
     if (textIndex < text.length) {
       typewriterElement.innerHTML += text.charAt(textIndex);
-
       textIndex++;
-      // Call recursively to type next character
-      setTimeout(typeWriter, 60); //typing speed
+      timeoutId = setTimeout(typeWriter, 60);
     } else {
-      // After completing typing, add secondary styling class
-      typewriterElement.classList.add("typewriter-class-2"); //terminal green to neon pink
-
-      // Custom Event
-      // This event will signal that the typewriter effect has completed.
-      const typewriterFinishedEvent = new CustomEvent("typewriterFinished");
-      // Dispatching (trigger) the global custom event on the 'document' object.
-      // event available for any listener.
-      document.dispatchEvent(typewriterFinishedEvent);
+      typewriterElement.removeEventListener("click", clickHandler);
+      finishTypewriter();
     }
   }
 
-  if (typewriterElement) {
-    typeWriter();
-  }
+  typeWriter();
 };
