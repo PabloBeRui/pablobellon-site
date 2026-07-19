@@ -51,6 +51,34 @@ body {
   -ms-overflow-style: none;
 }
 
+/* ───────── CRT Scanlines & Screen Vignette Overlay (80s Mode) ───────── */
+/* Efecto de líneas de escaneo CRT y viñeta retro en pantalla // CRT scanlines and retro screen vignette overlay effect */
+body::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: 
+    /* Horizontal CRT scanlines / Líneas de escaneo CRT horizontales */
+    linear-gradient(
+      rgba(18, 16, 16, 0) 50%, 
+      rgba(0, 0, 0, 0.25) 50%
+    ),
+    /* Radial CRT vignette edge shadowing / Sombreado de viñeta radial en bordes CRT */
+    radial-gradient(
+      circle at center,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+  background-size: 100% 4px, 100% 100%;
+  z-index: 999;
+  pointer-events: none; /* Permite interacción con elementos subyacentes // Allows full interaction with underlying elements */
+  opacity: 0.85;
+}
+
 /* ───────── Layout Styles ───────── */
 /* the canvas is always positioned behind content */
 video#bg-video {
