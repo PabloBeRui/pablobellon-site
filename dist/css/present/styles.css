@@ -31,6 +31,7 @@
 }
 
 /* Body styling */
+/* Body styling with subtle ambient background */
 body {
   height: 100dvh;
   width: 100%;
@@ -40,7 +41,10 @@ body {
   align-items: center;
   user-select: none;
   font-family: var(--main-font);
-  background-color: #f8fffa; /*Mint white*/
+  /* Ambient radial gradient background / Fondo con degradado radial ambiental */
+  background: radial-gradient(circle at 15% 15%, rgba(0, 255, 179, 0.08) 0%, transparent 45%),
+              radial-gradient(circle at 85% 85%, rgba(0, 255, 179, 0.06) 0%, transparent 45%),
+              #f4faf6; /* Mint white ambient tint */
 
   /* hide scroll bar  */
   scrollbar-width: none;
@@ -94,30 +98,45 @@ a:hover {
 }
 
 /* ───────── Footer Styles ───────── */
+/* Footer styles and normalized icons */
 footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgba(28, 28, 30, 0.85); /* fondo translúcido */
-  backdrop-filter: blur(6px);
+  padding: 0.5rem 1rem;
+  background-color: rgba(24, 24, 27, 0.9); /* fondo translúcido esmerilado */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-top: 1px solid var(--electric-mint);
-}
-
-img.footer-ico {
-  transition: transform 0.3s ease-in-out;
-  height: 3rem;
-  /* electric mint filter  */
-  filter: brightness(0) saturate(100%) invert(47%) sepia(84%) saturate(489%)
-    hue-rotate(114deg) brightness(105%) contrast(101%);
+  border-top: 1px solid rgba(0, 255, 179, 0.3);
+  z-index: 100;
 }
 
 ul#ul-footer {
   display: flex;
   list-style: none;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+img.footer-ico {
+  height: 2.2rem;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  /* electric mint filter  */
+  filter: brightness(0) saturate(100%) invert(47%) sepia(84%) saturate(489%)
+    hue-rotate(114deg) brightness(105%) contrast(101%);
+}
+
+img.footer-ico:hover {
+  transform: translateY(-4px) scale(1.1);
+  filter: brightness(0) saturate(100%) invert(47%) sepia(84%) saturate(800%)
+    hue-rotate(114deg) brightness(130%) contrast(110%)
+    drop-shadow(0 0 6px rgba(0, 255, 179, 0.6));
 }
 
 footer a {
@@ -262,6 +281,26 @@ figure#coming-soon-figure .typewriter-class-2 {
   }
 }
 
+/* ───────── Theme Transition Overlay ───────── */
+/* Overlay layer for smooth theme transitions */
+#theme-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #050505;
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease-in-out;
+}
+
+#theme-transition-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* *********************************
  * ───────── Media Queries ─────────
  * ********************************* */
@@ -375,5 +414,17 @@ figure#coming-soon-figure .typewriter-class-2 {
 
   figure#coming-soon-figure {
     gap: 1rem;
+  }
+}
+
+/* ───────── Accessibility & Reduced Motion ───────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
