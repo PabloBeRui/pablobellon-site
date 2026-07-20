@@ -51,6 +51,34 @@ body {
   -ms-overflow-style: none;
 }
 
+/* ───────── CRT Scanlines & Screen Vignette Overlay (80s Mode) ───────── */
+/* CRT scanlines and retro screen vignette overlay effect */
+body::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: 
+    /* Horizontal CRT scanlines */
+    linear-gradient(
+      rgba(18, 16, 16, 0) 50%, 
+      rgba(0, 0, 0, 0.25) 50%
+    ),
+    /* Radial CRT vignette edge shadowing */
+    radial-gradient(
+      circle at center,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+  background-size: 100% 4px, 100% 100%;
+  z-index: 999;
+  pointer-events: none; /* Allows full interaction with underlying elements */
+  opacity: 0.85;
+}
+
 /* ───────── Layout Styles ───────── */
 /* the canvas is always positioned behind content */
 video#bg-video {
@@ -103,29 +131,36 @@ a:hover {
 }
 
 /* ───────── Footer Styles ───────── */
+/* Footer styles and normalized icons */
 footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
+  padding: 0.5rem 1rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-
-img.footer-ico {
-  transition: transform 0.3s ease-in-out;
-  height: 3rem;
-}
-
-img.footer-ico:hover {
-  border-radius: 100%;
-  transform: translateY(-4px);
+  z-index: 100;
 }
 
 ul#ul-footer {
   display: flex;
   list-style: none;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+img.footer-ico {
+  height: 2.2rem;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+img.footer-ico:hover {
+  transform: translateY(-4px) scale(1.1);
+  filter: drop-shadow(0 0 8px var(--terminal-green));
 }
 
 footer a {
@@ -434,5 +469,21 @@ figure#coming-soon-figure .typewriter-class-2 {
   }
   figure#coming-soon-figure video {
     width: 25%;
+  }
+}
+
+/* ───────── Accessibility & Reduced Motion ───────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  video#bg-video {
+    display: none !important;
   }
 }
