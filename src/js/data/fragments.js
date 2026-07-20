@@ -55,7 +55,7 @@ export const descriptionEn = `
   Testing: Vitest / React Testing Library and Jest / Supertest
 </p><br />
 
-><br /><br />
+<br /><br />
 `;
 
 // HTML templates for language toggle buttons
