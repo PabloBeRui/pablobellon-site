@@ -8,16 +8,17 @@ Bienvenido a mi **web personal**, construida desde cero con tecnologías moderna
 
 Este sitio sirve como presentación profesional, portfolio y entorno experimental para probar y aplicar conceptos de desarrollo web.
 
-> 🔗 También puedes visitar una de mis webs desarrolladas con React:  
-> 👉 [elElegido.netlify.app](https://elelegido.netlify.app)
+> 🔗 También puedes visitar mis proyectos destacados:  
+> 🚀 [GymNomads - Plataforma para deportistas viajeros](https://www.gymnomads.dev)  
+> 🍽️ [elElegido.netlify.app](https://elelegido.netlify.app)
 
 ---
 
 ### 👨‍💻 Sobre mí
 
-- Estudiante de 2º de **Desarrollo de Aplicaciones Web (DAW)**, con el 1º curso ya superado.
-- Apasionado por el diseño web, el frontend y las tecnologías creativas.
-- Experiencia autodidacta complementada con bootcamps y proyectos personales.
+- 🎓 **Técnico Superior en Desarrollo de Aplicaciones Web (DAW)** finalizado con una calificación media de **8.64**.
+- Apasionado por el desarrollo web, la arquitectura frontend y la creación de experiencias digitales modernas.
+- Sólida trayectoria previa en la industria combinada con formación intensiva en bootcamps (*HackABoss*, *TokioSchool*, *CampusDual*) y proyectos fullstack.
 - En continua formación y aprendizaje de nuevas herramientas y frameworks.
 
 ---
@@ -90,17 +91,18 @@ Welcome to my **personal website**, built from scratch with modern frontend tool
 
 This site serves as a professional introduction, portfolio, and experimental playground for applying web development skills.
 
-> 🔗 You can also check out my React-based site:  
-> 👉 [elElegido.netlify.app](https://elElegido.netlify.app)
+> 🔗 You can also check out my featured projects:  
+> 🚀 [GymNomads - Platform for traveling athletes](https://www.gymnomads.dev)  
+> 🍽️ [elElegido.netlify.app](https://elElegido.netlify.app)
 
 ---
 
 ### 👨‍💻 About me
 
-- 2nd-year student in **Web Application Development (DAW)**, with the 1st year completed.
-- Passionate about web design, frontend development, and creative technologies.
-- Self-taught experience enhanced by bootcamps and personal projects.
-- Constantly learning new tools and frameworks.
+- 🎓 Graduated with a **Higher VET Degree in Web Application Development (DAW)** with an average grade of **8.64**.
+- Passionate about web design, frontend architecture, and modern digital experiences.
+- Solid industrial background combined with intensive bootcamp training (*HackABoss*, *TokioSchool*, *CampusDual*) and fullstack projects.
+- Constantly learning and expanding technical skills.
 
 ---
 
