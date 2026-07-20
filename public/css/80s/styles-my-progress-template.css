@@ -325,6 +325,51 @@ li {
   margin-top: 0.5rem;
 }
 
+.projects-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-item {
+  display: inline-flex;
+}
+
+.project-chip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(0, 0, 0, 0.9);
+  color: var(--terminal-green);
+  border: 1px solid var(--terminal-green);
+  box-shadow: 0 0 8px rgba(0, 255, 65, 0.4);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--corner-prop);
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.project-chip-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: var(--terminal-green);
+  color: black;
+  box-shadow: 0 0 15px var(--terminal-green);
+}
+
+.project-arrow {
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
+}
+
+.project-chip-btn:hover .project-arrow {
+  transform: translate(2px, -2px);
+}
+
 /* ───────── Logo Icons ───────── */
 img#logo-img {
   height: 4rem;

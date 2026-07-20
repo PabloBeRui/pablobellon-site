@@ -49,7 +49,10 @@ export const courses = [
     img: "../../assets/images/icons/my-progress-icons/tokioschool.png",
     url: "https://www.tokioschool.com/",
     projects: [
-      "<a href='https://elelegido.netlify.app/'>Restaurante El Elegido</a>",
+      {
+        name: "Restaurante El Elegido",
+        url: "https://elelegido.netlify.app/",
+      },
     ],
     subjects: [
       {
@@ -72,7 +75,10 @@ export const courses = [
     img: "../../assets/images/icons/my-progress-icons/ilerna.png",
     url: "https://www.ilerna.es/",
     projects: [
-      "<a href='https://www.gymnomads.dev/'>GymNomads</a>",
+      {
+        name: "GymNomads",
+        url: "https://www.gymnomads.dev/",
+      },
     ],
     subjects: [
       {

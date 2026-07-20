@@ -137,7 +137,19 @@ export const myProgressRenderer = () => {
           <h4 class="projects-header">${projectsHeaderText}</h4>
           <ul class="projects-list">
             ${course.projects
-              .map((proj) => `<li class="project-item">🚀 ${proj}</li>`)
+              .map((proj) => {
+                if (typeof proj === "object") {
+                  return `
+                    <li class="project-item">
+                      <a href="${proj.url}" target="_blank" rel="noopener" class="project-chip-btn" title="${proj.name}">
+                        <span class="project-icon">🚀</span>
+                        <span class="project-name">${proj.name}</span>
+                        <span class="project-arrow" aria-hidden="true">↗</span>
+                      </a>
+                    </li>`;
+                }
+                return `<li class="project-item">🚀 ${proj}</li>`;
+              })
               .join("")} 
           </ul>
         </div>
