@@ -5,6 +5,7 @@ import {
   descriptionEs,
 } from "../data/fragments.js";
 import { esOrEn, toggleLanguage } from "../modules/state.js";
+import { initTiltEffect } from "../modules/tilt-effect.js";
 
 /**
  * about-me-renderer.js
@@ -42,4 +43,7 @@ export const aboutMeRenderer = () => {
 
   // Initial render on module load
   renderLanguage();
+
+  // Initialize subtle 3D tilt effect on About Me container card
+  initTiltEffect("#about-me-div-content", { maxTilt: 5, scale: 1.01 });
 };

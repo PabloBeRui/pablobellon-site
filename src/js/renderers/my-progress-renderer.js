@@ -8,6 +8,7 @@
  * ********************************* */
 
 import { courses } from "../data/my-progress-data.js";
+import { initTiltEffect } from "../modules/tilt-effect.js";
 
 /* *********************************
  * ────── Progress Renderer ──────
@@ -136,4 +137,7 @@ export const myProgressRenderer = () => {
       }
     });
   });
+
+  // Initialize 3D tilt effect on rendered course cards
+  initTiltEffect(".course-card", { maxTilt: 8, scale: 1.02 });
 };

@@ -10,6 +10,7 @@ import {
   loadInitialTemplate,
   introAnimations,
   initRouter,
+  initTiltEffect,
 } from "./modules/index.js";
 
 /*Listen for DOMContentLoaded to ensure the HTML is fully parsed
@@ -40,4 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // If the user clicks outside the main content (and not on a button),
   // reset the view back to the home template
   touchOutBack("#section-global-container");
+
+  // Initialize 3D tilt effect on hero media elements
+  initTiltEffect("#img-transition-now, #coming-soon-figure video", {
+    maxTilt: 12,
+    scale: 1.04,
+  });
 });
