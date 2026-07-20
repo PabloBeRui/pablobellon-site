@@ -60,20 +60,26 @@
   border: 1px solid rgba(0, 255, 179, 0.3);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 255, 179, 0.15);
   border-radius: var(--corner-prop);
-  padding: 0.85rem 1rem;
+  padding: 0.85rem 0.25rem;
   margin-bottom: 0.5rem;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  width: 100%;
 }
 
 .progress-stats-banner .stat-item {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  padding: 0 0.25rem;
+}
+
+.progress-stats-banner .stat-item:not(:last-child) {
+  border-right: 1px solid rgba(0, 255, 179, 0.25);
 }
 
 .progress-stats-banner .stat-value {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: white;
 }
@@ -84,16 +90,24 @@
 }
 
 .progress-stats-banner .stat-label {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.75);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
 }
 
 .progress-stats-banner .stat-divider {
-  width: 1px;
-  height: 25px;
-  background: rgba(0, 255, 179, 0.2);
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .progress-stats-banner .stat-value {
+    font-size: 1.05rem;
+  }
+  .progress-stats-banner .stat-label {
+    font-size: 0.6rem;
+    letter-spacing: 0px;
+  }
 }
 
 /* ───────── Course Card Styles ───────── */
