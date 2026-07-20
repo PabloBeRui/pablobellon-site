@@ -22,11 +22,25 @@
 }
 
 /* ───────── Navigation Styles ───────── */
-#my-progress-div-content nav {
-  width: 100%;
+#my-progress-div-content nav#nav-back-button {
+  width: 90%;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#my-progress-div-content nav#nav-back-button #back-button {
+  margin-left: 0;
+}
+
+#lang-btn-div-progress {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#lang-btn-div-progress #lang-btn {
+  margin-right: 0;
 }
 
 /* ───────── Progress Cards Container ───────── */
@@ -35,6 +49,65 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+/* ───────── Progress Stats Banner (Present Mode) ───────── */
+.progress-stats-banner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(24, 24, 28, 0.95);
+  border: 1px solid rgba(0, 255, 179, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 255, 179, 0.15);
+  border-radius: var(--corner-prop);
+  padding: 0.85rem 0.25rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.progress-stats-banner .stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 0.25rem;
+}
+
+.progress-stats-banner .stat-item:not(:last-child) {
+  border-right: 1px solid rgba(0, 255, 179, 0.25);
+}
+
+.progress-stats-banner .stat-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.progress-stats-banner .stat-value.highlight {
+  color: var(--electric-mint);
+  text-shadow: 0 0 10px rgba(0, 255, 179, 0.4);
+}
+
+.progress-stats-banner .stat-label {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.progress-stats-banner .stat-divider {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .progress-stats-banner .stat-value {
+    font-size: 1.05rem;
+  }
+  .progress-stats-banner .stat-label {
+    font-size: 0.6rem;
+    letter-spacing: 0px;
+  }
 }
 
 /* ───────── Course Card Styles ───────── */
@@ -76,6 +149,46 @@
   align-items: center;
   gap: 0.5rem;
   flex-shrink: 0;
+}
+
+.final-grade-badge {
+  background: rgba(0, 255, 179, 0.15);
+  color: var(--electric-mint);
+  border: 1px solid rgba(0, 255, 179, 0.4);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--corner-small);
+  box-shadow: 0 0 8px rgba(0, 255, 179, 0.2);
+}
+
+.subject-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.subject-grade {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--corner-small);
+}
+
+.subject-grade.top-grade {
+  background: rgba(0, 255, 179, 0.25);
+  color: var(--electric-mint);
+  border-color: var(--electric-mint);
+  box-shadow: 0 0 8px rgba(0, 255, 179, 0.3);
+}
+
+.subject-grade.high-grade {
+  background: rgba(0, 255, 179, 0.12);
+  color: var(--electric-mint);
+  border-color: rgba(0, 255, 179, 0.4);
 }
 
 /* ───────── Status Badges ───────── */
