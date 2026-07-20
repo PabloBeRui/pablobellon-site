@@ -15,6 +15,7 @@ import { personalVideoAnimation } from "./personal-video-animation.js";
 import { touchOutBack } from "./touch-out-back.js";
 import { typewriterEffect } from "./typewriter-effect.js";
 import { initRouter, handleRoute } from "./router.js";
+import { initTiltEffect } from "./tilt-effect.js";
 
 /* *********************************
  * ───────── Module Exports ─────────
@@ -30,4 +31,5 @@ export {
   introAnimations,
   initRouter,
   handleRoute,
+  initTiltEffect,
 };

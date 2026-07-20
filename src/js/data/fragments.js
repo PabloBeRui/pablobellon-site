@@ -27,13 +27,7 @@ export const descriptionEs = `
   Testing: Vitest / React Testing Library y Jest / Supertest
 </p><br />
 
-<p class="smooth-fade-in-upward">
-  He prestado especial atención a la <span class="skills-span">&nbsp;UI/UX&nbsp;</span> con una experiencia intuitiva y responsive.
-</p>
-
-<p class="smooth-fade-in-upward">
-  Actualmente estoy en búsqueda activa de empresa donde realizar las prácticas formativas (FCT). Busco incorporarme a un equipo donde pueda seguir creciendo en desarrollo frontend, contribuir y aportar desde el primer momento con una actitud inmejorable. 
-</p><br /><br />
+<br /><br />
 `;
 
 export const descriptionEn = `
@@ -61,13 +55,7 @@ export const descriptionEn = `
   Testing: Vitest / React Testing Library and Jest / Supertest
 </p><br />
 
-<p class="smooth-fade-in-upward">
-  I have paid special attention to <span class="skills-span">&nbsp;UI/UX&nbsp;</span> to deliver an intuitive and responsive experience.
-</p>
-
-<p class="smooth-fade-in-upward">
-  I am currently actively looking for a company to carry out my mandatory internship (FCT). I am seeking to join a team where I can continue growing in frontend development, contribute, and add value from day one with an excellent attitude.
-</p><br /><br />
+<br /><br />
 `;
 
 // HTML templates for language toggle buttons

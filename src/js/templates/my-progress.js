@@ -2,7 +2,7 @@
 
 const myProgress = `
 <div id="my-progress-div-content" class="smooth-fade-in-upward">
-        <nav id="nav-back-button">
+        <nav id="nav-back-button" class="my-progress-nav">
           <button
             class="nav-button"
             id="back-button"
@@ -10,6 +10,7 @@ const myProgress = `
             title="Back">
             Back
           </button>
+          <div id="lang-btn-div-progress"></div>
         </nav>
         <div id="progress-cards-container"></div>
       </div>
