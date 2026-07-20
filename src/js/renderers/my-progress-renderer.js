@@ -17,15 +17,43 @@ import { initTiltEffect } from "../modules/tilt-effect.js";
 export const myProgressRenderer = () => {
   // Select the container for course cards
   const cardContainer = document.querySelector("#progress-cards-container");
+  if (!cardContainer) return;
 
   // Clear out any existing cards
   cardContainer.innerHTML = "";
+
+  // Render top metrics stats banner
+  const statsBannerHTML = `
+    <div class="progress-stats-banner">
+      <div class="stat-item">
+        <span class="stat-value">+3.300</span>
+        <span class="stat-label">Horas de Formación</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-value highlight">8.64</span>
+        <span class="stat-label">Nota Media DAW</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-value">100%</span>
+        <span class="stat-label">Cursos Completados</span>
+      </div>
+    </div>
+  `;
+
+  cardContainer.insertAdjacentHTML("beforeend", statsBannerHTML);
 
   courses.forEach((course) => {
     // Compact status badge check icon instead of long text to prevent overflow on mobile
     const statusHTML = course.approved
       ? `<span class="status-badge completed" title="Completed" aria-label="Completed">✓</span>`
       : `<span class="status-badge in-progress" title="In Progress" aria-label="In Progress">⌛</span>`;
+
+    // Final grade badge if present
+    const finalGradeHTML = course.finalGrade
+      ? `<span class="final-grade-badge" title="Nota media final / Final average grade">Nota Media: ${course.finalGrade}</span>`
+      : "";
 
     // Build the list of subjects if any
     let subjectsHTML = "";
@@ -36,18 +64,35 @@ export const myProgressRenderer = () => {
           <h4 class="subjects-header">Asignaturas / Módulos:</h4>
           <ul class="subjects-list">
             ${course.subjects
-              .map(
-                (subj) => `
+              .map((subj) => {
+                let gradeHTML = "";
+                if (subj.grade) {
+                  const isTen = subj.grade === "10";
+                  const isNine = subj.grade === "9";
+                  const gradeClass = isTen
+                    ? "subject-grade top-grade"
+                    : isNine
+                    ? "subject-grade high-grade"
+                    : "subject-grade";
+
+                  gradeHTML = `<span class="${gradeClass}" title="Nota / Grade: ${subj.grade}">${
+                    isTen ? "10 ⭐" : subj.grade
+                  }</span>`;
+                }
+
+                return `
               <li class="subject-item">
                 <span class="subject-name">${subj.name}</span>
-                ${
-                  subj.approved
-                    ? `<span class="subject-status approved">✓</span>`
-                    : `<span class="subject-status pending">⌛</span>`
-                }
-              </li>`
-              )
-              /* Join the array of strings into a single HTML string */
+                <div class="subject-badges">
+                  ${gradeHTML}
+                  ${
+                    subj.approved
+                      ? `<span class="subject-status approved">✓</span>`
+                      : `<span class="subject-status pending">⌛</span>`
+                  }
+                </div>
+              </li>`;
+              })
               .join("")} 
           </ul>
         </div>
@@ -89,6 +134,7 @@ export const myProgressRenderer = () => {
           <h3 class="course-title">${course.name}</h3>
         </a>
         <div class="course-meta">
+          ${finalGradeHTML}
           <span class="course-year">${course.year}</span>
           ${statusHTML}
           ${accordionHTML}

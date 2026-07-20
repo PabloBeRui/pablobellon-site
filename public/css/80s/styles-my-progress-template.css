@@ -34,6 +34,51 @@
   gap: 1rem;
 }
 
+/* ───────── Progress Stats Banner (80s Mode) ───────── */
+.progress-stats-banner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid var(--terminal-green);
+  box-shadow: 0 0 12px var(--terminal-green);
+  border-radius: var(--corner-prop);
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.progress-stats-banner .stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-stats-banner .stat-value {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--terminal-green);
+}
+
+.progress-stats-banner .stat-value.highlight {
+  color: var(--neon-pink);
+  text-shadow: 0 0 8px var(--neon-pink);
+}
+
+.progress-stats-banner .stat-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.progress-stats-banner .stat-divider {
+  width: 1px;
+  height: 25px;
+  background: rgba(0, 255, 65, 0.3);
+}
+
 /* ───────── Course Card Styles ───────── */
 .course-card {
   background: rgba(0, 0, 0, 0.85);
@@ -72,6 +117,45 @@
   align-items: center;
   gap: 0.5rem;
   flex-shrink: 0;
+}
+
+.final-grade-badge {
+  background: black;
+  color: var(--terminal-green);
+  border: 1px solid var(--terminal-green);
+  box-shadow: 0 0 6px var(--terminal-green);
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--corner-small);
+}
+
+.subject-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.subject-grade {
+  background: black;
+  color: var(--terminal-green);
+  border: 1px solid var(--terminal-green);
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--corner-small);
+}
+
+.subject-grade.top-grade {
+  background: black;
+  color: #ff007f;
+  border-color: #ff007f;
+  box-shadow: 0 0 6px #ff007f;
+}
+
+.subject-grade.high-grade {
+  color: var(--terminal-green);
+  box-shadow: 0 0 4px var(--terminal-green);
 }
 
 /* ───────── Status Badges (80s Mode) ───────── */
