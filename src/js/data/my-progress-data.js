@@ -62,10 +62,10 @@ export const courses = [
   },
  
   {
-    id: "daw-2025",
+    id: "daw-2026",
     name: "DAW",
     nameEn: "DAW (Higher VET Web Degree)",
-    year: 2025,
+    year: 2026,
     totalHours: 2000,
     finalGrade: "8.64",
     approved: true,
