@@ -19,11 +19,25 @@
 }
 
 /* ───────── Navigation Styles ───────── */
-#my-progress-div-content nav {
-  width: 100%;
+#my-progress-div-content nav#nav-back-button {
+  width: 90%;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#my-progress-div-content nav#nav-back-button #back-button {
+  margin-left: 0;
+}
+
+#lang-btn-div-progress {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#lang-btn-div-progress #lang-btn {
+  margin-right: 0;
 }
 
 /* ───────── Progress Cards Container ───────── */
